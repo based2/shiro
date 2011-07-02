@@ -41,8 +41,6 @@ import java.security.Principal;
  */
 public class ShiroHttpServletRequest extends HttpServletRequestWrapper {
 
-    //TODO - complete JavaDoc
-
     //The following 7 constants support the Shiro's implementation of the Servlet Specification
     public static final String COOKIE_SESSION_ID_SOURCE = "cookie";
     public static final String URL_SESSION_ID_SOURCE = "url";
@@ -53,10 +51,10 @@ public class ShiroHttpServletRequest extends HttpServletRequestWrapper {
     public static final String IDENTITY_REMOVED_KEY = ShiroHttpServletRequest.class.getName() + "_IDENTITY_REMOVED_KEY";
     public static final String SESSION_ID_URL_REWRITING_ENABLED = ShiroHttpServletRequest.class.getName() + "_SESSION_ID_URL_REWRITING_ENABLED";
 
-    protected ServletContext servletContext = null;
+    protected ServletContext servletContext;
 
     protected HttpSession session = null;
-    protected boolean httpSessions = true;
+    protected boolean httpSessions;
 
     public ShiroHttpServletRequest(HttpServletRequest wrapped, ServletContext servletContext, boolean httpSessions) {
         super(wrapped);
@@ -154,6 +152,7 @@ public class ShiroHttpServletRequest extends HttpServletRequestWrapper {
             boolean existing = getSubject().getSession(false) != null;
             
             if (this.session == null || !existing) {
+
                 Session shiroSession = getSubject().getSession(create);
                 if (shiroSession != null) {
                     this.session = new ShiroHttpSession(shiroSession, this, this.servletContext);
