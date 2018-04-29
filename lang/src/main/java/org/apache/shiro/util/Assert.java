@@ -43,11 +43,12 @@ import java.util.Map;
  *
  * <pre class="code">
  * Assert.notNull(clazz, "The class must not be null");
- * Assert.isTrue(i > 0, "The value must be greater than zero");</pre>
+ * Assert.isTrue(i &gt; 0, "The value must be greater than zero");
+ * </pre>
  *
  * Mainly for internal use within the framework; consider Jakarta's Commons Lang
- * >= 2.0 for a more comprehensive suite of assertion utilities.
- * <p/>
+ * &gt;= 2.0 for a more comprehensive suite of assertion utilities.
+ * <p>
  * <em>Gratefully borrowed from the Spring Framework, also Apache 2.0 licensed</em>
  *
  * @author Keith Donald

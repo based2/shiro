@@ -34,13 +34,13 @@ import java.io.IOException;
 /**
  * Codec for <a href="http://en.wikipedia.org/wiki/Crypt_(Unix)">Unix Crypt</a>-style encoding.  While similar to
  * Base64, it is not compatible with Base64.
- * <p/>
+ * <p>
  * This implementation is based on encoding algorithms found in the Apache Portable Runtime library's
  * <a href="http://svn.apache.org/viewvc/apr/apr/trunk/crypto/apr_md5.c?revision=HEAD&view=markup">apr_md5.c</a>
  * implementation for its {@code crypt}-style support.  The APR team in turn received inspiration for its encoding
  * implementation based on FreeBSD 3.0's {@code /usr/src/lib/libcrypt/crypt.c} implementation.  The
  * accompanying license headers have been retained at the top of this source file.
- * <p/>
+ * <p>
  * This file and all that it contains is ASL 2.0 compatible.
  *
  * @since 1.2

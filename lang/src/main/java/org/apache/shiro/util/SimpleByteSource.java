@@ -30,7 +30,7 @@ import java.util.Arrays;
  * Very simple {@link ByteSource ByteSource} implementation that maintains an internal {@code byte[]} array and uses the
  * {@link Hex Hex} and {@link Base64 Base64} codec classes to support the
  * {@link #toHex() toHex()} and {@link #toBase64() toBase64()} implementations.
- * <p/>
+ * <p>
  * The constructors on this class accept the following implicit byte-backed data types and will convert them to
  * a byte-array automatically:
  * <ul>
@@ -108,7 +108,7 @@ public class SimpleByteSource implements ByteSource {
     /**
      * Returns {@code true} if the specified object is a recognized data type that can be easily converted to
      * bytes by instances of this class, {@code false} otherwise.
-     * <p/>
+     * <p>
      * This implementation returns {@code true} IFF the specified object is an instance of one of the following
      * types:
      * <ul>
@@ -117,7 +117,7 @@ public class SimpleByteSource implements ByteSource {
      * <li>{@link ByteSource}</li>
      * <li>{@link String}</li>
      * <li>{@link File}</li>
-     * </li>{@link InputStream}</li>
+     * <li>{@link InputStream}</li>
      * </ul>
      *
      * @param o the object to test to see if it can be easily converted to bytes by instances of this class.

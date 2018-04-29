@@ -38,11 +38,11 @@ import java.util.ServiceLoader;
  * An {@code EnvironmentLoader} is responsible for loading a web application's Shiro {@link WebEnvironment}
  * (which includes the web app's {@link org.apache.shiro.web.mgt.WebSecurityManager WebSecurityManager}) into the
  * {@code ServletContext} at application startup.
- * <p/>
+ * </p>
  * In Shiro 1.1 and earlier, the Shiro ServletFilter was responsible for creating the {@code WebSecurityManager} and
  * any additional objects (security filters, etc).  However, any component not filtered by the Shiro Filter (such
  * as other context listeners) was not able to easily acquire the these objects to perform security operations.
- * <p/>
+ * </p>
  * Due to this, in Shiro 1.2 and later, this {@code EnvironmentLoader} (or more likely, the
  * {@link EnvironmentLoaderListener} subclass) is the preferred mechanism to initialize
  * a Shiro environment.  The Shiro Filter, while still required for request filtering, will not perform this
@@ -73,7 +73,7 @@ import java.util.ServiceLoader;
  * </pre>
  * The {@code WebEnvironment} implementation must implement the {@link ResourceConfigurable} interface if it is to
  * acquire the {@code shiroConfigLocations} value.
- * <p/>
+ * <p />
  * If this {@code context-param} is not specified, the {@code WebEnvironment} instance determines default resource
  * lookup behavior.  For example, the {@link IniWebEnvironment} will check the following two locations for INI config
  * by default (in order):
@@ -85,7 +85,7 @@ import java.util.ServiceLoader;
  * Using this loader will only initialize Shiro's environment in a web application - it will not filter web requests or
  * perform web-specific security operations.  To do this, you must ensure that you have also configured the
  * {@link org.apache.shiro.web.servlet.ShiroFilter ShiroFilter} in {@code web.xml}.
- * <p/>
+ * <p />
  * Finally, it should be noted that this implementation was based on ideas in Spring 3's
  * {@code org.springframework.web.context.ContextLoader} implementation - no need to reinvent the wheel for this common
  * behavior.

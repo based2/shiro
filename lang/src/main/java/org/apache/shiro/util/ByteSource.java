@@ -137,7 +137,7 @@ public interface ByteSource {
         /**
          * Returns {@code true} if the specified object can be easily represented as a {@code ByteSource} using
          * the {@link ByteSource.Util}'s default heuristics, {@code false} otherwise.
-         * <p/>
+         * <p>
          * This implementation merely returns {@link SimpleByteSource}.{@link SimpleByteSource#isCompatible(Object) isCompatible(source)}.
          *
          * @param source the object to test to see if it can be easily converted to ByteSource instances using default

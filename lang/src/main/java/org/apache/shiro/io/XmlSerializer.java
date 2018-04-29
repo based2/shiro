@@ -29,7 +29,7 @@ import java.io.ByteArrayOutputStream;
  * Serializer implementation that uses the JavaBeans
  * {@link java.beans.XMLEncoder XMLEncoder} and {@link java.beans.XMLDecoder XMLDecoder} to serialize
  * and deserialize, respectively.
- * <p/>
+ * <p>
  * <b>NOTE:</b> The JavaBeans XMLEncoder/XMLDecoder only successfully encode/decode objects when they are
  * JavaBeans compatible!
  * 

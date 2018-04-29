@@ -36,10 +36,10 @@ public abstract class CodecSupport {
 
     /**
      * Converts the specified character array to a byte array using the Shiro's preferred encoding (UTF-8).
-     * <p/>
+     * <p>
      * This is a convenience method equivalent to calling the {@link #toBytes(String,String)} method with a
      * a wrapping String and {@link CodecSupport#PREFERRED_ENCODING PREFERRED_ENCODING}, i.e.
-     * <p/>
+     * <p>
      * <code>toBytes( new String(chars), {@link CodecSupport#PREFERRED_ENCODING PREFERRED_ENCODING} );</code>
      *
      * @param chars the character array to be converted to a byte array.
@@ -51,10 +51,10 @@ public abstract class CodecSupport {
 
     /**
      * Converts the specified character array into a byte array using the specified character encoding.
-     * <p/>
+     * <p>
      * This is a convenience method equivalent to calling the {@link #toBytes(String,String)} method with a
      * a wrapping String and the specified encoding, i.e.
-     * <p/>
+     * <p>
      * <code>toBytes( new String(chars), encoding );</code>
      *
      * @param chars    the character array to be converted to a byte array
@@ -142,7 +142,7 @@ public abstract class CodecSupport {
 
     /**
      * Converts the specified byte array to a character array using the specified character encoding.
-     * <p/>
+     * <p>
      * Effectively calls <code>{@link #toString(byte[], String) toString(bytes,encoding)}.{@link String#toCharArray() toCharArray()};</code>
      *
      * @param bytes    the byte array to convert to a String
@@ -157,7 +157,7 @@ public abstract class CodecSupport {
     /**
      * Returns {@code true} if the specified object can be easily converted to bytes by instances of this class,
      * {@code false} otherwise.
-     * <p/>
+     * <p>
      * The default implementation returns {@code true} IFF the specified object is an instance of one of the following
      * types:
      * <ul>
@@ -166,7 +166,7 @@ public abstract class CodecSupport {
      * <li>{@link ByteSource}</li>
      * <li>{@link String}</li>
      * <li>{@link File}</li>
-     * </li>{@link InputStream}</li>
+     * <li>{@link InputStream}</li>
      * </ul>
      *
      * @param o the object to test to see if it can be easily converted to a byte array
@@ -181,10 +181,10 @@ public abstract class CodecSupport {
 
     /**
      * Converts the specified Object into a byte array.
-     * <p/>
+     * <p>
      * If the argument is a {@code byte[]}, {@code char[]}, {@link ByteSource}, {@link String}, {@link File}, or
      * {@link InputStream}, it will be converted automatically and returned.}
-     * <p/>
+     * <p>
      * If the argument is anything other than these types, it is passed to the
      * {@link #objectToBytes(Object) objectToBytes} method which must be overridden by subclasses.
      *
@@ -215,10 +215,10 @@ public abstract class CodecSupport {
 
     /**
      * Converts the specified Object into a String.
-     * <p/>
+     * <p>
      * If the argument is a {@code byte[]} or {@code char[]} it will be converted to a String using the
      * {@link #PREFERRED_ENCODING}.  If a String, it will be returned as is.
-     * <p/>
+     * <p>
      * If the argument is anything other than these three types, it is passed to the
      * {@link #objectToString(Object) objectToString} method.
      *

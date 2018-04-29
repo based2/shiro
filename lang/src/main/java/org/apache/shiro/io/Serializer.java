@@ -21,10 +21,10 @@ package org.apache.shiro.io;
 /**
  * A <code>Serializer</code> converts objects to raw binary data and vice versa, enabling persistent storage
  * of objects to files, HTTP cookies, or other mechanism.
- * <p/>
+ * <p>
  * A <code>Serializer</code> should only do conversion, never change the data, such as encoding/decoding or
  * encryption.  These orthogonal concerns are handled elsewhere by Shiro, for example, via
- * {@link org.apache.shiro.codec.CodecSupport CodecSupport} and {@link org.apache.shiro.crypto.CipherService CipherService}s.
+ * {@link org.apache.shiro.codec.CodecSupport CodecSupport} and { org.apache.shiro.crypto.CipherService CipherService}s.
  *
  * @param <T> The type of the object being serialized and deserialized.
  * @since 0.9

@@ -22,8 +22,7 @@ import java.text.ParseException;
 import java.util.*;
 
 /**
- * <p>Simple utility class for String operations useful across the framework.
- * <p/>
+ * <p>Simple utility class for String operations useful across the framework.</p>
  * <p>Some methods in this class were copied from the Spring Framework so we didn't have to re-invent the wheel,
  * and in these cases, we have retained all license, copyright and author information.
  *
@@ -44,7 +43,7 @@ public class StringUtils {
     public static final char DEFAULT_DELIMITER_CHAR = ',';
 
     /**
-     * Constant representing the default quote character (double quote), equal to '&quot;'</code>
+     * Constant representing the default quote character (double quote), equal to <code>'&quot;'</code>
      */
     public static final char DEFAULT_QUOTE_CHAR = '"';
 
@@ -52,13 +51,13 @@ public class StringUtils {
      * Check whether the given String has actual text.
      * More specifically, returns <code>true</code> if the string not <code>null</code>,
      * its length is greater than 0, and it contains at least one non-whitespace character.
-     * <p/>
-     * <code>StringUtils.hasText(null) == false<br/>
-     * StringUtils.hasText("") == false<br/>
-     * StringUtils.hasText(" ") == false<br/>
-     * StringUtils.hasText("12345") == true<br/>
+     * <p>
+     * <code>StringUtils.hasText(null) == false<br>
+     * StringUtils.hasText("") == false<br>
+     * StringUtils.hasText(" ") == false<br>
+     * StringUtils.hasText("12345") == true<br>
      * StringUtils.hasText(" 12345 ") == true</code>
-     * <p/>
+     * 
      * <p>Copied from the Spring Framework while retaining all license, copyright and author information.
      *
      * @param str the String to check (may be <code>null</code>)
@@ -82,12 +81,12 @@ public class StringUtils {
     /**
      * Check that the given String is neither <code>null</code> nor of length 0.
      * Note: Will return <code>true</code> for a String that purely consists of whitespace.
-     * <p/>
-     * <code>StringUtils.hasLength(null) == false<br/>
-     * StringUtils.hasLength("") == false<br/>
-     * StringUtils.hasLength(" ") == true<br/>
+     * <p>
+     * <code>StringUtils.hasLength(null) == false<br>
+     * StringUtils.hasLength("") == false<br>
+     * StringUtils.hasLength(" ") == true<br>
      * StringUtils.hasLength("Hello") == true</code>
-     * <p/>
+     * <p>
      * Copied from the Spring Framework while retaining all license, copyright and author information.
      *
      * @param str the String to check (may be <code>null</code>)
@@ -102,7 +101,7 @@ public class StringUtils {
     /**
      * Test if the given String starts with the specified prefix,
      * ignoring upper/lower case.
-     * <p/>
+     * <p>
      * <p>Copied from the Spring Framework while retaining all license, copyright and author information.
      *
      * @param str    the String to check
@@ -127,14 +126,14 @@ public class StringUtils {
 
     /**
      * Returns a 'cleaned' representation of the specified argument.  'Cleaned' is defined as the following:
-     * <p/>
+     * <p>
      * <ol>
      * <li>If the specified <code>String</code> is <code>null</code>, return <code>null</code></li>
      * <li>If not <code>null</code>, {@link String#trim() trim()} it.</li>
      * <li>If the trimmed string is equal to the empty String (i.e. &quot;&quot;), return <code>null</code></li>
-     * <li>If the trimmed string is not the empty string, return the trimmed version</li>.
+     * <li>If the trimmed string is not the empty string, return the trimmed version.</li>
      * </ol>
-     * <p/>
+     * <p>
      * Therefore this method always ensures that any given string has trimmed text, and if it doesn't, <code>null</code>
      * is returned.
      *
@@ -211,7 +210,7 @@ public class StringUtils {
      * delimiter characters. Each of those characters can be used to separate
      * tokens. A delimiter is always a single character; for multi-character
      * delimiters, consider using <code>delimitedListToStringArray</code>
-     * <p/>
+     * <p>
      * <p>Copied from the Spring Framework while retaining all license, copyright and author information.
      *
      * @param str        the String to tokenize
@@ -231,7 +230,7 @@ public class StringUtils {
      * delimiter characters. Each of those characters can be used to separate
      * tokens. A delimiter is always a single character; for multi-character
      * delimiters, consider using <code>delimitedListToStringArray</code>
-     * <p/>
+     * <p>
      * <p>Copied from the Spring Framework while retaining all license, copyright and author information.
      *
      * @param str               the String to tokenize
@@ -270,7 +269,7 @@ public class StringUtils {
     /**
      * Copy the given Collection into a String array.
      * The Collection must contain String elements only.
-     * <p/>
+     * <p>
      * <p>Copied from the Spring Framework while retaining all license, copyright and author information.
      *
      * @param collection the Collection to copy
@@ -341,12 +340,12 @@ public class StringUtils {
     /**
      * Splits the specified delimited String into tokens, supporting quoted tokens so that quoted strings themselves
      * won't be tokenized.
-     * <p/>
+     * <p>
      * This method's implementation is very loosely based (with significant modifications) on
      * <a href="http://blogs.bytecode.com.au/glen">Glen Smith</a>'s open-source
      * <a href="http://opencsv.svn.sourceforge.net/viewvc/opencsv/trunk/src/au/com/bytecode/opencsv/CSVReader.java?&view=markup">CSVReader.java</a>
      * file.
-     * <p/>
+     * <p>
      * That file is Apache 2.0 licensed as well, making Glen's code a great starting point for us to modify to
      * our needs.
      *
@@ -414,12 +413,12 @@ public class StringUtils {
 
     /**
      * Joins the elements of the provided {@code Iterator} into
-     * a single String containing the provided elements.</p>
-     * <p/>
+     * a single String containing the provided elements.
+     * <p>
      * No delimiter is added before or after the list.
-     * A {@code null} separator is the same as an empty String ("").</p>
-     * <p/>
-     * Copied from Commons Lang, version 3 (r1138702).</p>
+     * A {@code null} separator is the same as an empty String ("").
+     * <p>
+     * Copied from Commons Lang, version 3 (r1138702).
      *
      * @param iterator  the {@code Iterator} of values to join together, may be null
      * @param separator the separator character to use, null treated as ""
@@ -462,7 +461,7 @@ public class StringUtils {
     /**
      * Splits the {@code delimited} string (delimited by the specified {@code separator} character) and returns the
      * delimited values as a {@code Set}.
-     * <p/>
+     * <p>
      * If either argument is {@code null}, this method returns {@code null}.
      *
      * @param delimited the string to split

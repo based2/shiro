@@ -21,14 +21,14 @@ package org.apache.shiro.codec;
 /**
  * Provides <a href="http://en.wikipedia.org/wiki/Base64">Base 64</a> encoding and decoding as defined by
  * <a href="http://www.ietf.org/rfc/rfc2045.txt">RFC 2045</a>.
- * <p/>
+ * <p>
  * This class implements section <cite>6.8. Base64 Content-Transfer-Encoding</cite> from RFC 2045 <cite>Multipurpose
  * Internet Mail Extensions (MIME) Part One: Format of Internet Message Bodies</cite> by Freed and Borenstein.
- * <p/>
+ * <p>
  * This class was borrowed from Apache Commons Codec SVN repository (rev. 618419) with modifications
  * to enable Base64 conversion without a full dependency on Commons Codec.  We didn't want to reinvent the wheel of
  * great work they've done, but also didn't want to force every Shiro user to depend on the commons-codec.jar
- * <p/>
+ * <p>
  * As per the Apache 2.0 license, the original copyright notice and all author and copyright information have
  * remained in tact.
  *
@@ -40,7 +40,7 @@ public class Base64 {
 
     /**
      * Chunk size per RFC 2045 section 6.8.
-     * <p/>
+     * <p>
      * The character limit does not count the trailing CRLF, but counts all other characters, including any
      * equal signs.
      *
@@ -98,9 +98,9 @@ public class Base64 {
     /**
      * Contains the Base64 values <code>0</code> through <code>63</code> accessed by using character encodings as
      * indices.
-     * <p/>
+     * <p>
      * <p>For example, <code>base64Alphabet['+']</code> returns <code>62</code>.</p>
-     * <p/>
+     * <p>
      * <p>The value of undefined encodings is <code>-1</code>.</p>
      */
     private static final byte[] base64Alphabet = new byte[BASELENGTH];
@@ -109,9 +109,9 @@ public class Base64 {
      * <p>Contains the Base64 encodings <code>A</code> through <code>Z</code>, followed by <code>a</code> through
      * <code>z</code>, followed by <code>0</code> through <code>9</code>, followed by <code>+</code>, and
      * <code>/</code>.</p>
-     * <p/>
+     * <p>
      * <p>This array is accessed by using character values as indices.</p>
-     * <p/>
+     * <p>
      * <p>For example, <code>lookUpBase64Alphabet[62] </code> returns <code>'+'</code>.</p>
      */
     private static final byte[] lookUpBase64Alphabet = new byte[LOOKUPLENGTH];

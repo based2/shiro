@@ -212,14 +212,14 @@ public class ClassUtils {
     }
 
     /**
-     *
-     * @param type
-     * @param annotation
-     * @return
+     * Gets Annotated Methods
+     * @param type class type
+     * @param annotation annotation
+     * @return methods list
      * @since 1.3
      */
     public static List<Method> getAnnotatedMethods(final Class<?> type, final Class<? extends Annotation> annotation) {
-        final List<Method> methods = new ArrayList<Method>();
+        final List<Method> methods = new ArrayList<>();
         Class<?> clazz = type;
         while (!Object.class.equals(clazz)) {
             Method[] currentClassMethods = clazz.getDeclaredMethods();
