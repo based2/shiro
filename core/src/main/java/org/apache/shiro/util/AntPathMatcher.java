@@ -18,6 +18,9 @@
  */
 package org.apache.shiro.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * <p>PathMatcher implementation for Ant-style path patterns.
  * Examples are provided below.</p>
@@ -58,6 +61,8 @@ package org.apache.shiro.util;
  * @since 16.07.2003
  */
 public class AntPathMatcher implements PatternMatcher {
+
+    private final static Logger LOGGER = LoggerFactory.getLogger(AntPathMatcher.class);
 
     //TODO - complete JavaDoc
 
@@ -105,7 +110,16 @@ public class AntPathMatcher implements PatternMatcher {
      * @return <code>true</code> if the supplied <code>path</code> matched,
      *         <code>false</code> if it didn't
      */
-    protected boolean doMatch(String pattern, String path, boolean fullMatch) {
+    protected boolean doMatch(final String pattern, final String path, final boolean fullMatch) {
+
+        if (null==pattern || "".equals(pattern)) {
+            LOGGER.warn("Empty pattern for path " + path);
+            return false;
+        }
+        if (null==path || "".equals(path)) {
+            LOGGER.warn("Empty path for pattern " + pattern);
+        }
+        // https://issues.apache.org/jira/browse/SHIRO-582
         if (path.startsWith(this.pathSeparator) != pattern.startsWith(this.pathSeparator)) {
             return false;
         }
@@ -120,7 +134,7 @@ public class AntPathMatcher implements PatternMatcher {
 
         // Match all elements up to the first **
         while (pattIdxStart <= pattIdxEnd && pathIdxStart <= pathIdxEnd) {
-            String patDir = pattDirs[pattIdxStart];
+            final String patDir = pattDirs[pattIdxStart];
             if ("**".equals(patDir)) {
                 break;
             }
@@ -202,8 +216,8 @@ public class AntPathMatcher implements PatternMatcher {
             strLoop:
             for (int i = 0; i <= strLength - patLength; i++) {
                 for (int j = 0; j < patLength; j++) {
-                    String subPat = (String) pattDirs[pattIdxStart + j + 1];
-                    String subStr = (String) pathDirs[pathIdxStart + i + j];
+                    String subPat = pattDirs[pattIdxStart + j + 1];
+                    String subStr = pathDirs[pathIdxStart + i + j];
                     if (!matchStrings(subPat, subStr)) {
                         continue strLoop;
                     }

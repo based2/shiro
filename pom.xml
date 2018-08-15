@@ -117,7 +117,7 @@
              ahem, hazelcast, ahem... -->
         <powermock.version>1.7.4</powermock.version>
 
-        <maven.compiler.version>3.7.0</maven.compiler.version>
+        <maven.compiler.version>3.8.0</maven.compiler.version>
         <maven.compiler.source>${jdk.version}</maven.compiler.source>
         <maven.compiler.target>${jdk.version}</maven.compiler.target>
 
