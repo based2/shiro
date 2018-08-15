@@ -1,0 +1,32 @@
+One or more dependencies were identified with known vulnerabilities in Apache Shiro:
+
+jackson-annotations-2.8.0.jar (com.fasterxml.jackson.core:jackson-annotations:2.8.0, cpe:/a:fasterxml:jackson:2.8.0) : CVE-2016-7051
+jackson-core-2.6.3.jar (com.fasterxml.jackson.core:jackson-core:2.6.3, cpe:/a:fasterxml:jackson:2.6.3) : CVE-2016-7051
+jackson-databind-2.6.3.jar (com.fasterxml.jackson.core:jackson-databind:2.6.3, cpe:/a:fasterxml:jackson-databind:2.6.3, cpe:/a:fasterxml:jackson:2.6.3) : CVE-2018-7489, CVE-2018-5968, CVE-2017-7525, CVE-2017-17485, CVE-2017-15095, CVE-2016-7051
+jackson-databind-2.8.10.jar (com.fasterxml.jackson.core:jackson-databind:2.8.10, cpe:/a:fasterxml:jackson-databind:2.8.10, cpe:/a:fasterxml:jackson:2.8.10) : CVE-2018-7489, CVE-2018-5968, CVE-2017-17485
+jackson-databind-2.8.8.1.jar (com.fasterxml.jackson.core:jackson-databind:2.8.8.1, cpe:/a:fasterxml:jackson-databind:2.8.8.1, cpe:/a:fasterxml:jackson:2.8.8.1) : CVE-2018-7489, CVE-2018-5968, CVE-2017-7525, CVE-2017-17485, CVE-2017-15095
+jackson-jaxrs-base-2.6.3.jar (com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.6.3, cpe:/a:fasterxml:jackson:2.6.3) : CVE-2016-7051, CVE-2016-3720
+android-json-0.0.20131108.vaadin1.jar (com.vaadin.external.google:android-json:0.0.20131108.vaadin1, cpe:/a:google:android:0.0.201311) : CVE-2016-5696, CVE-2014-6060, CVE-2014-1939, CVE-2013-7372, CVE-2010-1807
+commons-collections-3.2.1.jar (commons-collections:commons-collections:3.2.1, cpe:/a:apache:commons_collections:3.2.1) : CVE-2017-15708, CVE-2015-6420
+cxf-core-3.1.7.jar (cpe:/a:apache:cxf:3.1.7, org.apache.cxf:cxf-core:3.1.7) : CVE-2017-5656, CVE-2017-5653, CVE-2017-3156, CVE-2017-12624, CVE-2016-8739, CVE-2016-6812
+taglibs-standard-impl-1.2.1.jar (cpe:/a:apache:standard_taglibs:1.2.1, org.apache.taglibs:taglibs-standard-impl:1.2.1) : CVE-2015-0254
+tomcat-embed-core-8.5.23.jar (cpe:/a:apache:tomcat:8.5.23, org.apache.tomcat.embed:tomcat-embed-core:8.5.23) : CVE-2018-8014, CVE-2018-1305, CVE-2018-1304, CVE-2017-6056, CVE-2017-15706, CVE-2016-6325, CVE-2016-5425
+groovy-2.4.3.jar (commons-cli:commons-cli:1.2, cpe:/a:apache:groovy:2.4.3) : CVE-2016-6814, CVE-2016-6497, CVE-2015-3253
+apache-jsp-9.3.0.M1.jar (cpe:/a:eclipse:jetty:9.3.0:m1, cpe:/a:jetty:jetty:9.3.0.m1, org.eclipse.jetty:apache-jsp:9.3.0.M1) : CVE-2017-9735, CVE-2016-4800, CVE-2015-2080
+jetty-jsp-9.3.0.M1.jar (cpe:/a:eclipse:jetty:9.3.0:m1, cpe:/a:jetty:jetty:9.3.0.m1, org.eclipse.jetty:jetty-jsp:9.3.0.M1) : CVE-2017-9735, CVE-2016-4800, CVE-2015-2080
+javax.servlet.jsp.jstl-1.2.0.v201105211821.jar (cpe:/a:eclipse:jetty:1.2.0.v20110521, cpe:/a:jetty:jetty:1.2.0.v20110521, org.eclipse.jetty.orbit:javax.servlet.jsp.jstl:1.2.0.v201105211821) : CVE-2017-9735
+org.eclipse.jdt.core-3.8.2.v20130121.jar (cpe:/a:eclipse:jetty:3.8.2.v20130121, cpe:/a:jetty:jetty:3.8.2.v20130121, org.eclipse.jetty.orbit:org.eclipse.jdt.core:3.8.2.v20130121) : CVE-2017-9735
+jetty-schemas-3.1.M0.jar (cpe:/a:eclipse:jetty:3.1.m0, cpe:/a:jetty:jetty:3.1.m0, org.eclipse.jetty.toolchain:jetty-schemas:3.1.M0) : CVE-2017-9735
+websocket-server-9.3.0.M1.jar (cpe:/a:eclipse:jetty:9.3.0:m1, cpe:/a:jetty:jetty:9.3.0.m1, org.eclipse.jetty.websocket:websocket-server:9.3.0.M1) : CVE-2017-9735, CVE-2016-4800, CVE-2015-2080
+async-http-servlet-3.0-3.0.19.Final.jar (cpe:/a:redhat:resteasy:3.0.19, org.jboss.resteasy:async-http-servlet-3.0:3.0.19.Final) : CVE-2016-9606, CVE-2016-6348, CVE-2016-6347, CVE-2016-6346, CVE-2016-6345
+resteasy-jaxrs-3.0.19.Final.jar (cpe:/a:redhat:resteasy:3.0.19, org.jboss.resteasy:resteasy-jaxrs:3.0.19.Final) : CVE-2016-9606, CVE-2016-6348, CVE-2016-6347, CVE-2016-6346, CVE-2016-6345
+apache-el-8.0.9.M3.jar (cpe:/a:apache:tomcat:8.0.9.m3, cpe:/a:apache_tomcat:apache_tomcat:8.0.9.m3, cpe:/a:jasper_project:jasper:8.0.9.m3, cpe:/a:mortbay:jetty:8.0.9.m3, org.mortbay.jasper:apache-el:8.0.9.M3) : CVE-2017-6056, CVE-2016-6325, CVE-2016-5425, CVE-2011-4461
+esapi-2.0.1.jar (cpe:/a:owasp:enterprise_security_api:2.0.1, org.owasp.esapi:esapi:2.0.1) : CVE-2013-5960, CVE-2013-5679
+spring-boot-1.5.9.RELEASE.jar (cpe:/a:pivotal_software:spring_boot:1.5.9, org.springframework.boot:spring-boot:1.5.9.RELEASE) : CVE-2018-1196
+spring-core-3.2.18.RELEASE.jar (cpe:/a:pivotal:spring_framework:3.2.18, cpe:/a:pivotal_software:spring_framework:3.2.18, cpe:/a:springsource:spring_framework:3.2.18, cpe:/a:vmware:springsource_spring_framework:3.2.18, org.springframework:spring-core:3.2.18.RELEASE) : CVE-2018-1272, CVE-2018-1271, CVE-2018-1270, CVE-2016-5007
+spring-core-4.3.13.RELEASE.jar (cpe:/a:pivotal:spring_framework:4.3.13, cpe:/a:pivotal_software:spring_framework:4.3.13, cpe:/a:springsource:spring_framework:4.3.13, cpe:/a:vmware:springsource_spring_framework:4.3.13, org.springframework:spring-core:4.3.13.RELEASE) : CVE-2018-1275, CVE-2018-1272, CVE-2018-1271, CVE-2018-1270, CVE-2018-1257, CVE-2018-1199
+spring-core-4.3.16.RELEASE.jar (cpe:/a:pivotal:spring_framework:4.3.16, cpe:/a:pivotal_software:spring_framework:4.3.16, cpe:/a:springsource:spring_framework:4.3.16, cpe:/a:vmware:springsource_spring_framework:4.3.16, org.springframework:spring-core:4.3.16.RELEASE) : CVE-2018-1257
+xercesImpl-2.11.0.jar (cpe:/a:apache:xerces2_java:2.11.0, xerces:xercesImpl:2.11.0) : CVE-2012-0881
+
+
+See the dependency-check report for more details.
