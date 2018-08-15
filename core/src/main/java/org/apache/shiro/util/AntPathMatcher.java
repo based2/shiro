@@ -118,8 +118,9 @@ public class AntPathMatcher implements PatternMatcher {
         }
         if (null==path || "".equals(path)) {
             LOGGER.warn("Empty path for pattern " + pattern);
+            return false;
         }
-        // https://issues.apache.org/jira/browse/SHIRO-582
+
         if (path.startsWith(this.pathSeparator) != pattern.startsWith(this.pathSeparator)) {
             return false;
         }

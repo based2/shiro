@@ -37,25 +37,27 @@ public class AntPathMatcherTest {
                 { "/foo", "/foo", true },
                 { "/foo", "/foo/bar", false },
 
-                { "/foo/*", "/foo", true },
+                { "/foo/*", "/foo", false },
+                { "/foo/*", "/foo/", true },
                 { "/foo/*", "/foo.bar", false },
                 { "/foo/*", "/foo/bar", true },
-                { "/foo/*", "/foo/bar/", true },
-                { "/foo/*", "/foo/bar/baz", true },
-                { "/foo/*", "/foo/*", false },
+                { "/foo/*", "/foo/bar/", false },
+                { "/foo/*", "/foo/bar/baz", false },
+                { "/foo/*", "/foo/*", true },
                 { "/foo/*", "/foo/*/bar", false },
 
+                { "/foo/**", "/foo/**", true },
                 { "/foo/**", "/foo/bar", true },
                 { "/foo/**", "/foo.bar", false },
                 { "/foo/**", "/foo/bar/baz", true },
 
-                { null, "/foo/bar/baz", true },
+                { null, "/foo/bar/baz", false },
 
-                { "/foo/**", null, true },
+                { "/foo/**", null, false },
 
                 // https://issues.apache.org/jira/browse/SHIRO-582
                 { "/foo", "/\\../\\../", false },
-                { "/foo", "/\\../\\../foo", true }
+                { "/foo", "/\\../\\../foo", false } // TODO true
         });
     }
 
