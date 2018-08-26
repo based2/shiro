@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * Inspects an object for annotated methods of interest and creates an {@link EventListener} instance for each method
  * discovered.  An event bus will call the resulting listeners as relevant events arrive.
- * <p/>
+ * <br>
  * The default {@link #setAnnotationClass(Class) annotationClass} is {@link Subscribe}, indicating each
  * {@link Subscribe}-annotated method will be represented as an EventListener.
  *

@@ -20,14 +20,14 @@ package org.apache.shiro.crypto.hash;
 
 /**
  * A {@code HashService} hashes input sources utilizing a particular hashing strategy.
- * <p/>
+ * <p>
  * A {@code HashService} sits at a higher architectural level than Shiro's simple {@link Hash} classes:  it allows
  * for salting and iteration-related strategies to be configured and internalized in a
  * single component that can be re-used in multiple places in the application.
- * <p/>
+ * </p>
  * For example, for the most secure hashes, it is highly recommended to use a randomly generated salt, potentially
  * paired with an configuration-specific private salt, in addition to using multiple hash iterations.
- * <p/>
+ * <br>
  * While one can do this easily enough using Shiro's {@link Hash} implementations directly, this direct approach could
  * quickly lead to copy-and-paste behavior.  For example, consider this logic which might need to repeated in an
  * application:
@@ -62,10 +62,10 @@ public interface HashService {
      * same exact salt <b><em>MUST</em></b> be presented back to the {@code HashService} if hash
      * comparison/verification will be performed at a later time (for example, for password hash or file checksum
      * comparison).
-     * <p/>
+     * <br>
      * For additional security, the {@code HashService}'s internal implementation may use more complex salting
      * strategies than what would be achieved by computing a {@code Hash} manually.
-     * <p/>
+     * <br>
      * In summary, if a {@link HashService} returns a salt in a returned Hash, it is expected that the same salt
      * will be provided to the same {@code HashService} instance.
      *

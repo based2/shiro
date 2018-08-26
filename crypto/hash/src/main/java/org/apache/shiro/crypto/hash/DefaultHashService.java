@@ -43,24 +43,24 @@ import org.apache.shiro.util.ByteSource;
  * take for an attacker to compromise a password.  This
  * <a href="http://www.stormpath.com/blog/strong-password-hashing-apache-shiro">blog article</a>
  * explains in greater detail why this is useful, as well as information on how many iterations is 'enough'.
- * <p/>
+ * <br>
  * You may set the number of hash iterations via the {@link #setHashIterations(int)} property.  The default is
  * {@code 1}, but should be increased significantly if the {@code HashService} is intended to be used for password
  * hashing. See the linked blog article for more info.
  * <h2>Private Salt</h2>
  * If using this implementation as part of a password hashing strategy, it might be desirable to configure a
  * {@link #setPrivateSalt(ByteSource) private salt}:
- * <p/>
+ * <br>
  * A hash and the salt used to compute it are often stored together.  If an attacker is ever able to access
  * the hash (e.g. during password cracking) and it has the full salt value, the attacker has all of the input necessary
  * to try to brute-force crack the hash (source + complete salt).
- * <p/>
+ * <p>
  * However, if part of the salt is not available to the attacker (because it is not stored with the hash), it is
  * <em>much</em> harder to crack the hash value since the attacker does not have the complete inputs necessary.
- * <p/>
+ * </p><p>
  * The {@link #getPrivateSalt() privateSalt} property exists to satisfy this private-and-not-shared part of the salt.
  * If you configure this attribute, you can obtain this additional very important safety feature.
- * <p/>
+ * </p>
  * <b>*</b>By default, the {@link #getPrivateSalt() privateSalt} is null, since a sensible default cannot be used that
  * isn't easily compromised (because Shiro is an open-source project and any default could be easily seen and used).
  *
@@ -102,7 +102,7 @@ public class DefaultHashService implements ConfigurableHashService {
      * new {@link SecureRandomNumberGenerator}()</li>
      * <li>{@link #setGeneratePublicSalt(boolean) generatePublicSalt} = {@code false}</li>
      * </ul>
-     * <p/>
+     * <br>
      * If this hashService will be used for password hashing it is recommended to set the
      * {@link #setPrivateSalt(ByteSource) privateSalt} and significantly increase the number of
      * {@link #setHashIterations(int) hashIterations}.  See the class-level JavaDoc for more information.
@@ -116,11 +116,11 @@ public class DefaultHashService implements ConfigurableHashService {
 
     /**
      * Computes and responds with a hash based on the specified request.
-     * <p/>
+     * <br>
      * This implementation functions as follows:
      * <ul>
      * <li>If the request's {@link org.apache.shiro.crypto.hash.HashRequest#getSalt() salt} is null:
-     * <p/>
+     * <br>
      * A salt will be generated and used to compute the hash.  The salt is generated as follows:
      * <ol>
      * <li>Use the {@link #getRandomNumberGenerator() randomNumberGenerator} to generate a new random number.</li>
@@ -132,13 +132,13 @@ public class DefaultHashService implements ConfigurableHashService {
      * </li>
      * <li>
      * If the request salt is not null:
-     * <p/>
+     * <br>
      * This indicates that the hash computation is for comparison purposes (of a
      * previously computed hash).  The request salt will be {@link #combine(ByteSource, ByteSource) combined} with any
      * configured {@link #getPrivateSalt() privateSalt} and used as the complete salt during hash computation.
      * </li>
      * </ul>
-     * <p/>
+     * <br>
      * The returned {@code Hash}'s {@link Hash#getSalt() salt} property
      * will contain <em>only</em> the 'public' part of the salt and <em>NOT</em> the privateSalt.  See the class-level
      * JavaDoc explanation for more info.
@@ -190,7 +190,7 @@ public class DefaultHashService implements ConfigurableHashService {
     /**
      * Returns the public salt that should be used to compute a hash based on the specified request or
      * {@code null} if no public salt should be used.
-     * <p/>
+     * <br>
      * This implementation functions as follows:
      * <ol>
      * <li>If the request salt is not null and non-empty, this will be used, return it.</li>
@@ -307,10 +307,10 @@ public class DefaultHashService implements ConfigurableHashService {
     /**
      * Returns {@code true} if a public salt should be randomly generated and used to compute a hash if a
      * {@link HashRequest} does not specify a salt, {@code false} otherwise.
-     * <p/>
+     * <p>
      * The default value is {@code false} but should definitely be set to {@code true} if the
      * {@code HashService} instance is being used for password hashing.
-     * <p/>
+     * </p>
      * <b>NOTE:</b> this property only has an effect if a {@link #getPrivateSalt() privateSalt} is NOT configured.  If a
      * private salt has been configured and a request does not provide a salt, a random salt will always be generated
      * to protect the integrity of the private salt (without a public salt, the private salt would be exposed as-is,
@@ -326,10 +326,10 @@ public class DefaultHashService implements ConfigurableHashService {
     /**
      * Sets whether or not a public salt should be randomly generated and used to compute a hash if a
      * {@link HashRequest} does not specify a salt.
-     * <p/>
+     * <p>
      * The default value is {@code false} but should definitely be set to {@code true} if the
      * {@code HashService} instance is being used for password hashing.
-     * <p/>
+     * </p>
      * <b>NOTE:</b> this property only has an effect if a {@link #getPrivateSalt() privateSalt} is NOT configured.  If a
      * private salt has been configured and a request does not provide a salt, a random salt will always be generated
      * to protect the integrity of the private salt (without a public salt, the private salt would be exposed as-is,

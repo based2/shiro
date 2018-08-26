@@ -24,10 +24,10 @@ import org.apache.shiro.codec.Hex;
 
 /**
  * Generates an SHA-384 Hash from a given input <tt>source</tt> with an optional <tt>salt</tt> and hash iterations.
- * <p/>
+ * <p>
  * See the {@link SimpleHash SimpleHash} parent class JavaDoc for a detailed explanation of Hashing
  * techniques and how the overloaded constructors function.
- * <p/>
+ * </p>
  * <b>JDK Version Note</b> - Attempting to instantiate this class on JREs prior to version 1.4.0 will throw
  * an {@link IllegalStateException IllegalStateException}
  *

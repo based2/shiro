@@ -31,7 +31,7 @@ public interface HostAuthenticationToken extends AuthenticationToken {
      * authentication attempt originates or if the Shiro environment cannot or
      * chooses not to resolve the hostname to improve performance, this method
      * returns the String representation of the client's IP address.
-     * <p/>
+     * <br>
      * When used in web environments, this value is usually the same as the
      * {@code ServletRequest.getRemoteHost()} value.
      *

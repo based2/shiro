@@ -36,8 +36,7 @@ import org.apache.shiro.util.StringUtils;
  * <pre>
  * <b>$</b>mcfFormatId<b>$</b>algorithmName<b>$</b>iterationCount<b>$</b>base64EncodedSalt<b>$</b>base64EncodedDigest
  * </pre>
- * <p>Each token is defined as follows:</p>
- * <table>
+ * <table summary="Each token is defined as follows:">
  *     <tr>
  *         <th>Position</th>
  *         <th>Token</th>
@@ -64,7 +63,7 @@ import org.apache.shiro.util.StringUtils;
  *         <td>3</td>
  *         <td>{@code iterationCount}</td>
  *         <td>The number of hash iterations performed.</td>
- *         <td>true (1 <= N <= Integer.MAX_VALUE)</td>
+ *         <td>true (1 &lt;= N &lt;= Integer.MAX_VALUE)</td>
  *     </tr>
  *     <tr>
  *         <td>4</td>

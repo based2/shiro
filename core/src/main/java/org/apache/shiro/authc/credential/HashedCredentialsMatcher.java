@@ -60,11 +60,11 @@ import org.apache.shiro.util.StringUtils;
  * able to use dictionary attacks to compromise user accounts (Atlassian has since
  * <a href="http://blogs.atlassian.com/news/2010/04/oh_man_what_a_day_an_update_on_our_security_breach.html">
  * fixed the problem</a> of course).
- * <p/>
+ * <p>
  * The lesson?
- * <p/>
+ * </p>
  * <b>ALWAYS, ALWAYS, ALWAYS SALT USER PASSWORDS!</b>
- * <p/>
+ * </p>
  * <h3>Salting</h3>
  * Prior to Shiro 1.1, salts could be obtained based on the end-user submitted
  * {@link AuthenticationToken AuthenticationToken} via the now-deprecated
@@ -78,7 +78,7 @@ import org.apache.shiro.util.StringUtils;
  * As of Shiro 1.1, it is expected that any salt used to hash the submitted credentials will be obtained from the
  * stored account information (represented as an {@link AuthenticationInfo AuthenticationInfo} instance).  This is much
  * more secure because the salt value remains private to the application (Shiro will never store this value).
- * <p/>
+ * <br>
  * To enable this, {@code Realm}s should return {@link SaltedAuthenticationInfo SaltedAuthenticationInfo} instances
  * during authentication.  {@code HashedCredentialsMatcher} implementations will then use the provided
  * {@link org.apache.shiro.authc.SaltedAuthenticationInfo#getCredentialsSalt credentialsSalt} for hashing.  To avoid
@@ -89,7 +89,7 @@ import org.apache.shiro.util.StringUtils;
  * Because of the identified security risk, {@code Realm} implementations that support credentials hashing should
  * be updated to return {@link SaltedAuthenticationInfo SaltedAuthenticationInfo} instances as
  * soon as possible.
- * <p/>
+ * <br>
  * If this is not possible for some reason, this class will retain 1.0 backwards-compatible behavior of obtaining
  * the salt via the now-deprecated {@link #getSalt(AuthenticationToken) getSalt(AuthenticationToken)} method.  This
  * method will only be invoked if a {@code Realm} <em>does not</em> return
@@ -195,10 +195,10 @@ public class HashedCredentialsMatcher extends SimpleCredentialsMatcher {
 
     /**
      * Sets the indicator if this system's stored credential hash is Hex encoded or not.
-     * <p/>
+     * <p>
      * A value of {@code true} will cause this class to decode the system credential from Hex, a
      * value of {@code false} will cause this class to decode the system credential from Base64.
-     * <p/>
+     * </p>
      * Unless overridden via this method, the default value is {@code true} for convenience - all of Shiro's
      * {@link Hash Hash#toString()} implementations return Hex encoded values by default, making this class's use with
      * those implementations easier.
@@ -213,9 +213,9 @@ public class HashedCredentialsMatcher extends SimpleCredentialsMatcher {
     /**
      * Returns {@code true} if a submitted {@code AuthenticationToken}'s credentials should be salted when hashing,
      * {@code false} if it should not be salted.
-     * <p/>
+     * <p>
      * If enabled, the salt used will be obtained via the {@link #getSalt(AuthenticationToken) getSalt} method.
-     * <p/>
+     * </p>
      * The default value is {@code false}.
      *
      * @return {@code true} if a submitted {@code AuthenticationToken}'s credentials should be salted when hashing,
@@ -227,7 +227,7 @@ public class HashedCredentialsMatcher extends SimpleCredentialsMatcher {
      *             {@code SaltedAuthenticationInfo} instances, but <b>it is highly recommended that {@code Realm} implementations
      *             that support hashed credentials start returning {@link SaltedAuthenticationInfo SaltedAuthenticationInfo}
      *             instances as soon as possible</b>.
-     *             <p/>
+     *             <br>
      *             This is because salts should always be obtained from the stored account information and
      *             never be interpreted based on user/Subject-entered data.  User-entered data is easier to compromise for
      *             attackers, whereas account-unique (and secure randomly-generated) salts never disseminated to the end-user
@@ -267,7 +267,7 @@ public class HashedCredentialsMatcher extends SimpleCredentialsMatcher {
     /**
      * Returns the number of times a submitted {@code AuthenticationToken}'s credentials will be hashed before
      * comparing to the credentials stored in the system.
-     * <p/>
+     * <br>
      * Unless overridden, the default value is {@code 1}, meaning a normal hash execution will occur.
      *
      * @return the number of times a submitted {@code AuthenticationToken}'s credentials will be hashed before
@@ -280,9 +280,9 @@ public class HashedCredentialsMatcher extends SimpleCredentialsMatcher {
     /**
      * Sets the number of times a submitted {@code AuthenticationToken}'s credentials will be hashed before comparing
      * to the credentials stored in the system.
-     * <p/>
+     * <br>
      * Unless overridden, the default value is {@code 1}, meaning a normal single hash execution will occur.
-     * <p/>
+     * <br>
      * If this argument is less than 1 (i.e. 0 or negative), the default value of 1 is applied.  There must always be
      * at least 1 hash iteration (otherwise there would be no hash).
      *
@@ -298,7 +298,7 @@ public class HashedCredentialsMatcher extends SimpleCredentialsMatcher {
 
     /**
      * Returns a salt value used to hash the token's credentials.
-     * <p/>
+     * <br>
      * This default implementation merely returns {@code token.getPrincipal()}, effectively using the user's
      * identity (username, user id, etc) as the salt, a most common technique.  If you wish to provide the
      * authentication token's salt another way, you may override this method.
@@ -311,7 +311,7 @@ public class HashedCredentialsMatcher extends SimpleCredentialsMatcher {
      *             This method and the 1.0 behavior still exists for backwards compatibility if the {@code Realm} does not return
      *             {@code SaltedAuthenticationInfo} instances, but <b>it is highly recommended that {@code Realm} implementations
      *             that support hashed credentials start returning {@link SaltedAuthenticationInfo SaltedAuthenticationInfo}
-     *             instances as soon as possible</b>.<p/>
+     *             instances as soon as possible</b>.<br>
      *             This is because salts should always be obtained from the stored account information and
      *             never be interpreted based on user/Subject-entered data.  User-entered data is easier to compromise for
      *             attackers, whereas account-unique (and secure randomly-generated) salts never disseminated to the end-user
@@ -324,10 +324,10 @@ public class HashedCredentialsMatcher extends SimpleCredentialsMatcher {
 
     /**
      * Returns a {@link Hash Hash} instance representing the already-hashed AuthenticationInfo credentials stored in the system.
-     * <p/>
+     * <p>
      * This method reconstructs a {@link Hash Hash} instance based on a {@code info.getCredentials} call,
      * but it does <em>not</em> hash that value - it is expected that method call will return an already-hashed value.
-     * <p/>
+     * </p>
      * This implementation's reconstruction effort functions as follows:
      * <ol>
      * <li>Convert {@code account.getCredentials()} to a byte array via the {@link #toBytes toBytes} method.
@@ -385,7 +385,7 @@ public class HashedCredentialsMatcher extends SimpleCredentialsMatcher {
      * Hash the provided {@code token}'s credentials using the salt stored with the account if the
      * {@code info} instance is an {@code instanceof} {@link SaltedAuthenticationInfo SaltedAuthenticationInfo} (see
      * the class-level JavaDoc for why this is the preferred approach).
-     * <p/>
+     * <br>
      * If the {@code info} instance is <em>not</em>
      * an {@code instanceof} {@code SaltedAuthenticationInfo}, the logic will fall back to Shiro 1.0
      * backwards-compatible logic:  it will first check to see {@link #isHashSalted() isHashSalted} and if so, will try

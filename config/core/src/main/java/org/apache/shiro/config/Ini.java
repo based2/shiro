@@ -37,7 +37,7 @@ import java.util.Set;
 
 /**
  * A class representing the <a href="http://en.wikipedia.org/wiki/INI_file">INI</a> text configuration format.
- * <p/>
+ * <br>
  * An Ini instance is a map of {@link Ini.Section Section}s, keyed by section name.  Each
  * {@code Section} is itself a map of {@code String} name/value pairs.  Name/value pairs are guaranteed to be unique
  * within each {@code Section} only - not across the entire {@code Ini} instance.
@@ -305,7 +305,7 @@ public class Ini implements Map<String, Ini.Section> {
     /**
      * Merges the contents of <code>m</code>'s {@link Section} objects into self.
      * This differs from {@link Ini#putAll(Map)}, in that each section is merged with the existing one.
-     * For example the following two ini blocks are merged and the result is the third<BR/>
+     * For example the following two ini blocks are merged and the result is the third<br>
      * <p>
      * Initial:
      * <pre>
@@ -334,8 +334,6 @@ public class Ini implements Map<String, Ini.Section> {
      * [section2]
      * key2 = new value
      * </code> </pre>
-     *
-     * </p>
      *
      * @param m map to be merged
      * @since 1.4

@@ -22,11 +22,11 @@ import org.apache.shiro.crypto.hash.Hash;
 
 /**
  * A {@code HashFormat} is able to format a {@link Hash} instance into a well-defined formatted String.
- * <p/>
+ * <br>
  * Note that not all HashFormat algorithms are reversible.  That is, they can't be parsed and reconstituted to the
  * original Hash instance.  The traditional <a href="http://en.wikipedia.org/wiki/Crypt_(Unix)">
  * Unix crypt(3)</a> is one such format.
- * <p/>
+ * <br>
  * The formats that <em>are</em> reversible however will be represented as {@link ParsableHashFormat} instances.
  *
  * @see ParsableHashFormat

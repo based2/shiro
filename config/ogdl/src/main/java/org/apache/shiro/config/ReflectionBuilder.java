@@ -57,7 +57,7 @@ import java.util.Set;
  * Object builder that uses reflection and Apache Commons BeanUtils to build objects given a
  * map of "property values".  Typically these come from the Shiro INI configuration and are used
  * to construct or modify the SecurityManager, its dependencies, and web-based security filters.
- * <p/>
+ * <br>
  * Recognizes {@link Factory} implementations and will call
  * {@link org.apache.shiro.util.Factory#getInstance() getInstance} to satisfy any reference to this bean.
  *
@@ -147,7 +147,7 @@ public class ReflectionBuilder {
     }
 
     /**
-     * @param objects
+     * @param objects objects
      */
     public void setObjects(Map<String, ?> objects) {
         this.objects.clear();

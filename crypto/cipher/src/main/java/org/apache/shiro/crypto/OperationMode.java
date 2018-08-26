@@ -24,7 +24,7 @@ package org.apache.shiro.crypto;
  * all JDK-standard Cipher operation mode names as defined in
  * <a href="http://java.sun.com/javase/6/docs/technotes/guides/security/StandardNames.html">JDK Security Standard
  * Names</a>, as well as a few more that are well-known and supported by other JCA Providers.
- * <p/>
+ * <br>
  * This {@code enum} exists to provide Shiro end-users type-safety when declaring an operation mode.  This helps reduce
  * error by providing a compile-time mechanism to specify a mode and guarantees a valid name that will be
  * recognized by an underlying JCA Provider.
@@ -35,7 +35,7 @@ package org.apache.shiro.crypto;
  * platform and rely on an external JCA Provider to be installed.  Some providers
  * (like <a href="http://www.bouncycastle.org">Bouncy Castle</a>) may support these modes however.
  *
- * @see <a href="http://en.wikipedia.org/wiki/Block_cipher_modes_of_operation">Block Cipher Modes of Operation<a/>
+ * @see <a href="http://en.wikipedia.org/wiki/Block_cipher_modes_of_operation">Block Cipher Modes of Operation</a>
  * @since 1.0
  */
 public enum OperationMode {
@@ -44,7 +44,7 @@ public enum OperationMode {
      * <a href="http://en.wikipedia.org/wiki/Block_cipher_modes_of_operation#Cipher-block_chaining_.28CBC.29">
      * Cipher-block Chaining</a> mode, defined in <a href="http://csrc.nist.gov/publications/fips/index.html">FIPS
      * PUB 81</a>.
-     * <p/>
+     * <br>
      * This is a standard JDK operation mode and should be supported by all JDK environments.
      */
     CBC,
@@ -53,7 +53,7 @@ public enum OperationMode {
      * <a href="http://en.wikipedia.org/wiki/CCM_mode">Counter with CBC-MAC</a> mode<b>*</b> - for block ciphers with
      * 128 bit block-size only. See <a href="http://www.ietf.org/rfc/rfc3610.txt">RFC 3610</a> for AES Ciphers.
      * This mode has essentially been replaced by the more-capable {@link #EAX EAX} mode.
-     * <p/>
+     * <br>
      * <b>*THIS IS A NON-STANDARD MODE</b>. It is not guaranteed to be supported across JDK installations.  You must
      * ensure you have a JCA Provider that can support this cipher operation mode.
      * <a href="http://www.bouncycastle.org">Bouncy Castle</a> <em>may</em> be one such provider.
@@ -62,8 +62,8 @@ public enum OperationMode {
 
     /**
      * <a href="http://en.wikipedia.org/wiki/Block_cipher_modes_of_operation#Cipher_feedback_.28CFB.29">Cipher
-     * Feedback<a/> mode, defined in <a href="http://csrc.nist.gov/publications/fips/index.html">FIPS PUB 81</a>.
-     * <p/>
+     * Feedback</a> mode, defined in <a href="http://csrc.nist.gov/publications/fips/index.html">FIPS PUB 81</a>.
+     * <br>
      * This is a standard JDK operation mode and should be supported by all JDK environments.
      */
     CFB,
@@ -72,7 +72,7 @@ public enum OperationMode {
      * <a href="http://en.wikipedia.org/wiki/Block_cipher_modes_of_operation#Counter_.28CTR.29">Counter Mode</a>, aka
      * Integer Counter Mode (ICM) and Segmented Integer Counter (SIC).  Counter is a simplification of {@link #OFB OFB}
      * and updates the input block as a counter.
-     * <p/>
+     * <br>
      * This is a standard JDK operation mode and should be supported by all JDK environments.
      */
     CTR,
@@ -80,7 +80,7 @@ public enum OperationMode {
     /**
      * <a href="http://en.wikipedia.org/wiki/EAX_mode">EAX Mode</a><b>*</b>.  This is a patent-free but less-effecient
      * alternative to {@link #OCB OCB} and has capabilities beyond what {@link #CCM CCM} can provide.
-     * <p/>
+     * <br>
      * <b>*THIS IS A NON-STANDARD MODE</b>. It is not guaranteed to be supported across JDK installations.  You must
      * ensure you have a JCA Provider that can support this cipher operation mode.
      * <a href="http://www.bouncycastle.org">Bouncy Castle</a> <em>may</em> be one such provider.
@@ -92,7 +92,7 @@ public enum OperationMode {
      * Codebook</a> mode, defined in <a href="http://csrc.nist.gov/publications/fips/index.html">FIPS PUB 81</a>.
      * ECB is the only mode that does <em>not</em> require an Initialization Vector, but because of this, can be seen
      * as less secure than operation modes that require an IV.
-     * <p/>
+     * <br>
      * This is a standard JDK operation mode and should be supported by all JDK environments.
      */
     ECB,
@@ -100,7 +100,7 @@ public enum OperationMode {
     /**
      * <a href="http://en.wikipedia.org/wiki/GCM_mode">Galois/Counter</a> mode<b>*</b> - for block ciphers with 128
      * bit block-size only.
-     * <p/>
+     * <br>
      * <b>*THIS IS A NON-STANDARD MODE</b>. It is not guaranteed to be supported across JDK installations.  You must
      * ensure you have a JCA Provider that can support this cipher operation mode.
      * <a href="http://www.bouncycastle.org">Bouncy Castle</a> <em>may</em> be one such provider.
@@ -109,7 +109,7 @@ public enum OperationMode {
 
     /**
      * No mode.
-     * <p/>
+     * <br>
      * This is a standard JDK operation mode and should be supported by all JDK environments.
      */
     NONE,
@@ -118,7 +118,7 @@ public enum OperationMode {
      * <a href="http://en.wikipedia.org/wiki/OCB_mode">Offset Codebook</a> mode<b>*</b>.  Parallel mode that provides
      * both message privacy and authenticity in a single pass.  This is a very efficient mode, but is patent-encumbered.
      * A less-efficient (two pass) alternative is available by using {@link #EAX EAX} mode.
-     * <p/>
+     * <br>
      * <b>*THIS IS A NON-STANDARD MODE</b>. It is not guaranteed to be supported across JDK installations.  You must
      * ensure you have a JCA Provider that can support this cipher operation mode.
      * <a href="http://www.bouncycastle.org">Bouncy Castle</a> <em>may</em> be one such provider.
@@ -128,15 +128,15 @@ public enum OperationMode {
     /**
      * <a href="http://en.wikipedia.org/wiki/Block_cipher_modes_of_operation#Output_feedback_.28OFB.29">Output
      * Feedback</a> mode, defined in <a href="http://csrc.nist.gov/publications/fips/index.html">FIPS PUB 81</a>.
-     * <p/>
+     * <br>
      * This is a standard JDK operation mode and should be supported by all JDK environments.
      */
     OFB,
 
     /**
      * <a href="http://en.wikipedia.org/wiki/Block_cipher_modes_of_operation#Propagating_cipher-block_chaining_.28PCBC.29">
-     * Propagating Cipher Block Chaining</a> mode, defined in <a href="http://web.mit.edu/kerberos/">Kerberos version 4<a/>.
-     * <p/>
+     * Propagating Cipher Block Chaining</a> mode, defined in <a href="http://web.mit.edu/kerberos/">Kerberos version 4</a>.
+     * <br>
      * This is a standard JDK operation mode and should be supported by all JDK environments.
      */
     PCBC

@@ -30,11 +30,10 @@ import java.util.Date;
  * {@link org.apache.shiro.session.Session Session}.
  * This implementation is basically a proxy to a server-side {@link NativeSessionManager NativeSessionManager},
  * which will return the proper results for each method call.
- * <p/>
  * <p>A <tt>DelegatingSession</tt> will cache data when appropriate to avoid a remote method invocation,
  * only communicating with the server when necessary.
- * <p/>
- * <p>Of course, if used in-process with a NativeSessionManager business POJO, as might be the case in a
+ * </p>
+ * Of course, if used in-process with a NativeSessionManager business POJO, as might be the case in a
  * web-based application where the web classes and server-side business pojos exist in the same
  * JVM, a remote method call will not be incurred.
  *

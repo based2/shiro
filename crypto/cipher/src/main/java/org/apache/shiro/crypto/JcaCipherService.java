@@ -43,12 +43,12 @@ import java.security.spec.AlgorithmParameterSpec;
  * byte array or {@code OutputStream} is actually a concatenation of an initialization vector byte array plus the actual
  * encrypted data byte array.  The {@code decrypt} methods in turn know to read this prepended initialization vector
  * before decrypting the real data that follows.
- * <p/>
+ * <p>
  * This is highly desirable because initialization vectors guarantee that, for a key and any plaintext, the encrypted
  * output will always be different <em>even if you call {@code encrypt} multiple times with the exact same arguments</em>.
  * This is essential in cryptography to ensure that data patterns cannot be identified across multiple input sources
  * that are the same or similar.
- * <p/>
+ * </p>
  * You can turn off this behavior by setting the
  * {@link #setGenerateInitializationVectors(boolean) generateInitializationVectors} property to {@code false}, but it
  * is highly recommended that you do not do this unless you have a very good reason to do so, since you would be losing
@@ -57,7 +57,7 @@ import java.security.spec.AlgorithmParameterSpec;
  * This implementation defaults the {@link #setInitializationVectorSize(int) initializationVectorSize} attribute to
  * {@code 128} bits, a fairly common size.  Initialization vector sizes are very algorithm specific however, so subclass
  * implementations will often override this value in their constructor if necessary.
- * <p/>
+ * <br>
  * Also note that {@code initializationVectorSize} values are specified in the number of
  * bits (not bytes!) to match common references in most cryptography documentation.  In practice though, initialization
  * vectors are always specified as a byte array, so ensure that if you set this property, that the value is a multiple
@@ -203,7 +203,7 @@ public abstract class JcaCipherService implements CipherService {
      * Returns the size in bytes of the internal buffer used to transfer data from one stream to another during stream
      * operations ({@link #encrypt(java.io.InputStream, java.io.OutputStream, byte[])} and
      * {@link #decrypt(java.io.InputStream, java.io.OutputStream, byte[])}).
-     * <p/>
+     * <br>
      * Default size is {@code 512} bytes.
      *
      * @return the size of the internal buffer used to transfer data from one stream to another during stream
@@ -217,7 +217,7 @@ public abstract class JcaCipherService implements CipherService {
      * Sets the size in bytes of the internal buffer used to transfer data from one stream to another during stream
      * operations ({@link #encrypt(java.io.InputStream, java.io.OutputStream, byte[])} and
      * {@link #decrypt(java.io.InputStream, java.io.OutputStream, byte[])}).
-     * <p/>
+     * <br>
      * Default size is {@code 512} bytes.
      *
      * @param streamingBufferSize the size of the internal buffer used to transfer data from one stream to another

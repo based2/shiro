@@ -24,10 +24,10 @@ import java.util.Comparator;
  * Compares two event listeners to determine the order in which they should be invoked when an event is dispatched.
  * The lower the order, the sooner it will be invoked (the higher its precedence).  The higher the order, the later
  * it will be invoked (the lower its precedence).
- * <p/>
+ * <p>
  * TypedEventListeners have a higher precedence (i.e. a lower order) than standard EventListener instances.  Standard
  * EventListener instances have the same order priority.
- * <p/>
+ * </p>
  * When both objects being compared are TypedEventListeners, they are ordered according to the rules of the
  * {@link EventClassComparator}, using the TypedEventListeners'
  * {@link TypedEventListener#getEventType() eventType}.

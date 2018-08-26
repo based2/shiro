@@ -35,7 +35,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 /**
  * A default event bus implementation that synchronously publishes events to registered listeners.  Listeners can be
  * registered or unregistered for events as necessary.
- * <p/>
+ * <br>
  * An event bus enables a publish/subscribe paradigm within Shiro - components can publish or consume events they
  * find relevant without needing to be tightly coupled to other components.  This affords great
  * flexibility within Shiro by promoting loose coupling and high cohesion between components and a much safer

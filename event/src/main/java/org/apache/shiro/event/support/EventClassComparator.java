@@ -24,10 +24,10 @@ import java.util.Comparator;
  * Compares two event classes based on their position in a class hierarchy.  Classes higher up in a hierarchy are
  * 'greater than' (ordered later) than classes lower in a hierarchy (ordered earlier).  Classes in unrelated
  * hierarchies have the same order priority.
- * <p/>
+ * <p>
  * Event bus implementations use this comparator to determine which event listener method to invoke when polymorphic
  * listener methods are defined:
- * <p/>
+ * </p>
  * If two event classes exist A and B, where A is the parent class of B (and B is a subclass of A) and an event
  * subscriber listens to both events:
  * <pre>
@@ -41,7 +41,7 @@ import java.util.Comparator;
  * The {@code onEvent(B b)} method will be invoked on the subscriber and the
  * {@code onEvent(A a)} method will <em>not</em> be invoked.  This is to prevent multiple dispatching of a single event
  * to the same consumer.
- * <p/>
+ * <br>
  * The EventClassComparator is used to order listener method priority based on their event argument class - methods
  * handling event subclasses have higher precedence than superclasses.
  *

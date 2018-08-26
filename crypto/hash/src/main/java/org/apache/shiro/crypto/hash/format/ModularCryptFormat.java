@@ -33,7 +33,7 @@ public interface ModularCryptFormat extends HashFormat {
     /**
      * Returns the Modular Crypt Format identifier that indicates how the formatted String should be parsed.  This id
      * is always in the MCF-formatted string's first token.
-     * <p/>
+     * <br>
      * Example values are {@code md5}, {@code 1}, {@code 2}, {@code apr1}, etc.
      *
      * @return the Modular Crypt Format identifier that indicates how the formatted String should be parsed.

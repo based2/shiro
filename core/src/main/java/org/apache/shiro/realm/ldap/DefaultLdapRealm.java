@@ -157,17 +157,16 @@ public class DefaultLdapRealm extends AuthorizingRealm {
      * specify the format corresponding to your directory.  You do this by specifying the full User DN as normal, but
      * but you use a <b>{@code {0}}</b> placeholder token in the string representing the location where the
      * user's submitted principal (usually a username or uid) will be substituted at runtime.
-     * <p/>
+     * <br>
      * For example,  if your directory
      * uses an LDAP {@code uid} attribute to represent usernames, the User DN for the {@code jsmith} user may look like
      * this:
-     * <p/>
      * <pre>uid=jsmith,ou=users,dc=mycompany,dc=com</pre>
-     * <p/>
+     * <br>
      * in which case you would set this property with the following template value:
-     * <p/>
+     * <p>
      * <pre>uid=<b>{0}</b>,ou=users,dc=mycompany,dc=com</pre>
-     * <p/>
+     * <br>
      * If no template is configured, the raw {@code AuthenticationToken}
      * {@link AuthenticationToken#getPrincipal() principal} will be used as the LDAP principal.  This is likely
      * incorrect as most LDAP directories expect a fully-qualified User DN as opposed to the raw uid or username.  So,
@@ -416,7 +415,7 @@ public class DefaultLdapRealm extends AuthorizingRealm {
     /**
      * Method that should be implemented by subclasses to build an
      * {@link AuthorizationInfo} object by querying the LDAP context for the
-     * specified principal.</p>
+     * specified principal.<br>
      *
      * @param principals          the principals of the Subject whose AuthenticationInfo should be queried from the LDAP server.
      * @param ldapContextFactory factory used to retrieve LDAP connections.

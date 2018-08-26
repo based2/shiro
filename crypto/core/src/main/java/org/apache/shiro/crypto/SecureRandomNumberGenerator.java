@@ -25,7 +25,7 @@ import java.security.SecureRandom;
 /**
  * Default implementation of the {@link RandomNumberGenerator RandomNumberGenerator} interface, backed by a
  * {@link SecureRandom SecureRandom} instance.
- * <p/>
+ * <br>
  * This class is a little easier to use than using the JDK's {@code SecureRandom} class directly.  It also
  * allows for JavaBeans-style of customization, convenient for Shiro's INI configuration or other IoC configuration
  * mechanism.

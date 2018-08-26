@@ -78,11 +78,11 @@ public class TextConfigurationRealm extends SimpleAccountRealm {
     /**
      * <p>Sets a newline (\n) delimited String that defines user-to-password-and-role(s) key/value pairs according
      * to the following format:
-     * <p/>
+     * <br>
      * <p><code><em>username</em> = <em>password</em>, role1, role2,...</code></p>
-     * <p/>
+     * <br>
      * <p>Here are some examples of what these lines might look like:</p>
-     * <p/>
+     * <br>
      * <p><code>root = <em>reallyHardToGuessPassword</em>, administrator<br/>
      * jsmith = <em>jsmithsPassword</em>, manager, engineer, employee<br/>
      * abrown = <em>abrownsPassword</em>, qa, employee<br/>
@@ -101,19 +101,17 @@ public class TextConfigurationRealm extends SimpleAccountRealm {
 
     /**
      * Sets a newline (\n) delimited String that defines role-to-permission definitions.
-     * <p/>
      * <p>Each line within the string must define a role-to-permission(s) key/value mapping with the
      * equals character signifies the key/value separation, like so:</p>
-     * <p/>
+     * </p>
      * <p><code><em>rolename</em> = <em>permissionDefinition1</em>, <em>permissionDefinition2</em>, ...</code></p>
-     * <p/>
+     * </p>
      * <p>where <em>permissionDefinition</em> is an arbitrary String, but must people will want to use
      * Strings that conform to the {@link org.apache.shiro.authz.permission.WildcardPermission WildcardPermission}
      * format for ease of use and flexibility.  Note that if an individual <em>permissionDefinition</em> needs to
      * be internally comma-delimited (e.g. <code>printer:5thFloor:print,info</code>), you will need to surround that
      * definition with double quotes (&quot;) to avoid parsing errors (e.g.
      * <code>&quot;printer:5thFloor:print,info&quot;</code>).
-     * <p/>
      * <p><b>NOTE:</b> if you have roles that don't require permission associations, don't include them in this
      * definition - just defining the role name in the {@link #setUserDefinitions(String) userDefinitions} is
      * enough to create the role if it does not yet exist.  This property is really only for configuring realms that

@@ -23,7 +23,7 @@ import org.apache.shiro.util.ByteSource;
 /**
  * A component that can generate random number/byte values as needed.  Useful in cryptography or security scenarios
  * where random byte arrays are needed, such as for password salts, nonces, initialization vectors and other seeds.
- * <p/>
+ * <br>
  * This is essentially the same as a {@link java.security.SecureRandom SecureRandom}, and indeed implementations
  * of this interface will probably all use {@link java.security.SecureRandom SecureRandom} instances, but this
  * interface provides a few additional benefits to end-users:
@@ -52,7 +52,7 @@ public interface RandomNumberGenerator {
      * Generates a byte array of fixed length filled with random data, often useful for generating salts,
      * initialization vectors or other seed data.  The length is specified as a configuration
      * value on the underlying implementation.
-     * <p/>
+     * <br>
      * If you'd like per-invocation control the number of bytes generated, use the
      * {@link #nextBytes(int) nextBytes(int)} method instead.
      *

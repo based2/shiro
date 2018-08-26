@@ -31,7 +31,6 @@ import java.util.Map;
 /**
  * A ThreadContext provides a means of binding and unbinding objects to the
  * current thread based on key/value pairs.
- * <p/>
  * <p>An internal {@link java.util.HashMap} is used to maintain the key/value pairs
  * for each thread.</p>
  * <p/>
@@ -207,11 +206,10 @@ public abstract class ThreadContext {
      * Convenience method that simplifies retrieval of the application's SecurityManager instance from the current
      * thread. If there is no SecurityManager bound to the thread (probably because framework code did not bind it
      * to the thread), this method returns <tt>null</tt>.
-     * <p/>
+     * <p>
      * It is merely a convenient wrapper for the following:
-     * <p/>
+     * </p>
      * <code>return (SecurityManager)get( SECURITY_MANAGER_KEY );</code>
-     * <p/>
      * This method only returns the bound value if it exists - it does not remove it
      * from the thread.  To remove it, one must call {@link #unbindSecurityManager() unbindSecurityManager()} instead.
      *
@@ -225,11 +223,10 @@ public abstract class ThreadContext {
 
     /**
      * Convenience method that simplifies binding the application's SecurityManager instance to the ThreadContext.
-     * <p/>
      * <p>The method's existence is to help reduce casting in code and to simplify remembering of
      * ThreadContext key names.  The implementation is simple in that, if the SecurityManager is not <tt>null</tt>,
      * it binds it to the thread, i.e.:
-     * <p/>
+     * </p>
      * <pre>
      * if (securityManager != null) {
      *     put( SECURITY_MANAGER_KEY, securityManager);

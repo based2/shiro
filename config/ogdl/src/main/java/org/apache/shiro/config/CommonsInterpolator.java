@@ -25,9 +25,9 @@ import org.apache.commons.configuration2.interpol.SystemPropertiesLookup;
 
 /**
  * Commons-Config interpolation wrapper. This implementation uses a {@link ConfigurationInterpolator} with the default
- * lookup: <code>sys</code> (system properties), <code>env</code> (environment variables>, and <code>const</code> (constants).
+ * lookup: <code>sys</code> (system properties), <code>env</code> (environment variables, and <code>const</code> (constants).
  *
- * <table>
+ * <table summary="">
  *     <tr>
  *         <th>lookup</th>
  *         <th>example</th>

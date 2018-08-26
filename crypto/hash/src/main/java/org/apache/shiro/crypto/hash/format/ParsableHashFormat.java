@@ -22,7 +22,7 @@ import org.apache.shiro.crypto.hash.Hash;
 
 /**
  * A {@code ParsableHashFormat} is able to parse a formatted string and convert it into a {@link Hash} instance.
- * <p/>
+ * <br>
  * This interface exists to represent {@code HashFormat}s that can offer two-way conversion
  * (Hash -&gt; String, String -&gt; Hash) capabilities.  Some HashFormats, such as many {@link ModularCryptFormat}s
  * (like Unix Crypt(3)) only support one way conversion and therefore wouldn't implement this interface.

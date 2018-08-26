@@ -47,7 +47,7 @@ public class DefaultHashFormatFactory implements HashFormatFactory {
 
     /**
      * Returns a {@code hashFormatAlias}-to-<code>fullyQualifiedHashFormatClassNameImplementation</code> map.
-     * <p/>
+     * <br>
      * This map will be used by the {@link #getInstance(String) getInstance} implementation:  that method's argument
      * will be used as a lookup key to this map.  If the map returns a value, that value will be used to instantiate
      * and return a new {@code HashFormat} instance.
@@ -151,7 +151,7 @@ public class DefaultHashFormatFactory implements HashFormatFactory {
     /**
      * Heuristically determine the fully qualified HashFormat implementation class name based on the specified
      * token.
-     * <p/>
+     * <br>
      * This implementation functions as follows (in order):
      * <ol>
      * <li>See if the argument can be used as a lookup key in the {@link #getFormatClassNames() formatClassNames}
@@ -172,7 +172,7 @@ public class DefaultHashFormatFactory implements HashFormatFactory {
      * (relaying the {@code token} argument to that method for each configured package).
      * </li>
      * </ol>
-     * <p/>
+     * <br>
      * If a class is not discovered via any of the above means, {@code null} is returned to indicate the class
      * could not be found.
      *
@@ -229,7 +229,7 @@ public class DefaultHashFormatFactory implements HashFormatFactory {
     /**
      * Heuristically determine the fully qualified {@code HashFormat} implementation class name in the specified
      * package based on the provided token.
-     * <p/>
+     * <br>
      * The token is expected to be a relevant fragment of an unqualified class name in the specified package.
      * A 'relevant fragment' can be one of the following:
      * <ul>
@@ -241,9 +241,8 @@ public class DefaultHashFormatFactory implements HashFormatFactory {
      * <li>The prefix of an unqualified class name ending with the text {@code CryptoFormat}.  The first character
      * of this prefix can be upper or lower case and both options will be tried.</li>
      * </ul>
-     * <p/>
-     * Some examples:
-     * <table>
+     * <br>
+     * <table summary="Some examples:">
      * <tr>
      * <th>Package Name</th>
      * <th>Token</th>

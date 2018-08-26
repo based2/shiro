@@ -166,7 +166,7 @@ public class DefaultSessionManager extends AbstractValidatingSessionManager impl
     /**
      * Persists the given session instance to an underlying EIS (Enterprise Information System).  This implementation
      * delegates and calls
-     * <code>this.{@link SessionDAO sessionDAO}.{@link SessionDAO#create(org.apache.shiro.session.Session) create}(session);<code>
+     * <code>this.{@link SessionDAO sessionDAO}.{@link SessionDAO#create(org.apache.shiro.session.Session) create}(session);</code>
      *
      * @param session the Session instance to persist to the underlying EIS.
      */

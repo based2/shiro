@@ -24,7 +24,7 @@ import org.apache.shiro.util.ByteSource;
  * A Cryptographic {@code Hash} represents a one-way conversion algorithm that transforms an input source to an
  * underlying byte array.  Hex and Base64-encoding output of the hashed bytes are automatically supported by the
  * inherited {@link #toHex() toHex()} and {@link #toBase64() toBase64()} methods.
- * <p/>
+ * <br>
  * The bytes returned by the parent interface's {@link #getBytes() getBytes()} are the hashed value of the
  * original input source, also known as the 'checksum' or 'digest'.
  *
@@ -40,7 +40,7 @@ public interface Hash extends ByteSource {
 
     /**
      * Returns the name of the algorithm used to hash the input source, for example, {@code SHA-256}, {@code MD5}, etc.
-     * <p/>
+     * <br>
      * The name is expected to be a {@link java.security.MessageDigest MessageDigest} algorithm name.
      *
      * @return the the name of the algorithm used to hash the input source, for example, {@code SHA-256}, {@code MD5}, etc.

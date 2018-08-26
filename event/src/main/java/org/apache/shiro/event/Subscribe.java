@@ -26,13 +26,13 @@ import java.lang.annotation.Target;
 /**
  * Indicates a method is an event consumer.  The method must have a single argument and the argument's type determines
  * what type of events should be delivered to the method for consumption.
- * <p/>
+ * <br>
  * For example:
  * <pre>
  * &#64;Subscribe
  * public void onSomeEvent(SomeEvent event) { ... }
  * </pre>
- * <p/>
+ * <br>
  * Because the method argument is declared as a {@code SomeEvent} type, the method will be called by the event
  * dispatcher whenever a {@code SomeEvent} instance (or one of its subclass instances that is not already registered)
  * is published.

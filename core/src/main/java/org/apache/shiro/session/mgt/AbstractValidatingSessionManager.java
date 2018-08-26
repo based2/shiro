@@ -196,7 +196,6 @@ public abstract class AbstractValidatingSessionManager extends AbstractNativeSes
     /**
      * Subclass template hook in case per-session timeout is not based on
      * {@link org.apache.shiro.session.Session#getTimeout()}.
-     * <p/>
      * <p>This implementation merely returns {@link org.apache.shiro.session.Session#getTimeout()}</p>
      *
      * @param session the session for which to determine session timeout.

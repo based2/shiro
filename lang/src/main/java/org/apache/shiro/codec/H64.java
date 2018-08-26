@@ -102,8 +102,8 @@ public class H64 {
     /**
      * Encodes the specified bytes to an {@code H64}-encoded String.
      *
-     * @param bytes
-     * @return
+     * @param bytes bytes
+     * @return encoded string
      */
     public static String encodeToString(byte[] bytes) {
         if (bytes == null || bytes.length == 0) return null;

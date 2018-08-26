@@ -32,7 +32,7 @@ public interface HashingPasswordService extends PasswordService {
     /**
      * Hashes the specified plaintext password using internal hashing configuration settings pertinent to password
      * hashing.
-     * <p/>
+     * <br>
      * Note
      * that this method is only likely to be used in more complex environments that wish to format and/or save the
      * returned {@code Hash} object in a custom manner.  Most applications will find the
@@ -43,7 +43,7 @@ public interface HashingPasswordService extends PasswordService {
      * String or character array representing passwords (character arrays are often a safer way to represent passwords
      * as they can be cleared/nulled-out after use.  Any argument type supported by
      * {@link ByteSource.Util#isCompatible(Object)} is valid.
-     * <p/>
+     * <br>
      * Regardless of your choice of using Strings or character arrays to represent submitted passwords, you can wrap
      * either as a {@code ByteSource} by using {@link ByteSource.Util}, for example, when the passwords are captured as
      * Strings:

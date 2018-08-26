@@ -21,12 +21,12 @@ package org.apache.shiro.authc;
 /**
  * An Authenticator is responsible for authenticating accounts in an application.  It
  * is one of the primary entry points into the Shiro API.
- * <p/>
+ * <p>
  * Although not a requirement, there is usually a single 'master' Authenticator configured for
  * an application.  Enabling Pluggable Authentication Module (PAM) behavior
  * (Two Phase Commit, etc.) is usually achieved by the single {@code Authenticator} coordinating
  * and interacting with an application-configured set of {@link org.apache.shiro.realm.Realm Realm}s.
- * <p/>
+ * </p>
  * Note that most Shiro users will not interact with an {@code Authenticator} instance directly.
  * Shiro's default architecture is based on an overall {@code SecurityManager} which typically
  * wraps an {@code Authenticator} instance.

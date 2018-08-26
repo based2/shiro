@@ -86,7 +86,7 @@ public class StringUtils {
      * StringUtils.hasLength("") == false<br>
      * StringUtils.hasLength(" ") == true<br>
      * StringUtils.hasLength("Hello") == true</code>
-     * <p>
+     * <br>
      * Copied from the Spring Framework while retaining all license, copyright and author information.
      *
      * @param str the String to check (may be <code>null</code>)
@@ -101,7 +101,6 @@ public class StringUtils {
     /**
      * Test if the given String starts with the specified prefix,
      * ignoring upper/lower case.
-     * <p>
      * <p>Copied from the Spring Framework while retaining all license, copyright and author information.
      *
      * @param str    the String to check
@@ -126,7 +125,7 @@ public class StringUtils {
 
     /**
      * Returns a 'cleaned' representation of the specified argument.  'Cleaned' is defined as the following:
-     * <p>
+     * <br>
      * <ol>
      * <li>If the specified <code>String</code> is <code>null</code>, return <code>null</code></li>
      * <li>If not <code>null</code>, {@link String#trim() trim()} it.</li>
@@ -210,7 +209,7 @@ public class StringUtils {
      * delimiter characters. Each of those characters can be used to separate
      * tokens. A delimiter is always a single character; for multi-character
      * delimiters, consider using <code>delimitedListToStringArray</code>
-     * <p>
+     * </p>
      * <p>Copied from the Spring Framework while retaining all license, copyright and author information.
      *
      * @param str        the String to tokenize
@@ -230,7 +229,7 @@ public class StringUtils {
      * delimiter characters. Each of those characters can be used to separate
      * tokens. A delimiter is always a single character; for multi-character
      * delimiters, consider using <code>delimitedListToStringArray</code>
-     * <p>
+     * </p>
      * <p>Copied from the Spring Framework while retaining all license, copyright and author information.
      *
      * @param str               the String to tokenize
@@ -269,7 +268,6 @@ public class StringUtils {
     /**
      * Copy the given Collection into a String array.
      * The Collection must contain String elements only.
-     * <p>
      * <p>Copied from the Spring Framework while retaining all license, copyright and author information.
      *
      * @param collection the Collection to copy

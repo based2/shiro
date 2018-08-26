@@ -22,12 +22,12 @@ package org.apache.shiro.crypto;
  * A {@code CipherPaddingScheme} represents well-known
  * <a href="http://en.wikipedia.org/wiki/Padding_(cryptography)">padding schemes</a> supported by JPA providers in a
  * type-safe manner.
- * <p/>
+ * <p>
  * When encrypted data is transferred, it is usually desirable to ensure that all 'chunks' transferred are a fixed-length:
  * different length blocks might give cryptanalysts clues about what the data might be, among other reasons.  Of course
  * not all data will convert to neat fixed-length blocks, so padding schemes are used to 'fill in' (pad) any remaining
  * space with unintelligible data.
- * <p/>
+ * </p>
  * Padding schemes can be used in both asymmetric key ciphers as well as symmetric key ciphers (e.g. block ciphers).
  * Block-ciphers especially regularly use padding schemes as they are based on the notion of fixed-length block sizes.
  *
@@ -51,7 +51,7 @@ public enum PaddingScheme {
     /**
      * Optimal Asymmetric Encryption Padding defined in RSA's <a href="http://en.wikipedia.org/wiki/PKCS1">PKSC#1
      * standard</a> (aka <a href="http://tools.ietf.org/html/rfc3447">RFC 3447</a>).
-     * <p/>
+     * <p>
      * <b>NOTE:</b> using this padding requires initializing {@link javax.crypto.Cipher Cipher} instances with a
      * {@link javax.crypto.spec.OAEPParameterSpec OAEPParameterSpec} object which provides the 1) message digest and
      * 2) mask generation function to use for the scheme.
@@ -60,7 +60,7 @@ public enum PaddingScheme {
      * combination, it does require the extra burden of providing your own {@code OAEPParameterSpec} object.  This is
      * often unnecessary, because most combinations are fairly standard.  These common combinations are pre-defined
      * in this enum in the {@code OAEP}* variants.
-     * <p/>
+     * <br>
      * If you find that these common combinations still do not meet your needs, then you will need to
      * specify your own message digest and mask generation function, either as an {@code OAEPParameterSpec} object
      * during Cipher initialization or, maybe more easily, in the scheme name directly.  If you want to use scheme name
@@ -78,7 +78,7 @@ public enum PaddingScheme {
 
     /**
      * Optimal Asymmetric Encryption Padding with {@code MD5} message digest and {@code MGF1} mask generation function.
-     * <p/>
+     * <br>
      * This is a convenient pre-defined OAEP padding scheme that embeds the message digest and mask generation function.
      * When using this padding scheme, there is no need to init the {@code Cipher} instance with an
      * {@link javax.crypto.spec.OAEPParameterSpec OAEPParameterSpec} object, as it is already 'built in' to the scheme
@@ -88,7 +88,7 @@ public enum PaddingScheme {
 
     /**
      * Optimal Asymmetric Encryption Padding with {@code SHA-1} message digest and {@code MGF1} mask generation function.
-     * <p/>
+     * <br>
      * This is a convenient pre-defined OAEP padding scheme that embeds the message digest and mask generation function.
      * When using this padding scheme, there is no need to init the {@code Cipher} instance with an
      * {@link javax.crypto.spec.OAEPParameterSpec OAEPParameterSpec} object, as it is already 'built in' to the scheme
@@ -98,7 +98,7 @@ public enum PaddingScheme {
 
     /**
      * Optimal Asymmetric Encryption Padding with {@code SHA-256} message digest and {@code MGF1} mask generation function.
-     * <p/>
+     * <br>
      * This is a convenient pre-defined OAEP padding scheme that embeds the message digest and mask generation function.
      * When using this padding scheme, there is no need to init the {@code Cipher} instance with an
      * {@link javax.crypto.spec.OAEPParameterSpec OAEPParameterSpec} object, as it is already 'built in' to the scheme
@@ -108,7 +108,7 @@ public enum PaddingScheme {
 
     /**
      * Optimal Asymmetric Encryption Padding with {@code SHA-384} message digest and {@code MGF1} mask generation function.
-     * <p/>
+     * <br>
      * This is a convenient pre-defined OAEP padding scheme that embeds the message digest and mask generation function.
      * When using this padding scheme, there is no need to init the {@code Cipher} instance with an
      * {@link javax.crypto.spec.OAEPParameterSpec OAEPParameterSpec} object, as it is already 'built in' to the scheme
@@ -118,7 +118,7 @@ public enum PaddingScheme {
 
     /**
      * Optimal Asymmetric Encryption Padding with {@code SHA-512} message digest and {@code MGF1} mask generation function.
-     * <p/>
+     * <br>
      * This is a convenient pre-defined OAEP padding scheme that embeds the message digest and mask generation function.
      * When using this padding scheme, there is no need to init the {@code Cipher} instance with an
      * {@link javax.crypto.spec.OAEPParameterSpec OAEPParameterSpec} object, as it is already 'built in' to the scheme

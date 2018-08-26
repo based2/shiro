@@ -332,8 +332,7 @@ public abstract class CachingSessionDAO extends AbstractSessionDAO implements Ca
 
     /**
      * Returns all active sessions in the system.
-     * <p/>
-     * <p>This implementation merely returns the sessions found in the activeSessions cache.  Subclass implementations
+     * <br>This implementation merely returns the sessions found in the activeSessions cache.  Subclass implementations
      * may wish to override this method to retrieve them in a different way, perhaps by an RDBMS query or by other
      * means.
      *

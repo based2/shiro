@@ -21,7 +21,7 @@ package org.apache.shiro.event;
 /**
  * Interface implemented by components that utilize an EventBus for publishing and/or subscribing to/from events
  * and wish that EventBus to be supplied if one is available.
- * <p/>
+ * <br>
  * <b>NOTE:</b> If an {@code EventBusAware} implementation wishes to subscribe to events (i.e. it has
  * {@code @Subscriber}-annotated methods itself, it must register itself with the event bus, i.e.:
  * <pre>

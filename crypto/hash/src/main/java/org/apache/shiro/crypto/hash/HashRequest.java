@@ -41,7 +41,7 @@ public interface HashRequest {
     /**
      * Returns a salt to be used by the {@link HashService} during hash computation, or {@code null} if no salt is
      * provided as part of the request.
-     * <p/>
+     * <br>
      * Note that a {@code null} value does not necessarily mean a salt won't be used at all - it just
      * means that the request didn't include one.  The servicing {@link HashService} is free to provide a salting
      * strategy for a request, even if the request did not specify one.
@@ -55,7 +55,7 @@ public interface HashRequest {
      * Returns the number of requested hash iterations to be performed when computing the final {@code Hash} result.
      * A non-positive (0 or less) indicates that the {@code HashService}'s default iteration configuration should
      * be used.  A positive value overrides the {@code HashService}'s configuration for a single request.
-     * <p/>
+     * <br>
      * Note that a {@code HashService} is free to ignore this number if it determines the number is not sufficient
      * to meet a desired level of security.
      *
@@ -67,7 +67,7 @@ public interface HashRequest {
      * Returns the name of the hash algorithm the {@code HashService} should use when computing the {@link Hash}, or
      * {@code null} if the default algorithm configuration of the {@code HashService} should be used.  A non-null value
      * overrides the {@code HashService}'s configuration for a single request.
-     * <p/>
+     * <br>
      * Note that a {@code HashService} is free to ignore this value if it determines that the algorithm is not
      * sufficient to meet a desired level of security.
      *
@@ -112,7 +112,7 @@ public interface HashRequest {
 
         /**
          * Sets the source data that will be hashed by a {@link HashService}.
-         * <p/>
+         * <br>
          * This is a convenience alternative to {@link #setSource(ByteSource)}: it will attempt to convert the
          * argument into a {@link ByteSource} instance using Shiro's default conversion heuristics
          * (as defined by {@link ByteSource.Util#isCompatible(Object) ByteSource.Util.isCompatible}.  If the object
@@ -133,7 +133,7 @@ public interface HashRequest {
 
         /**
          * Sets a salt to be used by the {@link HashService} during hash computation.
-         * <p/>
+         * <br>
          * <b>NOTE</b>: not calling this method does not necessarily mean a salt won't be used at all - it just
          * means that the request didn't include a salt.  The servicing {@link HashService} is free to provide a salting
          * strategy for a request, even if the request did not specify one.  You can always check the result
@@ -151,7 +151,7 @@ public interface HashRequest {
 
         /**
          * Sets a salt to be used by the {@link HashService} during hash computation.
-         * <p/>
+         * <br>
          * This is a convenience alternative to {@link #setSalt(ByteSource)}: it will attempt to convert the
          * argument into a {@link ByteSource} instance using Shiro's default conversion heuristics
          * (as defined by {@link ByteSource.Util#isCompatible(Object) ByteSource.Util.isCompatible}.  If the object
@@ -175,7 +175,7 @@ public interface HashRequest {
          * Not calling this method or setting a non-positive value (0 or less) indicates that the {@code HashService}'s
          * default iteration configuration should be used.  A positive value overrides the {@code HashService}'s
          * configuration for a single request.
-         * <p/>
+         * <br>
          * Note that a {@code HashService} is free to ignore this number if it determines the number is not sufficient
          * to meet a desired level of security. You can always check the result
          * {@code Hash} {@link Hash#getIterations() getIterations()} method to see what the actual
@@ -196,7 +196,7 @@ public interface HashRequest {
          * Not calling this method or setting it to {@code null} indicates the the default algorithm configuration of
          * the {@code HashService} should be used.  A non-null value
          * overrides the {@code HashService}'s configuration for a single request.
-         * <p/>
+         * <br>
          * Note that a {@code HashService} is free to ignore this value if it determines that the algorithm is not
          * sufficient to meet a desired level of security. You can always check the result
          * {@code Hash} {@link Hash#getAlgorithmName() getAlgorithmName()} method to see what the actual

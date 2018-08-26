@@ -21,7 +21,7 @@ package org.apache.shiro.event;
 /**
  * An event bus can publish events to event subscribers as well as provide a mechanism for registering and unregistering
  * event subscribers.
- * <p/>
+ * <br>
  * An event bus enables a publish/subscribe paradigm within Shiro - components can publish or consume events they
  * find relevant without needing to be tightly coupled to other components.  This affords great
  * flexibility within Shiro by promoting loose coupling and high cohesion between components and a much safer pluggable
@@ -48,7 +48,7 @@ package org.apache.shiro.event;
  * </ol>
  * After registering the component, when when an event of a respective type is published, the component's
  * {@code Subscribe}-annotated method(s) will be invoked as expected.
- * <p/>
+ * <br>
  * This design (and its constituent helper components) was largely influenced by
  * Guava's <a href="http://docs.guava-libraries.googlecode.com/git/javadoc/com/google/common/eventbus/EventBus.html">EventBus</a>
  * concept, although no code was viewed/copied/imported (even though Guava code is Apache 2.0 licensed and could have

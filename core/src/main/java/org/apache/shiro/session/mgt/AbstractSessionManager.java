@@ -71,7 +71,6 @@ public abstract class AbstractSessionManager implements SessionManager {
      * Sets the system-wide default time in milliseconds that any session may remain idle before expiring. This
      * value is the main default for all sessions and may be overridden on a <em>per-session</em> basis by calling
      * {@code Subject.getSession().}{@link Session#setTimeout setTimeout(long)} if so desired.
-     * <p/>
      * <ul>
      * <li>A negative return value means sessions never expire.</li>
      * <li>A non-negative return value (0 or greater) means session timeout will occur as expected.</li>

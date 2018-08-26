@@ -75,7 +75,7 @@ public interface PasswordService {
      * Converts the specified plaintext password (usually acquired from your application's 'new user' or 'password reset'
      * workflow) into a formatted string safe for storage.  The returned string can be safely saved with the
      * corresponding user account record (e.g. as a 'password' attribute).
-     * <p/>
+     * <br>
      * It is expected that the String returned from this method will be presented to the
      * {@link #passwordsMatch(Object, String) passwordsMatch(plaintext,encrypted)} method when performing a
      * password comparison check.
@@ -84,7 +84,7 @@ public interface PasswordService {
      * String or character array representing passwords (character arrays are often a safer way to represent passwords
      * as they can be cleared/nulled-out after use.  Any argument type supported by
      * {@link ByteSource.Util#isCompatible(Object)} is valid.
-     * <p/>
+     * <br>
      * For example:
      * <pre>
      * String rawPassword = ...
@@ -95,7 +95,7 @@ public interface PasswordService {
      * char[] rawPasswordChars = ...
      * String encryptedValue = passwordService.encryptPassword(rawPasswordChars);
      * </pre>
-     * <p/>
+     * <br>
      * The resulting {@code encryptedValue} should be stored with the account to be retrieved later during a
      * login attempt.  For example:
      * <pre>

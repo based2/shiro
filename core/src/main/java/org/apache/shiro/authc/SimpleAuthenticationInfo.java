@@ -62,7 +62,7 @@ public class SimpleAuthenticationInfo implements MergableAuthenticationInfo, Sal
     /**
      * Constructor that takes in a single 'primary' principal of the account and its corresponding credentials,
      * associated with the specified realm.
-     * <p/>
+     * <br>
      * This is a convenience constructor and will construct a {@link PrincipalCollection PrincipalCollection} based
      * on the {@code principal} and {@code realmName} argument.
      *
@@ -78,7 +78,7 @@ public class SimpleAuthenticationInfo implements MergableAuthenticationInfo, Sal
     /**
      * Constructor that takes in a single 'primary' principal of the account, its corresponding hashed credentials,
      * the salt used to hash the credentials, and the name of the realm to associate with the principals.
-     * <p/>
+     * <br>
      * This is a convenience constructor and will construct a {@link PrincipalCollection PrincipalCollection} based
      * on the <code>principal</code> and <code>realmName</code> argument.
      *
@@ -153,7 +153,7 @@ public class SimpleAuthenticationInfo implements MergableAuthenticationInfo, Sal
     /**
      * Returns the salt used to hash the credentials, or {@code null} if no salt was used or credentials were not
      * hashed at all.
-     * <p/>
+     * <br>
      * Note that this attribute is <em>NOT</em> handled in the
      * {@link #merge(AuthenticationInfo) merge} method - a hash salt is only useful within a single realm (as each
      * realm will perform it's own Credentials Matching logic), and once finished in that realm, Shiro has no further
@@ -170,7 +170,7 @@ public class SimpleAuthenticationInfo implements MergableAuthenticationInfo, Sal
     /**
      * Sets the salt used to hash the credentials, or {@code null} if no salt was used or credentials were not
      * hashed at all.
-     * <p/>
+     * <br>
      * Note that this attribute is <em>NOT</em> handled in the
      * {@link #merge(AuthenticationInfo) merge} method - a hash salt is only useful within a single realm (as each
      * realm will perform it's own Credentials Matching logic), and once finished in that realm, Shiro has no further

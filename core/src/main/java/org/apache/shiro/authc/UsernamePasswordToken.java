@@ -24,19 +24,18 @@ package org.apache.shiro.authc;
  * &quot;Remember Me&quot; services across user sessions as well as the
  * {@link org.apache.shiro.authc.HostAuthenticationToken HostAuthenticationToken} interface to retain the host name
  * or IP address location from where the authentication attempt is occurring.</p>
- * <p/>
  * <p>&quot;Remember Me&quot; authentications are disabled by default, but if the application developer wishes to allow
  * it for a login attempt, all that is necessary is to call {@link #setRememberMe setRememberMe(true)}.  If the underlying
  * <tt>SecurityManager</tt> implementation also supports <tt>RememberMe</tt> services, the user's identity will be
  * remembered across sessions.
- * <p/>
+ * </p>
  * <p>Note that this class stores a password as a char[] instead of a String
  * (which may seem more logical).  This is because Strings are immutable and their
  * internal value cannot be overwritten - meaning even a nulled String instance might be accessible in memory at a later
  * time (e.g. memory dump).  This is not good for sensitive information such as passwords. For more information, see the
  * <a href="http://java.sun.com/j2se/1.5.0/docs/guide/security/jce/JCERefGuide.html#PBEEx">
  * Java Cryptography Extension Reference Guide</a>.</p>
- * <p/>
+ * </p>
  * <p>To avoid this possibility of later memory access, the application developer should always call
  * {@link #clear() clear()} after using the token to perform a login attempt.</p>
  *
@@ -99,7 +98,6 @@ public class UsernamePasswordToken implements HostAuthenticationToken, RememberM
      * Constructs a new UsernamePasswordToken encapsulating the username and password submitted
      * during an authentication attempt, with a <tt>null</tt> {@link #getHost() host} and
      * a <tt>rememberMe</tt> default of <tt>false</tt>
-     * <p/>
      * <p>This is a convenience constructor and maintains the password internally via a character
      * array, i.e. <tt>password.toCharArray();</tt>.  Note that storing a password as a String
      * in your code could have possible security implications as noted in the class JavaDoc.</p>
@@ -157,7 +155,6 @@ public class UsernamePasswordToken implements HostAuthenticationToken, RememberM
     /**
      * Constructs a new UsernamePasswordToken encapsulating the username and password submitted, as well as if the user
      * wishes their identity to be remembered across sessions.
-     * <p/>
      * <p>This is a convenience constructor and maintains the password internally via a character
      * array, i.e. <tt>password.toCharArray();</tt>.  Note that storing a password as a String
      * in your code could have possible security implications as noted in the class JavaDoc.</p>
@@ -194,7 +191,6 @@ public class UsernamePasswordToken implements HostAuthenticationToken, RememberM
     /**
      * Constructs a new UsernamePasswordToken encapsulating the username and password submitted, if the user
      * wishes their identity to be remembered across sessions, and the inetAddress from where the attempt is occurring.
-     * <p/>
      * <p>This is a convenience constructor and maintains the password internally via a character
      * array, i.e. <tt>password.toCharArray();</tt>.  Note that storing a password as a String
      * in your code could have possible security implications as noted in the class JavaDoc.</p>
@@ -275,7 +271,7 @@ public class UsernamePasswordToken implements HostAuthenticationToken, RememberM
      * Returns the host name or IP string from where the authentication attempt occurs.  May be <tt>null</tt> if the
      * host name/IP is unknown or explicitly omitted.  It is up to the Authenticator implementation processing this
      * token if an authentication attempt without a host is valid or not.
-     * <p/>
+     * <br>
      * <p>(Shiro's default Authenticator allows <tt>null</tt> hosts to support localhost and proxy server environments).</p>
      *
      * @return the host from where the authentication attempt occurs, or <tt>null</tt> if it is unknown or
@@ -289,7 +285,7 @@ public class UsernamePasswordToken implements HostAuthenticationToken, RememberM
     /**
      * Sets the host name or IP string from where the authentication attempt occurs.  It is up to the Authenticator
      * implementation processing this token if an authentication attempt without a host is valid or not.
-     * <p/>
+     * <br>
      * <p>(Shiro's default Authenticator
      * allows <tt>null</tt> hosts to allow localhost and proxy server environments).</p>
      *

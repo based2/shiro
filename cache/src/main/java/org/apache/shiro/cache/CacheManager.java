@@ -35,8 +35,10 @@ public interface CacheManager {
      * will be created with that name and returned.
      *
      * @param name the name of the cache to acquire.
+     * @param <K> key
+     * @param <V> value
      * @return the Cache with the given name
      * @throws CacheException if there is an error acquiring the Cache instance.
      */
-    public <K, V> Cache<K, V> getCache(String name) throws CacheException;
+    <K, V> Cache<K, V> getCache(String name) throws CacheException;
 }

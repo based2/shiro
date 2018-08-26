@@ -31,20 +31,20 @@ import java.io.OutputStream;
  * <h2>Cipher Basics</h2>
  * For what is known as <em>Symmetric</em> {@code Cipher}s, the {@code Key} used to encrypt the source is the same
  * as (or trivially similar to) the {@code Key} used to decrypt it.
- * <p/>
+ * <p>
  * For <em>Asymmetric</em> {@code Cipher}s, the encryption {@code Key} is not the same as the decryption {@code Key}.
  * The most common type of Asymmetric Ciphers are based on what is called public/private key pairs:
- * <p/>
+ * </p>
  * A <em>private</em> key is known only to a single party, and as its name implies, is supposed be kept very private
  * and secure.  A <em>public</em> key that is associated with the private key can be disseminated freely to anyone.
  * Then data encrypted by the public key can only be decrypted by the private key and vice versa, but neither party
  * need share their private key with anyone else.  By not sharing a private key, you can guarantee no 3rd party can
  * intercept the key and therefore use it to decrypt a message.
- * <p/>
+ * <p>
  * This asymmetric key technology was created as a
  * more secure alternative to symmetric ciphers that sometimes suffer from man-in-the-middle attacks since, for
  * data shared between two parties, the same Key must also be shared and may be compromised.
- * <p/>
+ * </p>
  * Note that a symmetric cipher is perfectly fine to use if you just want to encode data in a format no one else
  * can understand and you never give away the key.  Shiro uses a symmetric cipher when creating certain
  * HTTP Cookies for example - because it is often undesirable to have user's identity stored in a plain-text cookie,
@@ -100,7 +100,7 @@ public interface CipherService {
     /**
      * Receives encrypted data from the given {@code InputStream}, decrypts it, and sends the resulting decrypted data
      * to the given {@code OutputStream}.
-     * <p/>
+     * <br>
      * <b>NOTE:</b> This method <em>does NOT</em> flush or close either stream prior to returning - the caller must
      * do so when they are finished with the streams.  For example:
      * <pre>
@@ -143,7 +143,7 @@ public interface CipherService {
     /**
      * Receives the data from the given {@code InputStream}, encrypts it, and sends the resulting encrypted data to the
      * given {@code OutputStream}.
-     * <p/>
+     * <br>
      * <b>NOTE:</b> This method <em>does NOT</em> flush or close either stream prior to returning - the caller must
      * do so when they are finished with the streams.  For example:
      * <pre>

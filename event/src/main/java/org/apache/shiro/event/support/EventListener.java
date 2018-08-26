@@ -20,16 +20,16 @@ package org.apache.shiro.event.support;
 
 /**
  * An event listener knows how to accept and process events of a particular type (or types).
- * <p/>
+ * <p>
  * Note that this interface is in the event implementation support package (and not the event package directly)
  * because it is a supporting concept for event bus implementations and not something that most application
  * developers using Shiro should implement directly.  App developers should instead use the
  * {@link org.apache.shiro.event.Subscribe Subscribe} annotation on methods they wish to receive events.
- * <p/>
+ * </p>
  * This interface therefore mainly represents a 'middle man' between the event bus and the actual subscribing
  * component.  As such, event bus implementors (or framework/infrastructural implementors) or those that wish to
  * customize listener/dispatch functionality might find this concept useful.
- * <p/>
+ * <br>
  * It is a concept almost always used in conjunction with a {@link EventListenerResolver} implementation.
  *
  * @see SingleArgumentMethodEventListener

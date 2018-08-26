@@ -25,7 +25,7 @@ import org.apache.shiro.util.SoftHashMap;
  * environments.  It will not cause memory leaks as it produces {@link Cache Cache}s backed by
  * {@link SoftHashMap SoftHashMap}s which auto-size themselves based on the runtime environment's memory
  * limitations and garbage collection behavior.
- * <p/>
+ * <br>
  * While the {@code Cache} instances created are thread-safe, they do not offer any enterprise-level features such as
  * cache coherency, optimistic locking, failover or other similar features.  For more enterprise features, consider
  * using a different {@code CacheManager} implementation backed by an enterprise-grade caching product (Hazelcast,
