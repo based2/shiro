@@ -22,7 +22,7 @@ import org.apache.shiro.ShiroException;
 
 /**
  * Generic exception representing a problem when attempting to access data.
- * <p/>
+ * <br>
  * The idea was borrowed from the Spring Framework, which has a nice model for a generic DAO exception hierarchy.
  * Unfortunately we can't use it as we can't force a Spring API usage on all Shiro end-users.
  *

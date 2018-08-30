@@ -27,7 +27,7 @@ import java.lang.annotation.Target;
  * Requires the current Subject to be an application <em>user</em> for the annotated class/instance/method to be
  * accessed or invoked.  This is <em>less</em> restrictive than the {@link RequiresAuthentication RequiresAuthentication}
  * annotation.
- * <p/>
+ * <br>
  * Shiro defines a &quot;user&quot; as a Subject that is either
  * &quot;remembered&quot; <b><em>or</em></b> authenticated:
  * <ul>
@@ -36,7 +36,7 @@ import java.lang.annotation.Target;
  * <li>A <b>remembered</b> user is any Subject that has proven their identity at least once, although not necessarily
  * during their current session, and asked the system to remember them.</li>
  * </ul>
- * <p/>
+ * <br>
  * See the {@link org.apache.shiro.authc.RememberMeAuthenticationToken RememberMeAuthenticationToken} JavaDoc for an
  * explanation of why these two states are considered different.
  *

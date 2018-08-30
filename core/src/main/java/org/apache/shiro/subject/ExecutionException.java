@@ -24,7 +24,7 @@ import org.apache.shiro.ShiroException;
  * Exception wrapping any potential checked exception thrown when a {@code Subject} executes a
  * {@link java.util.concurrent.Callable}.  This is a nicer alternative than forcing calling code to catch
  * a normal checked {@code Exception} when it may not be necessary.
- * <p/>
+ * <br>
  * If thrown, the causing exception will always be accessible via the {@link #getCause() getCause()} method.
  *
  * @since 1.0

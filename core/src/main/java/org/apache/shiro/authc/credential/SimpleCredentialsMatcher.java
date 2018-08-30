@@ -78,7 +78,6 @@ public class SimpleCredentialsMatcher extends CodecSupport implements Credential
      * <p>If both arguments are either a byte array (byte[]), char array (char[]) or String, they will be both be
      * converted to raw byte arrays via the {@link #toBytes toBytes} method first, and then resulting byte arrays
      * are compared via {@link Arrays#equals(byte[], byte[]) Arrays.equals(byte[],byte[])}.</p>
-     * </p>
      * <p>If either argument cannot be converted to a byte array as described, a simple Object <code>equals</code>
      * comparison is made.</p>
      * <p>Subclasses should override this method for more explicit equality checks.

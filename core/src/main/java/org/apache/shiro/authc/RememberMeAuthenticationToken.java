@@ -20,7 +20,7 @@ package org.apache.shiro.authc;
 
 /**
  * An {@code AuthenticationToken} that indicates if the user wishes their identity to be remembered across sessions.
- * <p/>
+ * <br>
  * Note however that when a new session is created for the corresponding user, that user's identity would be
  * remembered, but they are <em>NOT</em> considered authenticated.  Please see the
  * {@link org.apache.shiro.subject.Subject#isRemembered()} JavaDoc for an in-depth explanation of the semantic

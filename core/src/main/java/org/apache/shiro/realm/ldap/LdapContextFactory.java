@@ -60,7 +60,7 @@ public interface LdapContextFactory {
      * (now Oracle) implementation supports
      * <a href="http://download-llnw.oracle.com/javase/tutorial/jndi/ldap/auth_mechs.html">anonymous, simple, and
      * SASL-based mechanisms</a>.
-     * <p/>
+     * <br>
      * This method was added in Shiro 1.1 to address the fact that principals and credentials can be more than just
      * {@code String} user DNs and passwords for connecting to LDAP.  For example, the credentials can be an
      * {@code X.509} certificate.

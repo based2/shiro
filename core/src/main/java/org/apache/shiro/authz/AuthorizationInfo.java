@@ -24,10 +24,10 @@ import java.util.Collection;
 /**
  * <code>AuthorizationInfo</code> represents a single Subject's stored authorization data (roles, permissions, etc)
  * used during authorization (access control) checks only.
- * <p/>
+ * <br>
  * Roles are represented as a <code>Collection</code> of Strings
  * ({@link java.util.Collection Collection}<{@link String String}>), typically each element being the Role name.
- * <p/>
+ * <br>
  * {@link Permission Permission}s are provided in two ways:
  * <ul>
  * <li>A <code>Collection</code> of Strings, where each String can usually be converted into <code>Permission</code>
@@ -37,13 +37,13 @@ import java.util.Collection;
  * </ul>
  * Both permission collections together represent the total aggregate collection of permissions.  You may use one
  * or both depending on your preference and needs.
- * <p/>
+ * <br>
  * Because the act of authorization (access control) is orthogonal to authentication (log-in), this interface is
  * intended to represent only the account data needed by Shiro during an access control check
  * (role, permission, etc).  Shiro also has a parallel
  * {@link org.apache.shiro.authc.AuthenticationInfo AuthenticationInfo} interface for use during the authentication
  * process that represents identity data such as principals and credentials.
- * <p/>
+ * <br>
  * Because many if not most {@link org.apache.shiro.realm.Realm Realm}s store both sets of data for a Subject, it might be
  * convenient for a <code>Realm</code> implementation to utilize an implementation of the
  * {@link org.apache.shiro.authc.Account Account} interface instead, which is a convenience interface that combines both
@@ -68,7 +68,7 @@ public interface AuthorizationInfo extends Serializable {
      * Returns all string-based permissions assigned to the corresponding Subject.  The permissions here plus those
      * returned from {@link #getObjectPermissions() getObjectPermissions()} represent the total set of permissions
      * assigned.  The aggregate set is used to perform a permission authorization check.
-     * <p/>
+     * <br>
      * This method is a convenience mechanism that allows Realms to represent permissions as Strings if they choose.
      * When performing a security check, a <code>Realm</code> usually converts these strings to object
      * {@link Permission Permission}s via an internal

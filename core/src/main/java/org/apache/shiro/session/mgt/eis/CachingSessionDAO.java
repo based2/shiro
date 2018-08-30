@@ -33,12 +33,12 @@ import java.util.Collections;
  * An CachingSessionDAO is a SessionDAO that provides a transparent caching layer between the components that
  * use it and the underlying EIS (Enterprise Information System) session backing store (for example, filesystem,
  * database, enterprise grid/cloud, etc).
- * <p/>
+ * <br>
  * This implementation caches all active sessions in a configured
  * {@link #getActiveSessionsCache() activeSessionsCache}.  This property is {@code null} by default and if one is
  * not explicitly set, a {@link #setCacheManager cacheManager} is expected to be configured which will in turn be used
  * to acquire the {@code Cache} instance to use for the {@code activeSessionsCache}.
- * <p/>
+ * <br>
  * All {@code SessionDAO} methods are implemented by this class to employ
  * caching behavior and delegates the actual EIS operations to respective do* methods to be implemented by
  * subclasses (doCreate, doRead, etc).
@@ -141,7 +141,7 @@ public abstract class CachingSessionDAO extends AbstractSessionDAO implements Ca
     /**
      * Returns the active sessions cache, but if that cache instance is null, first lazily creates the cache instance
      * via the {@link #createActiveSessionsCache()} method and then returns the instance.
-     * <p/>
+     * <br>
      * Note that this method will only return a non-null value code if the {@code CacheManager} has been set.  If
      * not set, there will be no cache.
      *

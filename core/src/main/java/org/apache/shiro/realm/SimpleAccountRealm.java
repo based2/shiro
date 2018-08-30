@@ -42,7 +42,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  * uses a set of configured user accounts and roles to support authentication and authorization.  Each account entry
  * specifies the username, password, and roles for a user.  Roles can also be mapped
  * to permissions and associated with users.
- * <p/>
+ * <br>
  * User accounts and roles are stored in two {@code Map}s in memory, so it is expected that the total number of either
  * is not sufficiently large.
  *

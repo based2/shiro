@@ -88,7 +88,7 @@ public abstract class AuthorizingSecurityManager extends AuthenticatingSecurityM
     /**
      * First calls <code>super.afterRealmsSet()</code> and then sets these same <code>Realm</code> objects on this
      * instance's wrapped {@link Authorizer Authorizer}.
-     * <p/>
+     * <br>
      * The setting of realms the Authorizer will only occur if it is an instance of
      * {@link org.apache.shiro.authz.ModularRealmAuthorizer ModularRealmAuthorizer}, that is:
      * <pre>

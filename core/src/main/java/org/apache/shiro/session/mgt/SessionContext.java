@@ -25,10 +25,10 @@ import java.util.Map;
  * A {@code SessionContext} is a 'bucket' of data presented to a {@link SessionFactory SessionFactory} which interprets
  * this data to construct {@link org.apache.shiro.session.Session Session} instances.  It is essentially a Map of data
  * with a few additional type-safe methods for easy retrieval of objects commonly used to construct Subject instances.
- * <p/>
+ * <br>
  * While this interface contains type-safe setters and getters for common data types, the map can contain anything
  * additional that might be needed by the {@code SessionFactory} implementation to construct {@code Session} instances.
- * <p/>
+ * <br>
  * <b>USAGE</b>: Most Shiro end-users will never use a {@code SubjectContext} instance directly and instead will call
  * the {@code Subject.}{@link org.apache.shiro.subject.Subject#getSession() getSession()} or
  * {@code Subject.}{@link org.apache.shiro.subject.Subject#getSession(boolean) getSession(boolean)} methods (which
@@ -44,17 +44,17 @@ public interface SessionContext extends Map<String, Object> {
     /**
      * Sets the originating host name or IP address (as a String) from where the {@code Subject} is initiating the
      * {@code Session}.
-     * <p/>
+     * <br>
      * In web-based systems, this host can be inferred from the incoming request, e.g.
      * {@code javax.servlet.ServletRequest#getRemoteAddr()} or {@code javax.servlet.ServletRequest#getRemoteHost()}
      * methods, or in socket-based systems, it can be obtained via inspecting the socket
      * initiator's host IP.
-     * <p/>
+     * <br>
      * Most secure environments <em>should</em> specify a valid, non-{@code null} {@code host}, since knowing the
      * {@code host} allows for more flexibility when securing a system: by requiring an host, access control policies
      * can also ensure access is restricted to specific client <em>locations</em> in addition to {@code Subject}
      * principals, if so desired.
-     * <p/>
+     * <br>
      * <b>Caveat</b> - if clients to your system are on a
      * public network (as would be the case for a public web site), odds are high the clients can be
      * behind a NAT (Network Address Translation) router or HTTP proxy server.  If so, all clients
@@ -74,7 +74,7 @@ public interface SessionContext extends Map<String, Object> {
     /**
      * Returns the originating host name or IP address (as a String) from where the {@code Subject} is initiating the
      * {@code Session}.
-     * <p/>
+     * <br>
      * See the {@link #setHost(String) setHost(String)} JavaDoc for more about security policies based on the
      * {@code Session} host.
      *

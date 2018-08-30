@@ -29,7 +29,7 @@ import java.util.concurrent.Callable;
  * This ensures that any calls to {@code SecurityUtils.}{@link org.apache.shiro.SecurityUtils#getSubject() getSubject()}
  * during the target {@code Callable}'s execution still work correctly even if the {@code Callable} executes on a
  * different thread than the one that created it.  This allows {@code Subject} access during asynchronous operations.
- * <p/>
+ * <br>
  * When instances of this class execute (typically via a {@link java.util.concurrent.ExecutorService ExecutorService}),
  * the following occurs:
  * <ol>
@@ -38,7 +38,7 @@ import java.util.concurrent.Callable;
  * <li>The delegate/target {@code Callable} is {@link java.util.concurrent.Callable#call() executed}</li>
  * <li>The previous thread state that might have existed before the {@code Subject} was bound is fully restored</li>
  * </ol>
- * <p/>
+ * <br>
  * This behavior ensures that the thread that executes this {@code Callable}, which is often a different thread than
  * the one that created the instance, retains a {@code Subject} to support {@code SecurityUtils.getSubject()}
  * invocations. It also guarantees that the running thread remains 'clean' in any thread-pooled environments.
@@ -48,7 +48,7 @@ import java.util.concurrent.Callable;
  * This is typically considered a support class and is not often directly referenced.  Most people prefer to use
  * the {@code Subject.}{@link Subject#associateWith(Callable) associateWith} method, which will automatically return
  * an instance of this class.
- * <p/>
+ * <br>
  * An even more convenient alternative is to use a
  * {@link org.apache.shiro.concurrent.SubjectAwareExecutorService SubjectAwareExecutorService}, which
  * transparently uses instances of this class.

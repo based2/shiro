@@ -37,7 +37,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * will typically not scale for production environments and could easily cause {@code OutOfMemoryException}s.  Just
  * don't forget to configure<b>*</b> an instance of this class with a production-grade {@code CacheManager} that can
  * handle disk paging for large numbers of sessions and you'll be fine.
- * <p/>
+ * <br>
  * <b>*</b>If you configure Shiro's {@code SecurityManager} instance with such a {@code CacheManager}, it will be
  * automatically applied to an instance of this class and you won't need to explicitly set it in configuration.
  * <h3>Implementation Details</h3>

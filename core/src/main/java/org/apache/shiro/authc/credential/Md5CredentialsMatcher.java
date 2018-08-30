@@ -26,7 +26,7 @@ import org.apache.shiro.crypto.hash.Md5Hash;
 /**
  * {@code HashedCredentialsMatcher} implementation that expects the stored {@code AuthenticationInfo} credentials to be
  * MD5 hashed.
- * <p/>
+ * <br>
  * <b>Note:</b> <a href="http://en.wikipedia.org/wiki/MD5">MD5</a> and
  * <a href="http://en.wikipedia.org/wiki/SHA_hash_functions">SHA-1</a> algorithms are now known to be vulnerable to
  * compromise and/or collisions (read the linked pages for more).  While most applications are ok with either of these

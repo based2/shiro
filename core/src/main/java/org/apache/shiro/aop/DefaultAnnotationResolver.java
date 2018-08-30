@@ -25,12 +25,12 @@ import java.lang.reflect.Method;
  * Default {@code AnnotationResolver} implementation that merely inspects the
  * {@link MethodInvocation MethodInvocation}'s {@link MethodInvocation#getMethod() target method},
  * and returns {@code targetMethod}.{@link Method#getAnnotation(Class) getAnnotation(class)}.
- * <p/>
+ * <br>
  * Unfortunately Java's default reflection API for Annotations is not very robust, and this logic
  * may not be enough - if the incoming method invocation represents a method from an interface,
  * this default logic would not discover the annotation if it existed on the method implementation
  * directly (as opposed to being defined directly in the interface definition).
- * <p/>
+ * <br>
  * More complex class hierarchy traversal logic is required to exhaust a method's target object's
  * classes, parent classes, interfaces and parent interfaces.  That logic will likely be added
  * to this implementation in due time, but for now, this implementation relies on the JDK's default

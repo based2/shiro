@@ -31,12 +31,12 @@ import java.util.concurrent.*;
  * dispatch the Subject-enabled runnable or callable to an underlying delegate
  * {@link java.util.concurrent.ExecutorService ExecutorService} instance.  The principle is the same as the
  * parent {@link SubjectAwareExecutor} class, but enables the richer {@link ExecutorService} API.
- * <p/>
+ * <br>
  * This is a simplification for applications that want to execute code as the currently
  * executing {@code Subject} on another thread, but don't want or need to call the
  * {@link Subject#associateWith(Runnable)} or {@link Subject#associateWith(Callable)} methods and dispatch them to a
  * Thread manually.  This simplifies code and reduces Shiro dependencies across application source code.
- * <p/>
+ * <br>
  * Consider this code that could be repeated in many places across an application:
  * <pre>
  * {@link Callable Callable} applicationWork = //instantiate or acquire Callable from somewhere

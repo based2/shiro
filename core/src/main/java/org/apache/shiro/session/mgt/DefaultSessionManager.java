@@ -97,7 +97,7 @@ public class DefaultSessionManager extends AbstractValidatingSessionManager impl
      * It is ok to set this to {@code false} <b><em>ONLY</em></b> if you have some other process that you manage yourself
      * that periodically deletes invalid sessions from the backing data store over time, such as via a Quartz or Cron
      * job.  If you do not do this, the invalid sessions will become 'orphans' and fill up the data store over time.
-     * <p/>
+     * <br>
      * This property is provided because some systems need the ability to perform querying/reporting against sessions in
      * the data store, even after they have stopped or expired.  Setting this attribute to {@code false} will allow
      * such querying, but with the caveat that the application developer/configurer deletes the sessions themselves by
@@ -136,7 +136,7 @@ public class DefaultSessionManager extends AbstractValidatingSessionManager impl
     /**
      * Sets the internal {@code CacheManager} on the {@code SessionDAO} if it implements the
      * {@link org.apache.shiro.cache.CacheManagerAware CacheManagerAware} interface.
-     * <p/>
+     * <br>
      * This method is called after setting a cacheManager via the
      * {@link #setCacheManager(org.apache.shiro.cache.CacheManager) setCacheManager} method <em>em</em> when
      * setting a {@code SessionDAO} via the {@link #setSessionDAO} method to allow it to be propagated

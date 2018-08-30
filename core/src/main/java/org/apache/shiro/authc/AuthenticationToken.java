@@ -61,13 +61,12 @@ public interface AuthenticationToken extends Serializable {
 
     /**
      * Returns the account identity submitted during the authentication process.
-     * <p>
      * <p>Most application authentications are username/password based and have this
      * object represent a username.  If this is the case for your application,
      * take a look at the {@link UsernamePasswordToken UsernamePasswordToken}, as it is probably
      * sufficient for your use.
      * </p>
-     * <p>Ultimately, the object returned is application specific and can represent
+     * Ultimately, the object returned is application specific and can represent
      * any account identity (user id, X.509 certificate, etc).
      *
      * @return the account identity submitted during the authentication process.

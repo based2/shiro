@@ -91,10 +91,10 @@ public class ModularRealmAuthorizer implements Authorizer, PermissionResolverAwa
     }
 
     /**
-     * Returns the PermissionResolver to be used on <em>all</em> configured realms, or <code>null</code (the default)
+     * Returns the PermissionResolver to be used on <em>all</em> configured realms, or <code>null</code> (the default)
      * if all realm instances will each configure their own permission resolver.
      *
-     * @return the PermissionResolver to be used on <em>all</em> configured realms, or <code>null</code (the default)
+     * @return the PermissionResolver to be used on <em>all</em> configured realms, or <code>null</code> (the default)
      *         if realm instances will each configure their own permission resolver.
      * @since 1.0
      */
@@ -105,7 +105,7 @@ public class ModularRealmAuthorizer implements Authorizer, PermissionResolverAwa
     /**
      * Sets the specified {@link PermissionResolver PermissionResolver} on <em>all</em> of the wrapped realms that
      * implement the {@link org.apache.shiro.authz.permission.PermissionResolverAware PermissionResolverAware} interface.
-     * <p/>
+     * <br>
      * Only call this method if you want the permission resolver to be passed to all realms that implement the
      * <code>PermissionResolver</code> interface.  If you do not want this to occur, the realms must
      * configure themselves individually (or be configured individually).
@@ -121,10 +121,10 @@ public class ModularRealmAuthorizer implements Authorizer, PermissionResolverAwa
     /**
      * Sets the internal {@link #getPermissionResolver} on any internal configured
      * {@link #getRealms Realms} that implement the {@link org.apache.shiro.authz.permission.PermissionResolverAware PermissionResolverAware} interface.
-     * <p/>
+     * <br>
      * This method is called after setting a permissionResolver on this ModularRealmAuthorizer via the
      * {@link #setPermissionResolver(org.apache.shiro.authz.permission.PermissionResolver) setPermissionResolver} method.
-     * <p/>
+     * <br>
      * It is also called after setting one or more realms via the {@link #setRealms setRealms} method to allow these
      * newly available realms to be given the <code>PermissionResolver</code> already in use.
      *
@@ -157,7 +157,7 @@ public class ModularRealmAuthorizer implements Authorizer, PermissionResolverAwa
     /**
      * Sets the specified {@link RolePermissionResolver RolePermissionResolver} on <em>all</em> of the wrapped realms that
      * implement the {@link org.apache.shiro.authz.permission.RolePermissionResolverAware PermissionResolverAware} interface.
-     * <p/>
+     * <br>
      * Only call this method if you want the permission resolver to be passed to all realms that implement the
      * <code>RolePermissionResolver</code> interface.  If you do not want this to occur, the realms must
      * configure themselves individually (or be configured individually).
@@ -174,10 +174,10 @@ public class ModularRealmAuthorizer implements Authorizer, PermissionResolverAwa
     /**
      * Sets the internal {@link #getRolePermissionResolver} on any internal configured
      * {@link #getRealms Realms} that implement the {@link org.apache.shiro.authz.permission.RolePermissionResolverAware RolePermissionResolverAware} interface.
-     * <p/>
+     * <br>
      * This method is called after setting a rolePermissionResolver on this ModularRealmAuthorizer via the
      * {@link #setRolePermissionResolver(org.apache.shiro.authz.permission.RolePermissionResolver) setRolePermissionResolver} method.
-     * <p/>
+     * <br>
      * It is also called after setting one or more realms via the {@link #setRealms setRealms} method to allow these
      * newly available realms to be given the <code>RolePermissionResolver</code> already in use.
      *

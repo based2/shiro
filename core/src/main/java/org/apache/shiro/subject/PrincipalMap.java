@@ -22,10 +22,10 @@ import java.util.Map;
 
 /**
  * EXPERIMENTAL - DO NOT USE YET
- * <p/>
+ * <p>
  * A {@code PrincipalMap} is map of all of a subject's principals - its identifying attributes like username, userId,
  * etc.
- * <p/>
+ * </p>
  * The {@link Map} methods allow you to interact with a unified representation of
  * all of the Subject's principals, even if they came from different realms.  You can think of the {@code Map} methods
  * as the general purpose API for a Subject's principals.  That is, you can access a principal generally:
@@ -40,7 +40,7 @@ import java.util.Map;
  * <h3>Multi-Realm Environments</h3>
  * If your application uses multiple realms, the {@code Map} methods reflect
  * the the aggregate principals from <em>all</em> realms that authenticated the owning {@code Subject}.
- * <p/>
+ * <br>
  * But in these multi-realm environments, it is often convenient or necessary to acquire only the principals contributed
  * by a specific realm (often in a realm implementation itself).  This {@code PrincipalMap} interface satisfies
  * those needs by providing additional realm-specific accessor/mutator methods.

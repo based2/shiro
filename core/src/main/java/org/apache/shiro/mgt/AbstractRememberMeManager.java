@@ -38,21 +38,21 @@ import org.slf4j.LoggerFactory;
  * Abstract implementation of the {@code RememberMeManager} interface that handles
  * {@link #setSerializer(org.apache.shiro.io.Serializer) serialization} and
  * {@link #setCipherService encryption} of the remembered user identity.
- * <p/>
+ * <br>
  * The remembered identity storage location and details are left to subclasses.
  * <h2>Default encryption key</h2>
  * This implementation uses an {@link AesCipherService AesCipherService} for strong encryption by default.  It also
  * uses a default generated symmetric key to both encrypt and decrypt data.  As AES is a symmetric cipher, the same
  * {@code key} is used to both encrypt and decrypt data, BUT NOTE:
- * <p/>
+ * <br>
  * Because Shiro is an open-source project, if anyone knew that you were using Shiro's default
  * {@code key}, they could download/view the source, and with enough effort, reconstruct the {@code key}
  * and decode encrypted data at will.
- * <p/>
+ * <br>
  * Of course, this key is only really used to encrypt the remembered {@code PrincipalCollection} which is typically
  * a user id or username.  So if you do not consider that sensitive information, and you think the default key still
  * makes things 'sufficiently difficult', then you can ignore this issue.
- * <p/>
+ * <br>
  * However, if you do feel this constitutes sensitive information, it is recommended that you provide your own
  * {@code key} via the {@link #setCipherKey setCipherKey} method to a key known only to your application,
  * guaranteeing that no third party can decrypt your data.  You can generate your own key by calling the
@@ -102,7 +102,7 @@ public abstract class AbstractRememberMeManager implements RememberMeManager {
     /**
      * Returns the {@code Serializer} used to serialize and deserialize {@link PrincipalCollection} instances for
      * persistent remember me storage.
-     * <p/>
+     * <br>
      * Unless overridden by the {@link #setSerializer} method, the default instance is a
      * {@link org.apache.shiro.io.DefaultSerializer}.
      *
@@ -116,7 +116,7 @@ public abstract class AbstractRememberMeManager implements RememberMeManager {
     /**
      * Sets the {@code Serializer} used to serialize and deserialize {@link PrincipalCollection} instances for
      * persistent remember me storage.
-     * <p/>
+     * <br>
      * Unless overridden by this method, the default instance is a {@link DefaultSerializer}.
      *
      * @param serializer the {@code Serializer} used to serialize and deserialize {@link PrincipalCollection} instances
@@ -129,7 +129,7 @@ public abstract class AbstractRememberMeManager implements RememberMeManager {
     /**
      * Returns the {@code CipherService} to use for encrypting and decrypting serialized identity data to prevent easy
      * inspection of Subject identity data.
-     * <p/>
+     * <br>
      * Unless overridden by the {@link #setCipherService} method, the default instance is an {@link AesCipherService}.
      *
      * @return the {@code Cipher} to use for encrypting and decrypting serialized identity data to prevent easy
@@ -142,14 +142,14 @@ public abstract class AbstractRememberMeManager implements RememberMeManager {
     /**
      * Sets the {@code CipherService} to use for encrypting and decrypting serialized identity data to prevent easy
      * inspection of Subject identity data.
-     * <p/>
+     * <p>
      * If the CipherService is a symmetric CipherService (using the same key for both encryption and decryption), you
      * should set your key via the {@link #setCipherKey(byte[])} method.
-     * <p/>
+     * </p>
      * If the CipherService is an asymmetric CipherService (different keys for encryption and decryption, such as
      * public/private key pairs), you should set your encryption and decryption key via the respective
      * {@link #setEncryptionCipherKey(byte[])} and {@link #setDecryptionCipherKey(byte[])} methods.
-     * <p/>
+     * <br>
      * <b>N.B.</b> Unless overridden by this method, the default CipherService instance is an
      * {@link AesCipherService}.  This {@code RememberMeManager} implementation already has a configured symmetric key
      * to use for encryption and decryption, but it is recommended to provide your own for added security.  See the
@@ -204,12 +204,12 @@ public abstract class AbstractRememberMeManager implements RememberMeManager {
 
     /**
      * Convenience method that returns the cipher key to use for <em>both</em> encryption and decryption.
-     * <p/>
+     * <br>
      * <b>N.B.</b> This method can only be called if the underlying {@link #getCipherService() cipherService} is a symmetric
      * CipherService which by definition uses the same key for both encryption and decryption.  If using an asymmetric
      * CipherService public/private key pair, you cannot use this method, and should instead use the
      * {@link #getEncryptionCipherKey()} and {@link #getDecryptionCipherKey()} methods individually.
-     * <p/>
+     * <br>
      * The default {@link AesCipherService} instance is a symmetric cipher service, so this method can be used if you are
      * using the default.
      *
@@ -223,12 +223,12 @@ public abstract class AbstractRememberMeManager implements RememberMeManager {
 
     /**
      * Convenience method that sets the cipher key to use for <em>both</em> encryption and decryption.
-     * <p/>
+     * <p>
      * <b>N.B.</b> This method can only be called if the underlying {@link #getCipherService() cipherService} is a
      * symmetric CipherService?which by definition uses the same key for both encryption and decryption.  If using an
      * asymmetric CipherService?(such as a public/private key pair), you cannot use this method, and should instead use
      * the {@link #setEncryptionCipherKey(byte[])} and {@link #setDecryptionCipherKey(byte[])} methods individually.
-     * <p/>
+     * </p>
      * The default {@link AesCipherService} instance is a symmetric CipherService, so this method can be used if you
      * are using the default.
      *
@@ -298,7 +298,7 @@ public abstract class AbstractRememberMeManager implements RememberMeManager {
      * {@link #getIdentityToRemember resolves} the exact
      * {@link PrincipalCollection principals} to remember.  It then remembers the principals by calling
      * {@link #rememberIdentity(org.apache.shiro.subject.Subject, org.apache.shiro.subject.PrincipalCollection)}.
-     * <p/>
+     * <br>
      * This implementation ignores the {@link AuthenticationToken} argument, but it is available to subclasses if
      * necessary for custom logic.
      *
@@ -339,7 +339,7 @@ public abstract class AbstractRememberMeManager implements RememberMeManager {
 
     /**
      * Converts the given principal collection the byte array that will be persisted to be 'remembered' later.
-     * <p/>
+     * <br>
      * This implementation first {@link #serialize(org.apache.shiro.subject.PrincipalCollection) serializes} the
      * principals to a byte array and then {@link #encrypt(byte[]) encrypts} that byte array.
      *
@@ -368,7 +368,7 @@ public abstract class AbstractRememberMeManager implements RememberMeManager {
      * the remembered serialized byte array.  Then it {@link #convertBytesToPrincipals(byte[], SubjectContext) converts}
      * them and returns the re-constituted {@link PrincipalCollection}.  If no remembered principals could be
      * obtained, {@code null} is returned.
-     * <p/>
+     * <br>
      * If any exceptions are thrown, the {@link #onRememberedPrincipalFailure(RuntimeException, SubjectContext)} method
      * is called to allow any necessary post-processing (such as immediately removing any previously remembered
      * values for safety).
@@ -426,10 +426,10 @@ public abstract class AbstractRememberMeManager implements RememberMeManager {
      * warning message and forgets ('unremembers') the problem identity by calling
      * {@link #forgetIdentity(SubjectContext) forgetIdentity(context)} and then immediately re-throws the
      * exception to allow the calling component to react accordingly.
-     * <p/>
+     * <p>
      * This method implementation never returns an
      * object - it always rethrows, but can be overridden by subclasses for custom handling behavior.
-     * <p/>
+     * </p>
      * This most commonly would be called when an encryption key is updated and old principals are retrieved that have
      * been encrypted with the previous key.
      *

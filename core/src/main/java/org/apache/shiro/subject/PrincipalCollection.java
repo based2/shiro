@@ -27,7 +27,7 @@ import java.util.Set;
  * A collection of all principals associated with a corresponding {@link Subject Subject}.  A <em>principal</em> is
  * just a security term for an identifying attribute, such as a username or user id or social security number or
  * anything else that can be considered an 'identifying' attribute for a {@code Subject}.
- * <p/>
+ * <br>
  * A PrincipalCollection organizes its internal principals based on the {@code Realm} where they came from when the
  * Subject was first created.  To obtain the principal(s) for a specific Realm, see the {@link #fromRealm} method.  You
  * can also see which realms contributed to this collection via the {@link #getRealmNames() getRealmNames()} method.
@@ -41,7 +41,7 @@ public interface PrincipalCollection extends Iterable, Serializable {
 
     /**
      * Returns the primary principal used application-wide to uniquely identify the owning account/Subject.
-     * <p/>
+     * <br>
      * The value is usually always a uniquely identifying attribute specific to the data source that retrieved the
      * account data.  Some examples:
      * <ul>
@@ -55,16 +55,16 @@ public interface PrincipalCollection extends Iterable, Serializable {
      * is the value returned from this method.  However, in a multi-{@code Realm} application, where the
      * {@code PrincipalCollection} might retain principals across more than one realm, the value returned from this
      * method should be the single principal that uniquely identifies the subject for the entire application.
-     * <p/>
+     * <p>
      * That value is of course application specific, but most applications will typically choose one of the primary
      * principals from one of the {@code Realm}s.
-     * <p/>
+     * </p>
      * Shiro's default implementations of this interface make this
      * assumption by usually simply returning {@link #iterator()}.{@link java.util.Iterator#next() next()}, which just
      * returns the first returned principal obtained from the first consulted/configured {@code Realm} during the
      * authentication attempt.  This means in a multi-{@code Realm} application, {@code Realm} configuration order
      * matters if you want to retain this default heuristic.
-     * <p/>
+     * <br>
      * If this heuristic is not sufficient, most Shiro end-users will need to implement a custom
      * {@link org.apache.shiro.authc.pam.AuthenticationStrategy}.  An {@code AuthenticationStrategy} has exact control
      * over the {@link PrincipalCollection} returned at the end of an authentication attempt via the
@@ -79,7 +79,7 @@ public interface PrincipalCollection extends Iterable, Serializable {
     /**
      * Returns the first discovered principal assignable from the specified type, or {@code null} if there are none
      * of the specified type.
-     * <p/>
+     * <br>
      * Note that this will return {@code null} if the 'owning' subject has not yet logged in.
      *
      * @param type the type of the principal that should be returned.
@@ -90,7 +90,7 @@ public interface PrincipalCollection extends Iterable, Serializable {
     /**
      * Returns all principals assignable from the specified type, or an empty Collection if no principals of that
      * type are contained.
-     * <p/>
+     * <br>
      * Note that this will return an empty Collection if the 'owning' subject has not yet logged in.
      *
      * @param type the type of the principals that should be returned.
@@ -102,7 +102,7 @@ public interface PrincipalCollection extends Iterable, Serializable {
     /**
      * Returns a single Subject's principals retrieved from all configured Realms as a List, or an empty List if
      * there are not any principals.
-     * <p/>
+     * <br>
      * Note that this will return an empty List if the 'owning' subject has not yet logged in.
      *
      * @return a single Subject's principals retrieved from all configured Realms as a List.
@@ -112,7 +112,7 @@ public interface PrincipalCollection extends Iterable, Serializable {
     /**
      * Returns a single Subject's principals retrieved from all configured Realms as a Set, or an empty Set if there
      * are not any principals.
-     * <p/>
+     * <br>
      * Note that this will return an empty Set if the 'owning' subject has not yet logged in.
      *
      * @return a single Subject's principals retrieved from all configured Realms as a Set.
@@ -122,7 +122,7 @@ public interface PrincipalCollection extends Iterable, Serializable {
     /**
      * Returns a single Subject's principals retrieved from the specified Realm <em>only</em> as a Collection, or an empty
      * Collection if there are not any principals from that realm.
-     * <p/>
+     * <br>
      * Note that this will return an empty Collection if the 'owning' subject has not yet logged in.
      *
      * @param realmName the name of the Realm from which the principals were retrieved.

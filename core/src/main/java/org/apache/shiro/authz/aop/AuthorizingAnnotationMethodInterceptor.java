@@ -70,7 +70,7 @@ public abstract class AuthorizingAnnotationMethodInterceptor extends AnnotationM
 
     /**
      * Ensures the calling Subject is authorized to execute the specified <code>MethodInvocation</code>.
-     * <p/>
+     * <br>
      * As this is an AnnotationMethodInterceptor, this implementation merely delegates to the internal
      * {@link AuthorizingAnnotationHandler AuthorizingAnnotationHandler} by first acquiring the annotation by
      * calling {@link #getAnnotation(MethodInvocation) getAnnotation(methodInvocation)} and then calls

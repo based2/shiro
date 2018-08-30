@@ -25,7 +25,7 @@ import org.apache.shiro.session.Session;
 /**
  * A <code>ValidatingSession</code> is a <code>Session</code> that is capable of determining it is valid or not and
  * is able to validate itself if necessary.
- * <p/>
+ * <br>
  * Validation is usually an exercise of determining when the session was last accessed or modified and determining if
  * that time is longer than a specified allowed duration.
  * 

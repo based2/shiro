@@ -18,7 +18,7 @@
  */
 /**
  * Components used to support the framework's AOP/interception support classes.
- * <p/>
+ * <br>
  * As this package is a root-level package under <tt>org.apache.shiro</tt>, it contains AOP support classes
  * useful for any AOP environment and/or function. Feature-dependent AOP classes (e.g. authorization,
  * authentication, etc) will use these classes as their base in their respective packages.

@@ -32,10 +32,10 @@ import java.lang.annotation.Target;
  * </p>
  *
  * <p>For example, this declaration:
- * <p/>
- * <code>&#64;RequiresPermissions( {"file:read", "write:aFile.txt"} )<br/>
+ * <br>
+ * <code>&#64;RequiresPermissions( {"file:read", "write:aFile.txt"} )<br>
  * void someMethod();</code>
- * <p/>
+ * <br>
  * indicates the current user must be able to both <tt>read</tt> and <tt>write</tt>
  * to the file <tt>aFile.txt</tt> in order for the <tt>someMethod()</tt> to execute, otherwise
  * an {@link org.apache.shiro.authz.AuthorizationException AuthorizationException} will be thrown.

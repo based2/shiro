@@ -29,12 +29,12 @@ import java.util.Collection;
 /**
  * Superclass for almost all {@link Authenticator} implementations that performs the common work around authentication
  * attempts.
- * <p/>
+ * <p>
  * This class delegates the actual authentication attempt to subclasses but supports notification for
  * successful and failed logins as well as logouts. Notification is sent to one or more registered
  * {@link AuthenticationListener AuthenticationListener}s to allow for custom processing logic
  * when these conditions occur.
- * <p/>
+ * </p>
  * In most cases, the only thing a subclass needs to do (via its {@link #doAuthenticate} implementation)
  * is perform the actual principal/credential verification process for the submitted {@code AuthenticationToken}.
  *
@@ -239,10 +239,10 @@ public abstract class AbstractAuthenticator implements Authenticator, LogoutAwar
 
     /**
      * Template design pattern hook for subclasses to implement specific authentication behavior.
-     * <p/>
+     * <p>
      * Common behavior for most authentication attempts is encapsulated in the
      * {@link #authenticate} method and that method invokes this one for custom behavior.
-     * <p/>
+     * </p>
      * <b>N.B.</b> Subclasses <em>should</em> throw some kind of
      * {@code AuthenticationException} if there is a problem during
      * authentication instead of returning {@code null}.  A {@code null} return value indicates

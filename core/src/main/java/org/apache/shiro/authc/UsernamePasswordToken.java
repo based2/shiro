@@ -35,8 +35,7 @@ package org.apache.shiro.authc;
  * time (e.g. memory dump).  This is not good for sensitive information such as passwords. For more information, see the
  * <a href="http://java.sun.com/j2se/1.5.0/docs/guide/security/jce/JCERefGuide.html#PBEEx">
  * Java Cryptography Extension Reference Guide</a>.</p>
- * </p>
- * <p>To avoid this possibility of later memory access, the application developer should always call
+ *  To avoid this possibility of later memory access, the application developer should always call
  * {@link #clear() clear()} after using the token to perform a login attempt.</p>
  *
  * @since 0.1
@@ -125,8 +124,8 @@ public class UsernamePasswordToken implements HostAuthenticationToken, RememberM
     /**
      * Constructs a new UsernamePasswordToken encapsulating the username and password submitted, the
      * inetAddress from where the attempt is occurring, and a default <tt>rememberMe</tt> value of <tt>false</tt>
-     * <p/>
-     * <p>This is a convenience constructor and maintains the password internally via a character
+     * <br>
+     * This is a convenience constructor and maintains the password internally via a character
      * array, i.e. <tt>password.toCharArray();</tt>.  Note that storing a password as a String
      * in your code could have possible security implications as noted in the class JavaDoc.</p>
      *

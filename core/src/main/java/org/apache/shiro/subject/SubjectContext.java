@@ -30,7 +30,7 @@ import java.util.Map;
  * A {@code SubjectContext} is a 'bucket' of data presented to a {@link SecurityManager} which interprets
  * this data to construct {@link org.apache.shiro.subject.Subject Subject} instances.  It is essentially a Map of data
  * with a few additional type-safe methods for easy retrieval of objects commonly used to construct Subject instances.
- * <p/>
+ * <br>
  * While this interface contains type-safe setters and getters for common data types, the map can contain anything
  * additional that might be needed by the {@link SecurityManager} or
  * {@link org.apache.shiro.mgt.SubjectFactory SubjectFactory} implementation to construct {@code Subject} instances.
@@ -38,16 +38,16 @@ import java.util.Map;
  * The {@link SubjectContext} interface also allows for heuristic resolution of data used to construct a subject
  * instance.  That is, if an attribute has not been explicitly provided via a setter method, the {@code resolve*}
  * methods can use heuristics to obtain that data in another way from other attributes.
- * <p/>
+ * <p>
  * For example, if one calls {@link #getPrincipals()} and no principals are returned, perhaps the principals exist
  * in the {@link #getSession() session} or another attribute in the context.  The {@link #resolvePrincipals()} will know
  * how to resolve the principals based on heuristics.  If the {@code resolve*} methods return {@code null} then the
  * data could not be achieved by any heuristics and must be considered as not available in the context.
- * <p/>
+ * </p>
  * The general idea is that the normal getters can be called to see if the value was explicitly set.  The
  * {@code resolve*} methods should be used when actually constructing the {@code Subject} instance to ensure the most
  * specific/accurate data can be used.
- * <p/>
+ * <br>
  * <b>USAGE</b>: Most Shiro end-users will never use a {@code SubjectContext} instance directly and instead will use a
  * {@link Subject.Builder} (which internally uses a {@code SubjectContext}) and build {@code Subject} instances that
  * way.
@@ -87,7 +87,7 @@ public interface SubjectContext extends Map<String, Object> {
 
     /**
      * Returns the session id of the session that should be associated with the constructed {@link Subject} instance.
-     * <p/>
+     * <br>
      * The construction process is expected to resolve the session with the specified id and then construct the Subject
      * instance based on the resolved session.
      *
@@ -97,7 +97,7 @@ public interface SubjectContext extends Map<String, Object> {
 
     /**
      * Sets the session id of the session that should be associated with the constructed {@link Subject} instance.
-     * <p/>
+     * <br>
      * The construction process is expected to resolve the session with the specified id and then construct the Subject
      * instance based on the resolved session.
      *
@@ -109,7 +109,7 @@ public interface SubjectContext extends Map<String, Object> {
     /**
      * Returns any existing {@code Subject} that may be in use at the time the new {@code Subject} instance is
      * being created.
-     * <p/>
+     * <br>
      * This is typically used in the case where the existing {@code Subject} instance returned by
      * this method is unauthenticated and a new {@code Subject} instance is being created to reflect a successful
      * authentication - you want to return most of the state of the previous {@code Subject} instance when creating the
@@ -123,7 +123,7 @@ public interface SubjectContext extends Map<String, Object> {
     /**
      * Sets the existing {@code Subject} that may be in use at the time the new {@code Subject} instance is
      * being created.
-     * <p/>
+     * <br>
      * This is typically used in the case where the existing {@code Subject} instance returned by
      * this method is unauthenticated and a new {@code Subject} instance is being created to reflect a successful
      * authentication - you want to return most of the state of the previous {@code Subject} instance when creating the

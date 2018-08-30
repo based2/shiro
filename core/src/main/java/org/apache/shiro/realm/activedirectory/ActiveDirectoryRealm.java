@@ -90,7 +90,7 @@ public class ActiveDirectoryRealm extends AbstractLdapRealm {
      * Builds an {@link AuthenticationInfo} object by querying the active directory LDAP context for the
      * specified username.  This method binds to the LDAP server using the provided username and password -
      * which if successful, indicates that the password is correct.
-     * <p/>
+     * <br>
      * This method can be overridden by subclasses to query the LDAP server in a more complex way.
      *
      * @param token              the authentication token provided by the user.
@@ -122,9 +122,9 @@ public class ActiveDirectoryRealm extends AbstractLdapRealm {
      * Builds an {@link org.apache.shiro.authz.AuthorizationInfo} object by querying the active directory LDAP context for the
      * groups that a user is a member of.  The groups are then translated to role names by using the
      * configured {@link #groupRolesMap}.
-     * <p/>
+     * <br>
      * This implementation expects the <tt>principal</tt> argument to be a String username.
-     * <p/>
+     * <br>
      * Subclasses can override this method to determine authorization data (roles, permissions, etc) in a more
      * complex way.  Note that this default implementation does not support permissions, only roles.
      *

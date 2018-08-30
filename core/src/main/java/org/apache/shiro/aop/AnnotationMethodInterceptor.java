@@ -23,7 +23,7 @@ import java.lang.annotation.Annotation;
 /**
  * MethodInterceptor that inspects a specific annotation on the method invocation before continuing
  * its execution.
- * </p>
+ * <br>
  * The annotation is acquired from the {@link MethodInvocation MethodInvocation} via a
  * {@link AnnotationResolver AnnotationResolver} instance that may be configured.  Unless
  * overridden, the default {@code AnnotationResolver} is a
@@ -121,9 +121,9 @@ public abstract class AnnotationMethodInterceptor extends MethodInterceptorSuppo
     /**
      * Returns <code>true</code> if this interceptor supports, that is, should inspect, the specified
      * <code>MethodInvocation</code>, <code>false</code> otherwise.
-     * <p/>
+     * <p>
      * The default implementation simply does the following:
-     * <p/>
+     * </p>
      * <code>return {@link #getAnnotation(MethodInvocation) getAnnotation(mi)} != null</code>
      *
      * @param mi the <code>MethodInvocation</code> for the method being invoked.
@@ -136,7 +136,7 @@ public abstract class AnnotationMethodInterceptor extends MethodInterceptorSuppo
 
     /**
      * Returns the Annotation that this interceptor will process for the specified method invocation.
-     * <p/>
+     * <br>
      * The default implementation acquires the annotation using an annotation
      * {@link #getResolver resolver} using the internal annotation {@link #getHandler handler}'s
      * {@link org.apache.shiro.aop.AnnotationHandler#getAnnotationClass() annotationClass}.

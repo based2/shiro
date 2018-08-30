@@ -19,17 +19,17 @@
 /**
  * Components related to managing sessions, the time-based data contexts in which a Subject
  * interacts with an application.
- * <p/>
+ * <br>
  * Sessions in Shiro are completely POJO-based and do not <em>require</em> an application to use Web-based
  * or EJB-based session management infrastructure - the client and/or server technology is irrelevant in
  * Shiro's architecture, allowing session management to be employed in the smallest standalone application
  * to the largest enterprise deployments.
- * <p/>
+ * <br>
  * This design decision opens up a new world to Java applications - most notably the ability to participate in
  * a session regardless if the client is using HTTP, custom sockets, web services, or even non-Java programming
  * languages. Aside from Shiro, there is currently no technology in Java today allows this heterogenous
  * client-session capability.
- * <p/>
+ * <br>
  * Also because of this freedom, Shiro naturally supports Single Sign-On for any application as well, using
  * this heterogeneous session support.
  */

@@ -48,7 +48,7 @@ import java.util.Collection;
  * authentication, authorization, and session operations to wrapped {@link Authenticator}, {@link Authorizer}, and
  * {@link org.apache.shiro.session.mgt.SessionManager SessionManager} instances respectively via superclass
  * implementation.
- * <p/>
+ * <br>
  * To greatly reduce and simplify configuration, this implementation (and its superclasses) will
  * create suitable defaults for all of its required dependencies, <em>except</em> the required one or more
  * {@link Realm Realm}s.  Because {@code Realm} implementations usually interact with an application's data model,
@@ -56,12 +56,12 @@ import java.util.Collection;
  * {@code Realm} implementation that 'knows' about your application's data/security model
  * (via {@link #setRealm} or one of the overloaded constructors).  All other attributes in this class hierarchy
  * will have suitable defaults for most enterprise applications.
- * <p/>
+ * <br>
  * <b>RememberMe notice</b>: This class supports the ability to configure a
  * {@link #setRememberMeManager RememberMeManager}
  * for {@code RememberMe} identity services for login/logout, BUT, a default instance <em>will not</em> be created
  * for this attribute at startup.
- * <p/>
+ * <br>
  * Because RememberMe services are inherently client tier-specific and
  * therefore aplication-dependent, if you want {@code RememberMe} services enabled, you will have to specify an
  * instance yourself via the {@link #setRememberMeManager(RememberMeManager) setRememberMeManager}
@@ -189,7 +189,7 @@ public class DefaultSecurityManager extends SessionsSecurityManager {
 
     /**
      * Binds a {@code Subject} instance created after authentication to the application for later use.
-     * <p/>
+     * <br>
      * As of Shiro 1.2, this method has been deprecated in favor of {@link #save(org.apache.shiro.subject.Subject)},
      * which this implementation now calls.
      *
@@ -260,7 +260,7 @@ public class DefaultSecurityManager extends SessionsSecurityManager {
     /**
      * First authenticates the {@code AuthenticationToken} argument, and if successful, constructs a
      * {@code Subject} instance representing the authenticated account's identity.
-     * <p/>
+     * <br>
      * Once constructed, the {@code Subject} instance is then {@link #bind bound} to the application for
      * subsequent access before being returned to the caller.
      *
@@ -309,7 +309,6 @@ public class DefaultSecurityManager extends SessionsSecurityManager {
 
     /**
      * This implementation functions as follows:
-     * <p/>
      * <ol>
      * <li>Ensures the {@code SubjectContext} is as populated as it can be, using heuristics to acquire
      * data that may not have already been available to it (such as a referenced session or remembered principals).</li>
@@ -375,7 +374,7 @@ public class DefaultSecurityManager extends SessionsSecurityManager {
 
     /**
      * Saves the subject's state to a persistent location for future reference if necessary.
-     * <p/>
+     * <br>
      * This implementation merely delegates to the internal {@link #setSubjectDAO(SubjectDAO) subjectDAO} and calls
      * {@link SubjectDAO#save(org.apache.shiro.subject.Subject) subjectDAO.save(subject)}.
      *
@@ -389,7 +388,7 @@ public class DefaultSecurityManager extends SessionsSecurityManager {
 
     /**
      * Removes (or 'unbinds') the Subject's state from the application, typically called during {@link #logout}..
-     * <p/>
+     * <br>
      * This implementation merely delegates to the internal {@link #setSubjectDAO(SubjectDAO) subjectDAO} and calls
      * {@link SubjectDAO#delete(org.apache.shiro.subject.Subject) delete(subject)}.
      *
@@ -425,7 +424,7 @@ public class DefaultSecurityManager extends SessionsSecurityManager {
      * Attempts to resolve any associated session based on the context and returns a
      * context that represents this resolved {@code Session} to ensure it may be referenced if necessary by the
      * invoked {@link SubjectFactory} that performs actual {@link Subject} construction.
-     * <p/>
+     * <br>
      * If there is a {@code Session} already in the context because that is what the caller wants to be used for
      * {@code Subject} construction, or if no session is resolved, this method effectively does nothing
      * returns the context method argument unaltered.
@@ -592,7 +591,7 @@ public class DefaultSecurityManager extends SessionsSecurityManager {
 
     /**
      * Unbinds or removes the Subject's state from the application, typically called during {@link #logout}.
-     * <p/>
+     * <br>
      * This has been deprecated in Shiro 1.2 in favor of the {@link #delete(org.apache.shiro.subject.Subject) delete}
      * method.  The implementation has been updated to invoke that method.
      *

@@ -33,8 +33,8 @@ import org.slf4j.LoggerFactory;
  * Helper class that simplifies JNDI operations. It provides methods to lookup and
  * bind objects, and allows implementations of the {@link JndiCallback} interface
  * to perform any operation they like with a JNDI naming context provided.
- * <p/>
- * <p>Note that this implementation is an almost exact copy of the Spring Framework's identically named class from
+ * <br>
+ * Note that this implementation is an almost exact copy of the Spring Framework's identically named class from
  * their 2.5.4 distribution - we didn't want to re-invent the wheel, but not require a full dependency on the
  * Spring framework, nor does Spring make available only its JNDI classes in a small jar, or we would have used that.
  * Since Shiro is also Apache 2.0 licensed, all regular licenses and conditions and authors have remained in tact.

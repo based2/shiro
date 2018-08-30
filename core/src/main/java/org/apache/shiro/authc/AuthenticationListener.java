@@ -45,7 +45,7 @@ public interface AuthenticationListener {
 
     /**
      * Callback triggered when a {@code Subject} logs-out of the system.
-     * <p/>
+     * <br>
      * This method will only be triggered when a Subject explicitly logs-out of the session.  It will not
      * be triggered if their Session times out.
      *

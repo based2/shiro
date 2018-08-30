@@ -24,7 +24,7 @@ import org.apache.shiro.crypto.hash.Hash;
 
 /**
  * A {@link CredentialsMatcher} that employs best-practices comparisons for hashed text passwords.
- * <p/>
+ * <br>
  * This implementation delegates to an internal {@link PasswordService} to perform the actual password
  * comparison.  This class is essentially a bridge between the generic CredentialsMatcher interface and the
  * more specific {@code PasswordService} component.

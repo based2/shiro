@@ -33,11 +33,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * A very basic abstract extension point for the {@link Realm} interface that provides caching support for subclasses.
- * <p/>
+ * <br>
  * It also provides a convenience method,
  * {@link #getAvailablePrincipal(org.apache.shiro.subject.PrincipalCollection)}, which is useful across all
  * realm subclasses for obtaining a realm-specific principal/identity.
- * <p/>
+ * <br>
  * All actual Realm method implementations are left to subclasses.
  *
  * @see #clearCache(org.apache.shiro.subject.PrincipalCollection)
@@ -64,7 +64,7 @@ public abstract class CachingRealm implements Realm, Nameable, CacheManagerAware
      * Default no-argument constructor that defaults
      * {@link #isCachingEnabled() cachingEnabled} (for general caching) to {@code true} and sets a
      * default {@link #getName() name} based on the class name.
-     * <p/>
+     * <br>
      * Note that while in general, caching may be enabled by default, subclasses have control over
      * if specific caching is enabled.
      */
@@ -86,7 +86,7 @@ public abstract class CachingRealm implements Realm, Nameable, CacheManagerAware
 
     /**
      * Sets the <tt>CacheManager</tt> to be used for data caching to reduce EIS round trips.
-     * <p/>
+     * <br>
      * This property is <tt>null</tt> by default, indicating that caching is turned off.
      *
      * @param cacheManager the <tt>CacheManager</tt> to use for data caching, or <tt>null</tt> to disable caching.
@@ -99,7 +99,7 @@ public abstract class CachingRealm implements Realm, Nameable, CacheManagerAware
     /**
      * Returns {@code true} if caching should be used if a {@link CacheManager} has been
      * {@link #setCacheManager(org.apache.shiro.cache.CacheManager) configured}, {@code false} otherwise.
-     * <p/>
+     * <br>
      * The default value is {@code true} since the large majority of Realms will benefit from caching if a CacheManager
      * has been configured.  However, memory-only realms should set this value to {@code false} since they would
      * manage account data in memory already lookups would already be as efficient as possible.
@@ -140,7 +140,7 @@ public abstract class CachingRealm implements Realm, Nameable, CacheManagerAware
     /**
      * If caching is enabled, this will clear any cached data associated with the specified account identity.
      * Subclasses are free to override for additional behavior, but be sure to call {@code super.onLogout} first.
-     * <p/>
+     * <br>
      * This default implementation merely calls {@link #clearCache(org.apache.shiro.subject.PrincipalCollection)}.
      *
      * @param principals the application-specific Subject/user identifier that is logging out.
@@ -158,7 +158,7 @@ public abstract class CachingRealm implements Realm, Nameable, CacheManagerAware
 
     /**
      * Clears out any cached data associated with the specified account identity/identities.
-     * <p/>
+     * <br>
      * This implementation will return quietly if the principals argument is null or empty.  Otherwise it delegates
      * to {@link #doClearCache(org.apache.shiro.subject.PrincipalCollection)}.
      *

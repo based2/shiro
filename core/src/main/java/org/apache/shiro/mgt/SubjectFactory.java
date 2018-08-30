@@ -34,7 +34,7 @@ public interface SubjectFactory {
      * Creates a new Subject instance reflecting the state of the specified contextual data.  The data would be
      * anything required to required to construct a {@code Subject} instance and its contents can vary based on
      * environment.
-     * <p/>
+     * <br>
      * Any data supported by Shiro core will be accessible by one of the {@code SubjectContext}'s {@code get*}
      * or {@code resolve*} methods.  All other data is available as map {@link Map#get attribute}s.
      *

@@ -50,12 +50,12 @@ import java.util.Set;
  * Realm that allows authentication and authorization via JDBC calls.  The default queries suggest a potential schema
  * for retrieving the user's password for authentication, and querying for a user's roles and permissions.  The
  * default queries can be overridden by setting the query properties of the realm.
- * <p/>
+ * <br>
  * If the default implementation
  * of authentication and authorization cannot handle your schema, this class can be subclassed and the
  * appropriate methods overridden. (usually {@link #doGetAuthenticationInfo(org.apache.shiro.authc.AuthenticationToken)},
  * {@link #getRoleNamesForUser(java.sql.Connection,String)}, and/or {@link #getPermissions(java.sql.Connection,String,java.util.Collection)}
- * <p/>
+ * <br>
  * This realm supports caching by extending from {@link org.apache.shiro.realm.AuthorizingRealm}.
  *
  * @since 0.2
@@ -166,7 +166,7 @@ public class JdbcRealm extends AuthorizingRealm {
      * name, and the permission actions (in that order).  If you require a solution that does not match this query
      * structure, you can override {@link #doGetAuthorizationInfo(org.apache.shiro.subject.PrincipalCollection)} or just
      * {@link #getPermissions(java.sql.Connection,String,java.util.Collection)}</p>
-     * <p/>
+<br>
      * <b>Permissions are only retrieved if you set {@link #permissionsLookupEnabled} to true.  Otherwise,
      * this query is ignored.</b>
      *

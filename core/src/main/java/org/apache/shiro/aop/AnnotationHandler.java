@@ -48,7 +48,7 @@ public abstract class AnnotationHandler {
 
     /**
      * Returns the {@link org.apache.shiro.subject.Subject Subject} associated with the currently-executing code.
-     * <p/>
+     * <br>
      * This default implementation merely calls <code>{@link org.apache.shiro.SecurityUtils#getSubject SecurityUtils.getSubject()}</code>.
      *
      * @return the {@link org.apache.shiro.subject.Subject Subject} associated with the currently-executing code.

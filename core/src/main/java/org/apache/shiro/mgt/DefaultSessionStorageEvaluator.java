@@ -50,7 +50,7 @@ public class DefaultSessionStorageEvaluator implements SessionStorageEvaluator {
      * </ul></li>
      * </ul>
      * Most applications use Sessions and are OK with the default {@code true} setting for {@code sessionStorageEnabled}.
-     * <p/>
+     * <br>
      * However, if your application is a purely 100% stateless application that never uses sessions,
      * you will want to set {@code sessionStorageEnabled} to {@code false}.  Realize that a {@code false} value will
      * ensure that any subject login only retains the authenticated identity for the duration of a request.  Any other
@@ -66,7 +66,7 @@ public class DefaultSessionStorageEvaluator implements SessionStorageEvaluator {
     /**
      * Returns {@code true} if any Subject's {@code Session} may be used to persist that {@code Subject}'s state,
      * {@code false} otherwise.  The default value is {@code true}.
-     * <p/>
+     * <br>
      * <b>N.B.</b> This is a global configuration setting; setting this value to {@code false} will disable sessions
      * to persist Subject state for all Subjects that do not already have a Session.  It should typically only be set
      * to {@code false} for 100% stateless applications (e.g. when sessions aren't used or when remote clients
@@ -82,7 +82,7 @@ public class DefaultSessionStorageEvaluator implements SessionStorageEvaluator {
     /**
      * Sets if any Subject's {@code Session} may be used to persist that {@code Subject}'s state.  The
      * default value is {@code true}.
-     * <p/>
+     * <br>
      * <b>N.B.</b> This is a global configuration setting; setting this value to {@code false} will disable sessions
      * to persist Subject state for all Subjects that do not already have a Session.  It should typically only be set
      * to {@code false} for 100% stateless applications (e.g. when sessions aren't used or when remote clients

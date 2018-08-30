@@ -93,10 +93,10 @@ public abstract class AbstractValidatingSessionManager extends AbstractNativeSes
      * never called) , this method allows one to specify how
      * frequently session should be validated (to check for orphans).  The default value is
      * {@link #DEFAULT_SESSION_VALIDATION_INTERVAL}.
-     * <p/>
+     * <br>
      * If you override the default scheduler, it is assumed that overriding instance 'knows' how often to
      * validate sessions, and this attribute will be ignored.
-     * <p/>
+     * <br>
      * Unless this method is called, the default value is {@link #DEFAULT_SESSION_VALIDATION_INTERVAL}.
      *
      * @param sessionValidationInterval the time in milliseconds between checking for valid sessions to reap orphans.

@@ -37,10 +37,10 @@ import org.apache.shiro.util.LifecycleUtils;
  * {@link org.apache.shiro.session.mgt.SessionManager SessionManager} instance.  That is, this class implements the
  * methods in the {@link SessionManager SessionManager} interface, but in reality, those methods are merely
  * passthrough calls to the underlying 'real' {@code SessionManager} instance.
- * <p/>
+ * <br>
  * The remaining {@code SecurityManager} methods not implemented by this class or its parents are left to be
  * implemented by subclasses.
- * <p/>
+ * <br>
  * In keeping with the other classes in this hierarchy and Shiro's desire to minimize configuration whenever
  * possible, suitable default instances for all dependencies will be created upon instantiation.
  *
@@ -67,11 +67,11 @@ public abstract class SessionsSecurityManager extends AuthorizingSecurityManager
     /**
      * Sets the underlying delegate {@link SessionManager} instance that will be used to support this implementation's
      * <tt>SessionManager</tt> method calls.
-     * <p/>
+     * <br>
      * This <tt>SecurityManager</tt> implementation does not provide logic to support the inherited
      * <tt>SessionManager</tt> interface, but instead delegates these calls to an internal
      * <tt>SessionManager</tt> instance.
-     * <p/>
+     * <br>
      * If a <tt>SessionManager</tt> instance is not set, a default one will be automatically created and
      * initialized appropriately for the the existing runtime environment.
      *
@@ -122,7 +122,7 @@ public abstract class SessionsSecurityManager extends AuthorizingSecurityManager
     /**
      * Ensures the internal delegate <code>SessionManager</code> is injected with the newly set
      * {@link #setCacheManager CacheManager} so it may use it for its internal caching needs.
-     * <p/>
+     * <br>
      * Note:  This implementation only injects the CacheManager into the SessionManager if the SessionManager
      * instance implements the {@link CacheManagerAware CacheManagerAware} interface.
      */
@@ -135,7 +135,7 @@ public abstract class SessionsSecurityManager extends AuthorizingSecurityManager
     /**
      * Ensures the internal delegate <code>SessionManager</code> is injected with the newly set
      * {@link #setEventBus EventBus} so it may use it for its internal event needs.
-     * <p/>
+     * <br>
      * Note: This implementation only injects the EventBus into the SessionManager if the SessionManager
      * instance implements the {@link EventBusAware EventBusAware} interface.
      *

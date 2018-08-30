@@ -41,7 +41,7 @@ import javax.naming.ldap.LdapContext;
  * <a href="http://download-llnw.oracle.com/javase/tutorial/jndi/ldap/jndi.html">JNDI API as an LDAP API</a>.  This is
  * Shiro's default implementation for supporting LDAP, as using the JNDI API has been a common approach for Java LDAP
  * support for many years.
- * <p/>
+ * <br>
  * This realm implementation and its backing {@link JndiLdapContextFactory} should cover 99% of all Shiro-related LDAP
  * authentication and authorization needs.  However, if it does not suit your needs, you might want to look into
  * creating your own realm using an alternative, perhaps more robust, LDAP communication API, such as the
@@ -62,7 +62,7 @@ import javax.naming.ldap.LdapContext;
  * This class primarily provides the {@link #setUserDnTemplate(String) userDnTemplate} property to allow you to specify
  * the your LDAP server's User DN format.  Most other configuration is performed via the nested
  * {@link LdapContextFactory contextFactory} property.
- * <p/>
+ * <br>
  * For example, defining this realm in Shiro .ini:
  * <pre>
  * [main]
@@ -164,7 +164,7 @@ public class DefaultLdapRealm extends AuthorizingRealm {
      * <pre>uid=jsmith,ou=users,dc=mycompany,dc=com</pre>
      * <br>
      * in which case you would set this property with the following template value:
-     * <p>
+     * <br>
      * <pre>uid=<b>{0}</b>,ou=users,dc=mycompany,dc=com</pre>
      * <br>
      * If no template is configured, the raw {@code AuthenticationToken}
@@ -211,7 +211,7 @@ public class DefaultLdapRealm extends AuthorizingRealm {
     /**
      * Returns the LDAP User Distinguished Name (DN) to use when acquiring an
      * {@link javax.naming.ldap.LdapContext LdapContext} from the {@link LdapContextFactory}.
-     * <p/>
+     * <br>
      * If the the {@link #getUserDnTemplate() userDnTemplate} property has been set, this implementation will construct
      * the User DN by substituting the specified {@code principal} into the configured template.  If the
      * {@link #getUserDnTemplate() userDnTemplate} has not been set, the method argument will be returned directly
@@ -320,13 +320,13 @@ public class DefaultLdapRealm extends AuthorizingRealm {
 
     /**
      * Returns the principal to use when creating the LDAP connection for an authentication attempt.
-     * <p/>
+     * <br>
      * This implementation uses a heuristic: it checks to see if the specified token's
      * {@link AuthenticationToken#getPrincipal() principal} is a {@code String}, and if so,
      * {@link #getUserDn(String) converts it} from what is
      * assumed to be a raw uid or username {@code String} into a User DN {@code String}.  Almost all LDAP directories
      * expect the authentication connection to present a User DN and not an unqualified username or uid.
-     * <p/>
+     * <br>
      * If the token's {@code principal} is not a String, it is assumed to already be in the format supported by the
      * underlying {@link LdapContextFactory} implementation and the raw principal is returned directly.
      *
@@ -381,13 +381,13 @@ public class DefaultLdapRealm extends AuthorizingRealm {
 
     /**
      * Returns the {@link AuthenticationInfo} resulting from a Subject's successful LDAP authentication attempt.
-     * <p/>
+     * <br>
      * This implementation ignores the {@code ldapPrincipal}, {@code ldapCredentials}, and the opened
      * {@code ldapContext} arguments and merely returns an {@code AuthenticationInfo} instance mirroring the
      * submitted token's principal and credentials.  This is acceptable because this method is only ever invoked after
      * a successful authentication attempt, which means the provided principal and credentials were correct, and can
      * be used directly to populate the (now verified) {@code AuthenticationInfo}.
-     * <p/>
+     * <br>
      * Subclasses however are free to override this method for more advanced construction logic.
      *
      * @param token           the submitted {@code AuthenticationToken} that resulted in a successful authentication

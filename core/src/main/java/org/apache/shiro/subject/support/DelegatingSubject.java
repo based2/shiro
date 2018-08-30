@@ -48,12 +48,12 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * Implementation of the {@code Subject} interface that delegates
  * method calls to an underlying {@link org.apache.shiro.mgt.SecurityManager SecurityManager} instance for security checks.
  * It is essentially a {@code SecurityManager} proxy.
- * <p/>
+ * <p>
  * This implementation does not maintain state such as roles and permissions (only {@code Subject}
  * {@link #getPrincipals() principals}, such as usernames or user primary keys) for better performance in a stateless
  * architecture.  It instead asks the underlying {@code SecurityManager} every time to perform
  * the authorization check.
- * <p/>
+ * </p>
  * A common misconception in using this implementation is that an EIS resource (RDBMS, etc) would
  * be &quot;hit&quot; every time a method is called.  This is not necessarily the case and is
  * up to the implementation of the underlying {@code SecurityManager} instance.  If caching of authorization
@@ -61,7 +61,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * much more elegant to let the underlying {@code SecurityManager} implementation or its delegate components
  * manage caching, not this class.  A {@code SecurityManager} is considered a business-tier component,
  * where caching strategies are better managed.
- * <p/>
+ * <br>
  * Applications from large and clustered to simple and JVM-local all benefit from
  * stateless architectures.  This implementation plays a part in the stateless programming
  * paradigm and should be used whenever possible.

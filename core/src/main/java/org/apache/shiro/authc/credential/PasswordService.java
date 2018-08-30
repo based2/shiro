@@ -22,7 +22,7 @@ import org.apache.shiro.util.ByteSource;
 
 /**
  * A {@code PasswordService} supports common use cases when using passwords as a credentials mechanism.
- * <p/>
+ * <br>
  * Most importantly, implementations of this interface are expected to employ best-practices to ensure that
  * passwords remain as safe as possible in application environments.
  * <h2>Usage</h2>
@@ -49,7 +49,7 @@ import org.apache.shiro.util.ByteSource;
  * have to configure a {@link PasswordMatcher} on a realm that has password-based accounts.   During a login attempt,
  * shiro will use the {@code PasswordMatcher} and the {@code PasswordService} to automatically compare submitted
  * passwords.
- * <p/>
+ * <br>
  * For example, if using Shiro's INI, here is how you might configure the PasswordMatcher and PasswordService:
  * <pre>
  * [main]
@@ -122,7 +122,7 @@ public interface PasswordService {
      * String or character array representing passwords (character arrays are often a safer way to represent passwords
      * as they can be cleared/nulled-out after use.  Any argument type supported by
      * {@link ByteSource.Util#isCompatible(Object)} is valid.
-     * <p/>
+     * <br>
      * For example:
      * <pre>
      * String submittedPassword = ...

@@ -62,7 +62,7 @@ public abstract class AnnotationsAuthorizingMethodInterceptor extends Authorizin
 
     /**
      * Returns the method interceptors to execute for the annotated method.
-     * <p/>
+     * <br>
      * Unless overridden by the {@link #setMethodInterceptors(java.util.Collection)} method, the default collection
      * contains a
      * {@link RoleAnnotationMethodInterceptor RoleAnnotationMethodInterceptor} and a

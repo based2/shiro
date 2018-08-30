@@ -38,11 +38,11 @@ import java.util.Set;
 /**
  * A SimpleAccountRealm that enables text-based configuration of the initial User, Role, and Permission objects
  * created at startup.
- * <p/>
+ * <br>
  * Each User account definition specifies the username, password, and roles for a user.  Each Role definition
  * specifies a name and an optional collection of assigned Permissions.  Users can be assigned Roles, and Roles can be
  * assigned Permissions.  By transitive association, each User 'has' all of their Role's Permissions.
- * <p/>
+ * <br>
  * User and user-to-role definitions are specified via the {@link #setUserDefinitions} method and
  * Role-to-permission definitions are specified via the {@link #setRoleDefinitions} method.
  *
@@ -103,9 +103,7 @@ public class TextConfigurationRealm extends SimpleAccountRealm {
      * Sets a newline (\n) delimited String that defines role-to-permission definitions.
      * <p>Each line within the string must define a role-to-permission(s) key/value mapping with the
      * equals character signifies the key/value separation, like so:</p>
-     * </p>
      * <p><code><em>rolename</em> = <em>permissionDefinition1</em>, <em>permissionDefinition2</em>, ...</code></p>
-     * </p>
      * <p>where <em>permissionDefinition</em> is an arbitrary String, but must people will want to use
      * Strings that conform to the {@link org.apache.shiro.authz.permission.WildcardPermission WildcardPermission}
      * format for ease of use and flexibility.  Note that if an individual <em>permissionDefinition</em> needs to

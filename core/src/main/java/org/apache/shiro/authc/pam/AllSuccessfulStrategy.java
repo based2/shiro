@@ -31,8 +31,7 @@ import org.apache.shiro.realm.Realm;
 /**
  * <tt>AuthenticationStrategy</tt> implementation that requires <em>all</em> configured realms to
  * <b>successfully</b> process the submitted <tt>AuthenticationToken</tt> during the log-in attempt.
- * <p/>
- * <p>If one or more realms do not support the submitted token, or one or more are unable to acquire
+ * <br>If one or more realms do not support the submitted token, or one or more are unable to acquire
  * <tt>AuthenticationInfo</tt> for the token, this implementation will immediately fail the log-in attempt for the
  * associated subject (user).
  *

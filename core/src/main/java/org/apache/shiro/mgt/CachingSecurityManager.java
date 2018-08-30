@@ -30,7 +30,7 @@ import org.apache.shiro.util.LifecycleUtils;
 /**
  * A very basic starting point for the SecurityManager interface that merely provides logging and caching
  * support.  All actual {@code SecurityManager} method implementations are left to subclasses.
- * <p/>
+ * <br>
  * <b>Change in 1.0</b> - a default {@code CacheManager} instance is <em>not</em> created by default during
  * instantiation.  As caching strategies can vary greatly depending on an application's needs, a {@code CacheManager}
  * instance must be explicitly configured if caching across the framework is to be enabled.
@@ -70,7 +70,7 @@ public abstract class CachingSecurityManager implements SecurityManager, Destroy
     /**
      * Sets the CacheManager used by this {@code SecurityManager} and potentially any of its
      * children components.
-     * <p/>
+     * <br>
      * After the cacheManager attribute has been set, the template method
      * {@link #afterCacheManagerSet afterCacheManagerSet()} is executed to allow subclasses to adjust when a
      * cacheManager is available.
@@ -105,7 +105,7 @@ public abstract class CachingSecurityManager implements SecurityManager, Destroy
     /**
      * Sets the EventBus used by this {@code SecurityManager} and potentially any of its
      * children components.
-     * <p/>
+     * <br>
      * After the eventBus attribute has been set, the template method
      * {@link #afterEventBusSet() afterEventBusSet()} is executed to allow subclasses to adjust when a
      * eventBus is available.

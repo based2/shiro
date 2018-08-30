@@ -40,12 +40,12 @@ import java.util.Map;
  * {@link #getLdapContext(Object, Object)} method implementation merges this default template with other properties
  * accessible at runtime only (for example per-method principals and credentials).  The constructed runtime map is the
  * one used to acquire the {@link LdapContext}.
- * <p/>
+ * <br>
  * The template can be configured directly via the {@link #getEnvironment()}/{@link #setEnvironment(java.util.Map)}
  * properties directly if necessary, but it is usually more convenient to use the supporting wrapper get/set methods
  * for various environment properties.  These wrapper methods interact with the environment
  * template on your behalf, leaving your configuration cleaner and easier to understand.
- * <p/>
+ * <br>
  * For example, consider the following two identical configurations:
  * <pre>
  * [main]
@@ -62,7 +62,7 @@ import java.util.Map;
  * </pre>
  * As you can see, the 2nd configuration block is a little more difficult to read and also requires knowledge
  * of the underlying JNDI Context property keys.  The first is easier to read and understand.
- * <p/>
+ * <br>
  * Note that occasionally it will be necessary to use the latter configuration style to set environment properties
  * where no corresponding wrapper method exists.  In this case, the hybrid approach is still a little easier to read.
  * For example:
@@ -125,7 +125,7 @@ public class JndiLdapContextFactory implements LdapContextFactory {
      * Sets the type of LDAP authentication mechanism to use when connecting to the LDAP server.
      * This is a wrapper method for setting the JNDI {@link #getEnvironment() environment template}'s
      * {@link Context#SECURITY_AUTHENTICATION} property.
-     * <p/>
+     * <br>
      * "none" (i.e. anonymous) and "simple" authentications are supported automatically and don't need to be configured
      * via this property.  However, if you require a different mechanism, such as a SASL or External mechanism, you
      * must configure that explicitly via this property.  See the
@@ -144,7 +144,7 @@ public class JndiLdapContextFactory implements LdapContextFactory {
      * Returns the type of LDAP authentication mechanism to use when connecting to the LDAP server.
      * This is a wrapper method for getting the JNDI {@link #getEnvironment() environment template}'s
      * {@link Context#SECURITY_AUTHENTICATION} property.
-     * <p/>
+     * <br>
      * If this property remains un-configured (i.e. {@code null} indicating the
      * {@link #setAuthenticationMechanism(String)} method wasn't used), this indicates that the default JNDI
      * "none" (anonymous) and "simple" authentications are supported automatically.  Any non-null value returned
@@ -163,7 +163,7 @@ public class JndiLdapContextFactory implements LdapContextFactory {
     /**
      * The name of the ContextFactory class to use. This defaults to the SUN LDAP JNDI implementation
      * but can be overridden to use custom LDAP factories.
-     * <p/>
+     * <br>
      * This is a wrapper method for setting the JNDI environment's {@link Context#INITIAL_CONTEXT_FACTORY} property.
      *
      * @param contextFactoryClassName the context factory that should be used.
@@ -175,7 +175,7 @@ public class JndiLdapContextFactory implements LdapContextFactory {
     /**
      * Sets the name of the ContextFactory class to use. This defaults to the SUN LDAP JNDI implementation
      * but can be overridden to use custom LDAP factories.
-     * <p/>
+     * <br>
      * This is a wrapper method for getting the JNDI environment's {@link Context#INITIAL_CONTEXT_FACTORY} property.
      *
      * @return the name of the ContextFactory class to use.
@@ -190,7 +190,7 @@ public class JndiLdapContextFactory implements LdapContextFactory {
      * merged with appropriate runtime values as necessary in the
      * {@link #getLdapContext(Object, Object)} implementation.  The merged environment instance is what is used to
      * acquire the {@link LdapContext} at runtime.
-     * <p/>
+     * <br>
      * Most other get/set methods in this class act as thin proxy wrappers that interact with this property.  The
      * benefit of using them is you have an easier-to-use configuration mechanism compared to setting map properties
      * based on JNDI context keys.
@@ -206,7 +206,7 @@ public class JndiLdapContextFactory implements LdapContextFactory {
      * to use the other get/set methods in this class to set individual environment settings rather than use
      * this method, but it is available for advanced users that want full control over the base JNDI environment
      * settings.
-     * <p/>
+     * <br>
      * Note that this template only represents the base/default environment settings.  It is then merged with
      * appropriate runtime values as necessary in the {@link #getLdapContext(Object, Object)} implementation.
      * The merged environment instance is what is used to acquire the connection ({@link LdapContext}) at runtime.
@@ -247,12 +247,12 @@ public class JndiLdapContextFactory implements LdapContextFactory {
      * Returns whether or not connection pooling should be used when possible and appropriate.  This property is NOT
      * backed by the {@link #getEnvironment() environment template} like most other properties in this class.  It
      * is a flag to indicate that pooling is preferred.  The default value is {@code true}.
-     * <p/>
+     * <br>
      * However, pooling will only actually be enabled if this property is {@code true} <em>and</em> the connection
      * being created is for the {@link #getSystemUsername() systemUsername} user.  Connection pooling is not used for
      * general authentication attempts by application end-users because the probability of re-use for that same
      * user-specific connection after an authentication attempt is extremely low.
-     * <p/>
+     * <br>
      * If this attribute is {@code true} and it has been determined that the connection is being made with the
      * {@link #getSystemUsername() systemUsername}, the
      * {@link #getLdapContext(Object, Object)} implementation will set the Sun/Oracle-specific
@@ -270,12 +270,12 @@ public class JndiLdapContextFactory implements LdapContextFactory {
      * Sets whether or not connection pooling should be used when possible and appropriate.  This property is NOT
      * a wrapper to the {@link #getEnvironment() environment template} like most other properties in this class.  It
      * is a flag to indicate that pooling is preferred.  The default value is {@code true}.
-     * <p/>
+     * <br>
      * However, pooling will only actually be enabled if this property is {@code true} <em>and</em> the connection
      * being created is for the {@link #getSystemUsername() systemUsername} user.  Connection pooling is not used for
      * general authentication attempts by application end-users because the probability of re-use for that same
      * user-specific connection after an authentication attempt is extremely low.
-     * <p/>
+     * <br>
      * If this attribute is {@code true} and it has been determined that the connection is being made with the
      * {@link #getSystemUsername() systemUsername}, the
      * {@link #getLdapContext(Object, Object)} implementation will set the Sun/Oracle-specific
@@ -334,7 +334,7 @@ public class JndiLdapContextFactory implements LdapContextFactory {
     /**
      * Sets the password of the {@link #setSystemUsername(String) systemUsername} that will be used when creating an
      * LDAP connection used for authorization queries.
-     * <p/>
+     * <br>
      * Note that setting this property is not required if the calling LDAP Realm does not perform authorization
      * checks.
      *
@@ -348,7 +348,7 @@ public class JndiLdapContextFactory implements LdapContextFactory {
     /**
      * Returns the password of the {@link #setSystemUsername(String) systemUsername} that will be used when creating an
      * LDAP connection used for authorization queries.
-     * <p/>
+     * <br>
      * Note that setting this property is not required if the calling LDAP Realm does not perform authorization
      * checks.
      *
@@ -362,7 +362,7 @@ public class JndiLdapContextFactory implements LdapContextFactory {
     /**
      * Sets the system username that will be used when creating an LDAP connection used for authorization queries.
      * The user must have the ability to query for authorization data for any application user.
-     * <p/>
+     * <br>
      * Note that setting this property is not required if the calling LDAP Realm does not perform authorization
      * checks.
      *
@@ -376,7 +376,7 @@ public class JndiLdapContextFactory implements LdapContextFactory {
     /**
      * Returns the system username that will be used when creating an LDAP connection used for authorization queries.
      * The user must have the ability to query for authorization data for any application user.
-     * <p/>
+     * <br>
      * Note that setting this property is not required if the calling LDAP Realm does not perform authorization
      * checks.
      *
@@ -421,7 +421,7 @@ public class JndiLdapContextFactory implements LdapContextFactory {
     /**
      * Returns {@code true} if LDAP connection pooling should be used when acquiring a connection based on the specified
      * account principal, {@code false} otherwise.
-     * <p/>
+     * <br>
      * This implementation returns {@code true} only if {@link #isPoolingEnabled()} and the principal equals the
      * {@link #getSystemUsername()}.  The reasoning behind this is that connection pooling is not desirable for
      * general authentication attempts by application end-users because the probability of re-use for that same
@@ -440,7 +440,7 @@ public class JndiLdapContextFactory implements LdapContextFactory {
      * The environnmet (Map) used at runtime is created by merging the default/configured
      * {@link #getEnvironment() environment template} with some runtime values as necessary (e.g. a principal and
      * credential available at runtime only).
-     * <p/>
+     * <br>
      * After the merged Map instance is created, the LdapContext connection is
      * {@link #createLdapContext(java.util.Hashtable) created} and returned.
      *
@@ -512,7 +512,7 @@ public class JndiLdapContextFactory implements LdapContextFactory {
     /**
      * Validates the configuration in the JNDI <code>environment</code> settings and throws an exception if a problem
      * exists.
-     * <p/>
+     * <br>
      * This implementation will throw a {@link AuthenticationException} if the authentication mechanism is set to
      * 'simple', the principal is non-empty, and the credentials are empty (as per
      * <a href="http://tools.ietf.org/html/rfc4513#section-5.1.2">rfc4513 section-5.1.2</a>).

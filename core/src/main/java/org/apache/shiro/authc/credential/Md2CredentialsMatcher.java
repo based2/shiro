@@ -26,12 +26,12 @@ import org.apache.shiro.crypto.hash.Md2Hash;
 /**
  * {@code HashedCredentialsMatcher} implementation that expects the stored {@code AuthenticationInfo} credentials to be
  * MD2 hashed.
- * <p/>
+ * <br>
  * <b>Note:</b> the MD2, <a href="http://en.wikipedia.org/wiki/MD5">MD5</a> and
  * <a href="http://en.wikipedia.org/wiki/SHA_hash_functions">SHA-1</a> algorithms are now known to be vulnerable to
  * compromise and/or collisions (read the linked pages for more).  While most applications are ok with either of these
  * two, if your application mandates high security, use the SHA-256 (or higher) hashing algorithms and their
- * supporting <code>CredentialsMatcher</code> implementations.</p>
+ * supporting <code>CredentialsMatcher</code> implementations.
  *
  * @since 0.9
  * @deprecated since 1.1 - use the HashedCredentialsMatcher directly and set its

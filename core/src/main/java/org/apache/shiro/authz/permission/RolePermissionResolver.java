@@ -25,7 +25,7 @@ import java.util.Collection;
 /**
  * A RolePermissionResolver resolves a String value and converts it into a Collection of
  * {@link org.apache.shiro.authz.Permission} instances.
- * <p/>
+ * <br>
  * In some cases a {@link org.apache.shiro.realm.Realm} my only be able to return a list of roles.  This
  * component allows an application to resolve the roles into permissions.
  *

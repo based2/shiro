@@ -36,7 +36,7 @@ import java.io.Serializable;
  * generator (default or custom) will want to call the
  * {@link #generateSessionId(org.apache.shiro.session.Session)} method from within their {@link #doCreate}
  * implementations.
- * <p/>
+ * <br>
  * Subclass implementations that rely on the EIS data store to generate the ID automatically (e.g. when the session
  * ID is also an auto-generated primary key), they can simply ignore the {@code SessionIdGenerator} concept
  * entirely and just return the data store's ID from the {@link #doCreate} implementation.
@@ -86,12 +86,12 @@ public abstract class AbstractSessionDAO implements SessionDAO {
      * Generates a new ID to be applied to the specified {@code session} instance.  This method is usually called
      * from within a subclass's {@link #doCreate} implementation where they assign the returned id to the session
      * instance and then create a record with this ID in the EIS data store.
-     * <p/>
+     * <br>
      * Subclass implementations backed by EIS data stores that auto-generate IDs during record creation, such as
      * relational databases, don't need to use this method or the {@link #getSessionIdGenerator() sessionIdGenerator}
      * attribute - they can simply return the data store's generated ID from the {@link #doCreate} implementation
      * if desired.
-     * <p/>
+     * <br>
      * This implementation uses the {@link #setSessionIdGenerator configured} {@link SessionIdGenerator} to create
      * the ID.
      *
@@ -136,7 +136,7 @@ public abstract class AbstractSessionDAO implements SessionDAO {
      * assign a generated session ID to the session instance directly.  This method is not used by the
      * {@code AbstractSessionDAO} implementation directly, but it is provided so subclasses don't
      * need to know the {@code Session} implementation if they don't need to.
-     * <p/>
+     * <br>
      * This default implementation casts the argument to a {@link SimpleSession}, Shiro's default EIS implementation.
      *
      * @param session   the session instance to which the sessionId will be applied

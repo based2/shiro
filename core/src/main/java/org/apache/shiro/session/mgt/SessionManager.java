@@ -32,7 +32,7 @@ public interface SessionManager {
     /**
      * Starts a new session based on the specified contextual initialization data, which can be used by the underlying
      * implementation to determine how exactly to create the internal Session instance.
-     * <p/>
+     * <br>
      * This method is mainly used in framework development, as the implementation will often relay the argument
      * to an underlying {@link SessionFactory} which could use the context to construct the internal Session
      * instance in a specific manner.  This allows pluggable {@link org.apache.shiro.session.Session Session} creation

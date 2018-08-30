@@ -32,7 +32,7 @@ public class RegExPatternMatcher implements PatternMatcher {
     /**
      * Simple implementation that merely uses the default pattern comparison logic provided by the
      * JDK.
-     * <p/>This implementation essentially executes the following:
+     * <br>This implementation essentially executes the following:
      * <pre>
      * Pattern p = Pattern.compile(pattern);
      * Matcher m = p.matcher(source);

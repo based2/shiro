@@ -40,7 +40,7 @@ public interface Authenticator {
 
     /**
      * Authenticates a user based on the submitted {@code AuthenticationToken}.
-     * <p/>
+     * <br>
      * If the authentication is successful, an {@link AuthenticationInfo} instance is returned that represents the
      * user's account data relevant to Shiro.  This returned object is generally used in turn to construct a
      * {@code Subject} representing a more complete security-specific 'view' of an account that also allows access to
@@ -62,6 +62,6 @@ public interface Authenticator {
      * @see ConcurrentAccessException
      * @see UnknownAccountException
      */
-    public AuthenticationInfo authenticate(AuthenticationToken authenticationToken)
+    AuthenticationInfo authenticate(AuthenticationToken authenticationToken)
             throws AuthenticationException;
 }

@@ -29,7 +29,7 @@ import org.apache.shiro.util.ThreadState;
  * {@code SecurityUtils.getSubject()} call will still work properly.  This implementation also guarantees that Shiro's
  * thread state will be identical before and after execution to ensure threads remain clean in any thread-pooled
  * environment.
- * <p/>
+ * <br>
  * When instances of this class {@link Runnable#run() run()}, the following occurs:
  * <ol>
  * <li>The Subject and any of its associated thread state is first bound to the thread that executes the
@@ -37,7 +37,6 @@ import org.apache.shiro.util.ThreadState;
  * <li>The delegate/target {@code Runnable} is {@link #doRun(Runnable) run}</li>
  * <li>Any previous thread state that might have existed before the {@code Subject} was bound is fully restored</li>
  * </ol>
- * <p/>
  *
  * <h3>Usage</h3>
  *
@@ -45,7 +44,7 @@ import org.apache.shiro.util.ThreadState;
  * the {@code Subject.}{@link Subject#execute(Runnable) execute} or
  * {@code Subject.}{@link Subject#associateWith(Runnable) associateWith} methods, which transparently perform the
  * necessary association logic.
- * <p/>
+ * <br>
  * An even more convenient alternative is to use a
  * {@link org.apache.shiro.concurrent.SubjectAwareExecutor SubjectAwareExecutor}, which transparently uses
  * instances of this class but does not require referencing Shiro's API at all.

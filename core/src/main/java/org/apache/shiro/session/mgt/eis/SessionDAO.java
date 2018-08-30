@@ -30,7 +30,7 @@ import java.util.Collection;
  * EIS (Enterprise Information System).  It provides your four typical CRUD methods:
  * {@link #create}, {@link #readSession(java.io.Serializable)}, {@link #update(org.apache.shiro.session.Session)},
  * and {@link #delete(org.apache.shiro.session.Session)}.
- * <p/>
+ * <br>
  * The remaining {@link #getActiveSessions()} method exists as a support mechanism to pre-emptively orphaned sessions,
  * typically by {@link org.apache.shiro.session.mgt.ValidatingSessionManager ValidatingSessionManager}s), and should
  * be as efficient as possible, especially if there are thousands of active sessions.  Large scale/high performance
@@ -44,14 +44,14 @@ public interface SessionDAO {
     /**
      * Inserts a new Session record into the underling EIS (e.g. Relational database, file system, persistent cache,
      * etc, depending on the DAO implementation).
-     * <p/>
+     * <br>
      * After this method is invoked, the {@link org.apache.shiro.session.Session#getId()}
      * method executed on the argument must return a valid session identifier.  That is, the following should
      * always be true:
      * <pre>
      * Serializable id = create( session );
      * id.equals( session.getId() ) == true</pre>
-     * <p/>
+     * <br>
      * Implementations are free to throw any exceptions that might occur due to
      * integrity violation constraints or other EIS related errors.
      *
@@ -76,7 +76,7 @@ public interface SessionDAO {
      * Updates (persists) data from a previously created Session instance in the EIS identified by
      * {@code {@link Session#getId() session.getId()}}.  This effectively propagates
      * the data in the argument to the EIS record previously saved.
-     * <p/>
+     * <br>
      * In addition to UnknownSessionException, implementations are free to throw any other
      * exceptions that might occur due to integrity violation constraints or other EIS related
      * errors.
@@ -100,7 +100,7 @@ public interface SessionDAO {
     /**
      * Returns all sessions in the EIS that are considered active, meaning all sessions that
      * haven't been stopped/expired.  This is primarily used to validate potential orphans.
-     * <p/>
+     * <br>
      * If there are no active sessions in the EIS, this method may return an empty collection or {@code null}.
      * <h4>Performance</h4>
      * This method should be as efficient as possible, especially in larger systems where there might be
@@ -113,7 +113,7 @@ public interface SessionDAO {
      * <em>Ideally</em> this method would only return active sessions that the EIS was certain should be invalided.
      * Typically that is any session that is not stopped and where its lastAccessTimestamp is older than the session
      * timeout.
-     * <p/>
+     * <br>
      * For example, if sessions were backed by a relational database or SQL-92 'query-able' enterprise cache, you might
      * return something similar to the results returned by this query (assuming
      * {@link org.apache.shiro.session.mgt.SimpleSession SimpleSession}s were being stored):

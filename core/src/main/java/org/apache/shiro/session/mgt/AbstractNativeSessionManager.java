@@ -127,7 +127,7 @@ public abstract class AbstractNativeSessionManager extends AbstractSessionManage
 
     /**
      * Template method that allows subclasses to react to a new session being created.
-     * <p/>
+     * <br>
      * This method is invoked <em>before</em> any session listeners are notified.
      *
      * @param session the session that was just {@link #createSession created}.
@@ -170,7 +170,7 @@ public abstract class AbstractNativeSessionManager extends AbstractSessionManage
     /**
      * Returns the session instance to use to pass to registered {@code SessionListener}s for notification
      * that the session has been invalidated (stopped or expired).
-     * <p/>
+     * <br>
      * The default implementation returns an {@link ImmutableProxiedSession ImmutableProxiedSession} instance to ensure
      * that the specified {@code session} argument is not modified by any listeners.
      *

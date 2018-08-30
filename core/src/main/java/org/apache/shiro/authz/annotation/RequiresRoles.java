@@ -27,12 +27,12 @@ import java.lang.annotation.Target;
  * Requires the currently executing {@link org.apache.shiro.subject.Subject Subject} to have all of the 
  * specified roles. If they do not have the role(s), the method will not be executed and
  * an {@link org.apache.shiro.authz.AuthorizationException AuthorizationException} is thrown.
- * <p/>
+ * <br>
  * For example,
- * <p/>
+ * <br>
  * <code>&#64;RequiresRoles("aRoleName");<br/>
  * void someMethod();</code>
- * <p/>
+ * <br>
  * means <tt>someMethod()</tt> could only be executed by subjects who have been assigned the
  * 'aRoleName' role.
  *

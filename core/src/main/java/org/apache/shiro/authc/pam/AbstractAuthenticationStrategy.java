@@ -69,7 +69,7 @@ public abstract class AbstractAuthenticationStrategy implements AuthenticationSt
     /**
      * Merges the specified <code>info</code> argument into the <code>aggregate</code> argument and then returns an
      * aggregate for continued use throughout the login process.
-     * <p/>
+     * <br>
      * This implementation merely checks to see if the specified <code>aggregate</code> argument is an instance of
      * {@link org.apache.shiro.authc.MergableAuthenticationInfo MergableAuthenticationInfo}, and if so, calls
      * <code>aggregate.merge(info)</code>  If it is <em>not</em> an instance of

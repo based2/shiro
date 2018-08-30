@@ -27,10 +27,10 @@ import java.lang.annotation.Target;
  * Requires the current Subject to have been authenticated <em>during their current session</em> for the annotated
  * class/instance/method to be accessed or invoked.  This is <em>more</em> restrictive than the
  * {@link RequiresUser RequiresUser} annotation.
- * <p/>
+ * <br>
  * This annotation basically ensures that
  * <code>{@link org.apache.shiro.subject.Subject subject}.{@link org.apache.shiro.subject.Subject#isAuthenticated() isAuthenticated()} === true</code>
- * <p/>
+ * <br>
  * See the {@link RequiresUser RequiresUser} and
  * {@link org.apache.shiro.authc.RememberMeAuthenticationToken RememberMeAuthenticationToken} JavaDoc for an
  * explanation of why these two states are considered different.

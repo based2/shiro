@@ -57,7 +57,7 @@ public abstract class AbstractSessionManager implements SessionManager {
      * <li>A negative return value means sessions never expire.</li>
      * <li>A non-negative return value (0 or greater) means session timeout will occur as expected.</li>
      * </ul>
-     * <p/>
+     * <br>
      * Unless overridden via the {@link #setGlobalSessionTimeout} method, the default value is
      * {@link #DEFAULT_GLOBAL_SESSION_TIMEOUT}.
      *
@@ -75,7 +75,7 @@ public abstract class AbstractSessionManager implements SessionManager {
      * <li>A negative return value means sessions never expire.</li>
      * <li>A non-negative return value (0 or greater) means session timeout will occur as expected.</li>
      * </ul>
-     * <p/>
+     * <br>
      * Unless overridden by calling this method, the default value is {@link #DEFAULT_GLOBAL_SESSION_TIMEOUT}.
      *
      * @param globalSessionTimeout the time in milliseconds that any session may remain idle before expiring.

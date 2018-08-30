@@ -26,7 +26,7 @@ import org.apache.shiro.session.Session;
 /**
  * Implementation of the {@link Session Session} interface that proxies another <code>Session</code>, but does not
  * allow any 'write' operations to the underlying session. It allows 'read' operations only.
- * <p/>
+ * <br>
  * The <code>Session</code> write operations are defined as follows.  A call to any of these methods on this
  * proxy will immediately result in an {@link InvalidSessionException} being thrown:
  * <ul>

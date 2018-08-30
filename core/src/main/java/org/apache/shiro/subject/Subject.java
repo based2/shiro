@@ -51,7 +51,7 @@ import java.util.concurrent.Callable;
  * simply convert these String values to {@link Permission Permission} instances and then just call the corresponding
  * type-safe method.  (Shiro's default implementations do String-to-Permission conversion for these methods using
  * {@link org.apache.shiro.authz.permission.PermissionResolver PermissionResolver}s.)
- * <p/>
+ * <br>
  * These overloaded *Permission methods forgo type-safety for the benefit of convenience and simplicity,
  * so you should choose which ones to use based on your preferences and needs.
  *
@@ -63,7 +63,7 @@ public interface Subject {
      * Returns this Subject's application-wide uniquely identifying principal, or {@code null} if this
      * Subject is anonymous because it doesn't yet have any associated account data (for example,
      * if they haven't logged in).
-     * <p/>
+     * <br>
      * The term <em>principal</em> is just a fancy security term for any identifying attribute(s) of an application
      * user, such as a username, or user id, or public key, or anything else you might use in your application to
      * identify a user.
@@ -71,7 +71,7 @@ public interface Subject {
      * Although given names and family names (first/last) are technically considered principals as well,
      * Shiro expects the object returned from this method to be an identifying attribute unique across
      * your entire application.
-     * <p/>
+     * <br>
      * This implies that things like given names and family names are usually poor
      * candidates as return values since they are rarely guaranteed to be unique;  Things often used for this value:
      * <ul>
@@ -81,7 +81,7 @@ public interface Subject {
      * <li>An LDAP Unique ID</li>
      * </ul>
      * or any other similar suitable unique mechanism valuable to your application.
-     * <p/>
+     * <br>
      * Most implementations will simply return
      * <code>{@link #getPrincipals()}.{@link org.apache.shiro.subject.PrincipalCollection#getPrimaryPrincipal() getPrimaryPrincipal()}</code>
      *
@@ -94,7 +94,7 @@ public interface Subject {
      * Returns this Subject's principals (identifying attributes) in the form of a {@code PrincipalCollection} or
      * {@code null} if this Subject is anonymous because it doesn't yet have any associated account data (for example,
      * if they haven't logged in).
-     * <p/>
+     * <br>
      * The word &quot;principals&quot; is nothing more than a fancy security term for identifying attributes associated
      * with a Subject, aka, application user.  For example, user id, a surname (family/last name), given (first) name,
      * social security number, nickname, username, etc, are all examples of a principal.
@@ -108,7 +108,7 @@ public interface Subject {
     /**
      * Returns {@code true} if this Subject is permitted to perform an action or access a resource summarized by the
      * specified permission string.
-     * <p/>
+     * <br>
      * This is an overloaded method for the corresponding type-safe {@link Permission Permission} variant.
      * Please see the class-level JavaDoc for more information on these String-based permission methods.
      *
@@ -122,7 +122,7 @@ public interface Subject {
     /**
      * Returns {@code true} if this Subject is permitted to perform an action or access a resource summarized by the
      * specified permission.
-     * <p/>
+     * <br>
      * More specifically, this method determines if any {@code Permission}s associated
      * with the subject {@link Permission#implies(Permission) imply} the specified permission.
      *
@@ -134,7 +134,7 @@ public interface Subject {
     /**
      * Checks if this Subject implies the given permission strings and returns a boolean array indicating which
      * permissions are implied.
-     * <p/>
+     * <br>
      * This is an overloaded method for the corresponding type-safe {@link Permission Permission} variant.
      * Please see the class-level JavaDoc for more information on these String-based permission methods.
      *
@@ -150,11 +150,11 @@ public interface Subject {
     /**
      * Checks if this Subject implies the given Permissions and returns a boolean array indicating which permissions
      * are implied.
-     * <p/>
+     * <br>
      * More specifically, this method should determine if each {@code Permission} in
      * the array is {@link Permission#implies(Permission) implied} by permissions
      * already associated with the subject.
-     * <p/>
+     * <br>
      * This is primarily a performance-enhancing method to help reduce the number of
      * {@link #isPermitted} invocations over the wire in client/server systems.
      *
@@ -168,7 +168,7 @@ public interface Subject {
 
     /**
      * Returns {@code true} if this Subject implies all of the specified permission strings, {@code false} otherwise.
-     * <p/>
+     * <br>
      * This is an overloaded method for the corresponding type-safe {@link org.apache.shiro.authz.Permission Permission}
      * variant.  Please see the class-level JavaDoc for more information on these String-based permission methods.
      *
@@ -181,7 +181,7 @@ public interface Subject {
 
     /**
      * Returns {@code true} if this Subject implies all of the specified permissions, {@code false} otherwise.
-     * <p/>
+     * <br>
      * More specifically, this method determines if all of the given {@code Permission}s are
      * {@link Permission#implies(Permission) implied by} permissions already associated with this Subject.
      *
@@ -192,10 +192,10 @@ public interface Subject {
 
     /**
      * Ensures this Subject implies the specified permission String.
-     * <p/>
+     * <br>
      * If this subject's existing associated permissions do not {@link Permission#implies(Permission)} imply}
      * the given permission, an {@link org.apache.shiro.authz.AuthorizationException} will be thrown.
-     * <p/>
+     * <br>
      * This is an overloaded method for the corresponding type-safe {@link Permission Permission} variant.
      * Please see the class-level JavaDoc for more information on these String-based permission methods.
      *
@@ -208,7 +208,7 @@ public interface Subject {
 
     /**
      * Ensures this Subject {@link Permission#implies(Permission) implies} the specified {@code Permission}.
-     * <p/>
+     * <br>
      * If this subject's existing associated permissions do not {@link Permission#implies(Permission) imply}
      * the given permission, an {@link org.apache.shiro.authz.AuthorizationException} will be thrown.
      *
@@ -222,11 +222,11 @@ public interface Subject {
      * Ensures this Subject
      * {@link org.apache.shiro.authz.Permission#implies(org.apache.shiro.authz.Permission) implies} all of the
      * specified permission strings.
-     * <p/>
+     * <br>
      * If this subject's existing associated permissions do not
      * {@link org.apache.shiro.authz.Permission#implies(org.apache.shiro.authz.Permission) imply} all of the given permissions,
      * an {@link org.apache.shiro.authz.AuthorizationException} will be thrown.
-     * <p/>
+     * <br>
      * This is an overloaded method for the corresponding type-safe {@link Permission Permission} variant.
      * Please see the class-level JavaDoc for more information on these String-based permission methods.
      *
@@ -240,7 +240,7 @@ public interface Subject {
      * Ensures this Subject
      * {@link org.apache.shiro.authz.Permission#implies(org.apache.shiro.authz.Permission) implies} all of the
      * specified permission strings.
-     * <p/>
+     * <br>
      * If this subject's existing associated permissions do not
      * {@link org.apache.shiro.authz.Permission#implies(org.apache.shiro.authz.Permission) imply} all of the given permissions,
      * an {@link org.apache.shiro.authz.AuthorizationException} will be thrown.
@@ -261,7 +261,7 @@ public interface Subject {
     /**
      * Checks if this Subject has the specified roles, returning a boolean array indicating
      * which roles are associated.
-     * <p/>
+     * <br>
      * This is primarily a performance-enhancing method to help reduce the number of
      * {@link #hasRole} invocations over the wire in client/server systems.
      *
@@ -318,7 +318,7 @@ public interface Subject {
      * an {@link AuthenticationException} is thrown, the subclass of which identifies why the attempt failed.
      * If successful, the account data associated with the submitted principals/credentials will be
      * associated with this {@code Subject} and the method will return quietly.
-     * <p/>
+     * <br>
      * Upon returning quietly, this {@code Subject} instance can be considered
      * authenticated and {@link #getPrincipal() getPrincipal()} will be non-null and
      * {@link #isAuthenticated() isAuthenticated()} will be {@code true}.
@@ -334,7 +334,7 @@ public interface Subject {
     /**
      * Returns {@code true} if this Subject/user proved their identity <em>during their current session</em>
      * by providing valid credentials matching those known to the system, {@code false} otherwise.
-     * <p/>
+     * <br>
      * Note that even if this Subject's identity has been remembered via 'remember me' services, this method will
      * still return {@code false} unless the user has actually logged in with proper credentials <em>during their
      * current session</em>.  See the {@link #isRemembered() isRemembered()} method JavaDoc for more.
@@ -350,18 +350,18 @@ public interface Subject {
      * Returns {@code true} if this {@code Subject} has an identity (it is not anonymous) and the identity
      * (aka {@link #getPrincipals() principals}) is remembered from a successful authentication during a previous
      * session.
-     * <p/>
+     * <br>
      * Although the underlying implementation determines exactly how this method functions, most implementations have
      * this method act as the logical equivalent to this code:
      * <pre>
      * {@link #getPrincipal() getPrincipal()} != null && !{@link #isAuthenticated() isAuthenticated()}</pre>
-     * <p/>
+     * <br>
      * Note as indicated by the above code example, if a {@code Subject} is remembered, they are
      * <em>NOT</em> considered authenticated.  A check against {@link #isAuthenticated() isAuthenticated()} is a more
      * strict check than that reflected by this method.  For example, a check to see if a subject can access financial
      * information should almost always depend on {@link #isAuthenticated() isAuthenticated()} to <em>guarantee</em> a
      * verified identity, and not this method.
-     * <p/>
+     * <br>
      * Once the subject is authenticated, they are no longer considered only remembered because their identity would
      * have been verified during the current session.
      * <h4>Remembered vs Authenticated</h4>
@@ -369,23 +369,23 @@ public interface Subject {
      * the remembered identity gives the system an idea who that user probably is, but in reality, has no way of
      * absolutely <em>guaranteeing</em> if the remembered {@code Subject} represents the user currently
      * using the application.
-     * <p/>
+     * <br>
      * So although many parts of the application can still perform user-specific logic based on the remembered
      * {@link #getPrincipals() principals}, such as customized views, it should never perform highly-sensitive
      * operations until the user has legitimately verified their identity by executing a successful authentication
      * attempt.
-     * <p/>
+     * <br>
      * We see this paradigm all over the web, and we will use <a href="http://www.amazon.com">Amazon.com</a> as an
      * example:
-     * <p/>
+     * <br>
      * When you visit Amazon.com and perform a login and ask it to 'remember me', it will set a cookie with your
      * identity.  If you don't log out and your session expires, and you come back, say the next day, Amazon still knows
      * who you <em>probably</em> are: you still see all of your book and movie recommendations and similar user-specific
      * features since these are based on your (remembered) user id.
-     * <p/>
+     * <br>
      * BUT, if you try to do something sensitive, such as access your account's billing data, Amazon forces you
      * to do an actual log-in, requiring your username and password.
-     * <p/>
+     * <br>
      * This is because although amazon.com assumed your identity from 'remember me', it recognized that you were not
      * actually authenticated.  The only way to really guarantee you are who you say you are, and therefore allow you
      * access to sensitive account data, is to force you to perform an actual successful authentication.  You can
@@ -434,11 +434,11 @@ public interface Subject {
      * session invalidation.  Because cookies are part of the HTTP header, and headers can only be set before the
      * response body (html, image, etc) is sent, this method in web environments must be called before <em>any</em>
      * content has been rendered.
-     * <p/>
+     * <br>
      * The typical approach most applications use in this scenario is to redirect the user to a different
      * location (e.g. home page) immediately after calling this method.  This is an effect of the HTTP protocol
      * itself and not a reflection of Shiro's implementation.
-     * <p/>
+     * <br>
      * Non-HTTP environments may of course use a logged-out subject for login again if desired.
      */
     void logout();
@@ -460,7 +460,7 @@ public interface Subject {
      * Associates the specified {@code Runnable} with this {@code Subject} instance and then executes it on the
      * currently running thread.  If you want to execute the {@code Runnable} on a different thread, it is better to
      * use the {@link #associateWith(Runnable)} method instead.
-     * <p/>
+     * <br>
      * <b>Note</b>: This method is primarily provided to execute existing/legacy Runnable implementations.  It is better
      * for new code to use {@link #execute(Callable)} since that supports the ability to return values and catch
      * exceptions.
@@ -474,7 +474,7 @@ public interface Subject {
      * Returns a {@code Callable} instance matching the given argument while additionally ensuring that it will
      * retain and execute under this Subject's identity.  The returned object can be used with an
      * {@link java.util.concurrent.ExecutorService ExecutorService} to execute as this Subject.
-     * <p/>
+     * <br>
      * This will effectively ensure that any calls to
      * {@code SecurityUtils}.{@link SecurityUtils#getSubject() getSubject()} and related functionality will continue
      * to function properly on any thread that executes the returned {@code Callable} instance.
@@ -490,11 +490,11 @@ public interface Subject {
      * Returns a {@code Runnable} instance matching the given argument while additionally ensuring that it will
      * retain and execute under this Subject's identity.  The returned object can be used with an
      * {@link java.util.concurrent.Executor Executor} or another thread to execute as this Subject.
-     * <p/>
+     * <br>
      * This will effectively ensure that any calls to
      * {@code SecurityUtils}.{@link SecurityUtils#getSubject() getSubject()} and related functionality will continue
      * to function properly on any thread that executes the returned {@code Runnable} instance.
-     * <p/>
+     * <br>
      * *Note that if you need a return value to be returned as a result of the runnable's execution or if you need to
      * react to any Exceptions, it is highly recommended to use the
      * {@link #associateWith(java.util.concurrent.Callable) createCallable} method instead of this one.
@@ -510,7 +510,7 @@ public interface Subject {
      * Allows this subject to 'run as' or 'assume' another identity indefinitely.  This can only be
      * called when the {@code Subject} instance already has an identity (i.e. they are remembered from a previous
      * log-in or they have authenticated during their current session).
-     * <p/>
+     * <br>
      * Some notes about {@code runAs}:
      * <ul>
      * <li>You can tell if a {@code Subject} is 'running as' another identity by calling the
@@ -556,7 +556,7 @@ public interface Subject {
     /**
      * Releases the current 'run as' (assumed) identity and reverts back to the previous 'pre run as'
      * identity that existed before {@code #runAs runAs} was called.
-     * <p/>
+     * <br>
      * This method returns 'run as' (assumed) identity being released or {@code null} if this {@code Subject} is not
      * operating under an assumed identity.
      *
@@ -570,7 +570,7 @@ public interface Subject {
     /**
      * Builder design pattern implementation for creating {@link Subject} instances in a simplified way without
      * requiring knowledge of Shiro's construction techniques.
-     * <p/>
+     * <br>
      * <b>NOTE</b>: This is provided for framework development support only and should typically never be used by
      * application developers.  {@code Subject} instances should generally be acquired by using
      * <code>SecurityUtils.{@link SecurityUtils#getSubject() getSubject()}</code>
@@ -584,18 +584,18 @@ public interface Subject {
      * specify the exact {@code SecurityManager} instance to be used by the additional
      * <code>Subject.{@link #Builder(org.apache.shiro.mgt.SecurityManager) Builder(securityManager)}</code>
      * constructor if desired.
-     * <p/>
+     * <br>
      * All other methods may be called before the {@link #buildSubject() buildSubject()} method to
      * provide context on how to construct the {@code Subject} instance.  For example, if you have a session id and
      * want to acquire the {@code Subject} that 'owns' that session (assuming the session exists and is not expired):
      * <pre>
      * Subject subject = new Subject.Builder().sessionId(sessionId).buildSubject();</pre>
-     * <p/>
+     * <br>
      * Similarly, if you want a {@code Subject} instance reflecting a certain identity:
      * <pre>
      * PrincipalCollection principals = new SimplePrincipalCollection("username", <em>yourRealmName</em>);
      * Subject subject = new Subject.Builder().principals(principals).build();</pre>
-     * <p/>
+     * <br>
      * <b>Note*</b> that the returned {@code Subject} instance is <b>not</b> automatically bound to the application (thread)
      * for further use.  That is,
      * {@link org.apache.shiro.SecurityUtils SecurityUtils}.{@link org.apache.shiro.SecurityUtils#getSubject() getSubject()}
@@ -668,21 +668,21 @@ public interface Subject {
         /**
          * Enables building a {@link Subject Subject} instance that owns the {@link Session Session} with the
          * specified {@code sessionId}.
-         * <p/>
+         * <br>
          * Usually when specifying a {@code sessionId}, no other {@code Builder} methods would be specified because
          * everything else (principals, inet address, etc) can usually be reconstructed based on the referenced
          * session alone.  In other words, this is almost always sufficient:
          * <pre>
          * new Subject.Builder().sessionId(sessionId).buildSubject();</pre>
-         * <p/>
+         * <br>
          * <b>Although simple in concept, this method provides very powerful functionality previously absent in almost
          * all Java environments:</b>
-         * <p/>
+         * <br>
          * The ability to reference a {@code Subject} and their server-side session
          * <em>across clients of different mediums</em> such as web applications, Java applets,
          * standalone C# clients over XML-RPC and/or SOAP, and many others. This is a <em>huge</em>
          * benefit in heterogeneous enterprise applications.
-         * <p/>
+         * <br>
          * To maintain session integrity across client mediums, the {@code sessionId} <b>must</b> be transmitted
          * to all client mediums securely (e.g. over SSL) to prevent man-in-the-middle attacks.  This
          * is nothing new - all web applications are susceptible to the same problem when transmitting
@@ -730,7 +730,7 @@ public interface Subject {
 
         /**
          * Ensures the {@code Subject} being built will reflect the specified principals (aka identity).
-         * <p/>
+         * <br>
          * For example, if your application's unique identifier for users is a {@code String} username, and you wanted
          * to create a {@code Subject} instance that reflected a user whose username is
          * '{@code jsmith}', and you knew the Realm that could acquire {@code jsmith}'s principals based on the username
@@ -739,7 +739,7 @@ public interface Subject {
          * <pre>
          * PrincipalCollection identity = new {@link org.apache.shiro.subject.SimplePrincipalCollection#SimplePrincipalCollection(Object, String) SimplePrincipalCollection}(&quot;jsmith&quot;, &quot;myRealm&quot;);
          * Subject jsmith = new Subject.Builder().principals(identity).buildSubject();</pre>
-         * <p/>
+         * <br>
          * Similarly, if your application's unique identifier for users is a {@code long} value (such as might be used
          * as a primary key in a relational database) and you were using a {@code JDBC}
          * {@code Realm} named, (unimaginatively) &quot;jdbcRealm&quot;, you might create the Subject
@@ -763,7 +763,7 @@ public interface Subject {
          * Configures whether or not the created Subject instance can create a new {@code Session} if one does not
          * already exist.  If set to {@code false}, any application calls to
          * {@code subject.getSession()} or {@code subject.getSession(true))} will result in a SessionException.
-         * <p/>
+         * <br>
          * This setting is {@code true} by default, as most applications find value in sessions.
          *
          * @param enabled whether or not the created Subject instance can create a new {@code Session} if one does not
@@ -795,10 +795,10 @@ public interface Subject {
         /**
          * Allows custom attributes to be added to the underlying context {@code Map} used to construct the
          * {@link Subject} instance.
-         * <p/>
+         * <br>
          * A {@code null} key throws an {@link IllegalArgumentException}. A {@code null} value effectively removes
          * any previously stored attribute under the given key from the context map.
-         * <p/>
+         * <br>
          * <b>*NOTE*:</b> This method is only useful when configuring Shiro with a custom {@link SubjectFactory}
          * implementation.  This method allows end-users to append additional data to the context map which the
          * {@code SubjectFactory} implementation can use when building custom Subject instances. As such, this method
@@ -826,12 +826,12 @@ public interface Subject {
         /**
          * Creates and returns a new {@code Subject} instance reflecting the cumulative state acquired by the
          * other methods in this class.
-         * <p/>
+         * <br>
          * This {@code Builder} instance will still retain the underlying state after this method is called - it
          * will not clear it; repeated calls to this method will return multiple {@link Subject} instances, all
          * reflecting the exact same state.  If a new (different) {@code Subject} is to be constructed, a new
          * {@code Builder} instance must be created.
-         * <p/>
+         * <br>
          * <b>Note</b> that the returned {@code Subject} instance is <b>not</b> automatically bound to the application
          * (thread) for further use.  That is,
          * {@link org.apache.shiro.SecurityUtils SecurityUtils}.{@link org.apache.shiro.SecurityUtils#getSubject() getSubject()}

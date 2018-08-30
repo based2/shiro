@@ -23,7 +23,7 @@ import org.apache.shiro.subject.Subject;
 /**
  * A {@code SubjectDAO} is responsible for persisting a Subject instance's internal state such that the Subject instance
  * can be recreated at a later time if necessary.
- * <p/>
+ * <br>
  * Shiro's default {@code SecurityManager} implementations typically use a {@code SubjectDAO} in conjunction
  * with a {@link SubjectFactory}: after the {@code SubjectFactory} creates a {@code Subject} instance, the
  * {@code SubjectDAO} is used to persist that subject's state such that it can be accessed later if necessary.

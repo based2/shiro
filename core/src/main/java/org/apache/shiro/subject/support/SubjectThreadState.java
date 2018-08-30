@@ -30,7 +30,7 @@ import java.util.Map;
  * Manages thread-state for {@link Subject Subject} access (supporting
  * {@code SecurityUtils.}{@link org.apache.shiro.SecurityUtils#getSubject() getSubject()} calls)
  * during a thread's execution.
- * <p/>
+ * <br>
  * The {@link #bind bind} method will bind a {@link Subject} and a
  * {@link org.apache.shiro.mgt.SecurityManager SecurityManager} to the {@link ThreadContext} so they can be retrieved
  * from the {@code ThreadContext} later by any
@@ -82,7 +82,7 @@ public class SubjectThreadState implements ThreadState {
      * {@link ThreadContext} so they can be retrieved later by any
      * {@code SecurityUtils.}{@link org.apache.shiro.SecurityUtils#getSubject() getSubject()} calls that might occur
      * during the thread's execution.
-     * <p/>
+     * <br>
      * Prior to binding, the {@code ThreadContext}'s existing {@link ThreadContext#getResources() resources} are
      * retained so they can be restored later via the {@link #restore restore} call.
      */

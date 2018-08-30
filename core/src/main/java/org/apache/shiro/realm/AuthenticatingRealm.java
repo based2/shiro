@@ -43,11 +43,11 @@ import java.util.concurrent.atomic.AtomicInteger;
  * For applications that perform frequent repeated authentication of the same accounts (e.g. as is often done in
  * REST or Soap applications that authenticate on every request), it might be prudent to enable authentication
  * caching to alleviate constant load on any back-end data sources.
- * <p/>
+ * <br>
  * This feature is disabled by default to retain backwards-compatibility with Shiro 1.1 and earlier.  It may be
  * enabled by setting {@link #setAuthenticationCachingEnabled(boolean) authenticationCachingEnabled} = {@code true}
  * (and configuring Shiro with a {@link CacheManager} of course), but <b>NOTE:</b>
- * <p/>
+ * <br>
  * <b>ONLY enable authentication caching if either of the following is true for your realm implementation:</b>
  * <ul>
  * <li>The {@link #doGetAuthenticationInfo(org.apache.shiro.authc.AuthenticationToken) doGetAuthenticationInfo}
@@ -56,7 +56,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * plaintext (raw) credentials. For example,
  * if your realm references accounts with passwords, that the {@code AuthenticationInfo}'s
  * {@link org.apache.shiro.authc.AuthenticationInfo#getCredentials() credentials} are safely hashed and salted or otherwise
- * fully encrypted.<br/><br/></li>
+ * fully encrypted.<br><br></li>
  * <li>The {@link #doGetAuthenticationInfo(org.apache.shiro.authc.AuthenticationToken) doGetAuthenticationInfo}
  * implementation returns {@code AuthenticationInfo} instances where the
  * {@link org.apache.shiro.authc.AuthenticationInfo#getCredentials() credentials} are plaintext (raw) <b>AND</b> the
@@ -64,17 +64,17 @@ import java.util.concurrent.atomic.AtomicInteger;
  * entries over an unprotected (non TLS/SSL) network (as might be the case with a networked/distributed enterprise cache).
  * This should be the case even in private/trusted/corporate networks.</li>
  * </ul>
- * <p/>
+ * <br>
  * These points are very important because if authentication caching is enabled, this abstract class implementation
  * will place AuthenticationInfo instances returned from the subclass implementations directly into the cache, for
  * example:
  * <pre>
  * cache.put(cacheKey, subclassAuthenticationInfoInstance);
  * </pre>
- * <p/>
+ * <br>
  * Enabling authentication caching is ONLY safe to do if the above two scenarios apply.  It is NOT safe to enable under
  * any other scenario.
- * <p/>
+ * <br>
  * When possible, always represent and store credentials in a safe form (hash+salt or encrypted) to eliminate plaintext
  * visibility.
  * <h3>Authentication Cache Invalidation on Logout</h3>
@@ -82,19 +82,19 @@ import java.util.concurrent.atomic.AtomicInteger;
  * for an account during logout.  This can only occur if the
  * {@link #getAuthenticationCacheKey(org.apache.shiro.authc.AuthenticationToken)} and
  * {@link #getAuthenticationCacheKey(org.apache.shiro.subject.PrincipalCollection)} methods return the exact same value.
- * <p/>
+ * <br>
  * The default implementations of these methods expect that the
  * {@link org.apache.shiro.authc.AuthenticationToken#getPrincipal()} (what the user submits during login) and
  * {@link #getAvailablePrincipal(org.apache.shiro.subject.PrincipalCollection) getAvailablePrincipal} (what is returned
  * by the realm after account lookup) return
  * the same exact value.  For example, the user submitted username is also the primary account identifier.
- * <p/>
+ * <br>
  * However, if your application uses, say, a username for end-user login, but returns a primary key ID as the
  * primary principal after authentication, then you will need to override either
  * {@link #getAuthenticationCacheKey(org.apache.shiro.authc.AuthenticationToken) getAuthenticationCacheKey(token)} or
  * {@link #getAuthenticationCacheKey(org.apache.shiro.subject.PrincipalCollection) getAuthenticationCacheKey(principals)}
  * (or both) to ensure that the same cache key can be used for either object.
- * <p/>
+ * <br>
  * This guarantees that the same cache key used to cache the data during authentication (derived from the
  * {@code AuthenticationToken}) will be used to remove the cached data during logout (derived from the
  * {@code PrincipalCollection}).
@@ -103,7 +103,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * {@link #getAuthenticationCacheKey(org.apache.shiro.subject.PrincipalCollection)} are not identical, cached
  * authentication data removal is at the mercy of your cache provider settings.  For example, often cache
  * implementations will evict cache entries based on a timeToIdle or timeToLive (TTL) value.
- * <p/>
+ * <br>
  * If this lazy eviction capability of the cache product is not sufficient and you want discrete behavior
  * (highly recommended for authentication data), ensure that the return values from those two methods are identical in
  * the subclass implementation.
@@ -186,8 +186,8 @@ public abstract class AuthenticatingRealm extends CachingRealm implements Initia
     /**
      * Returns the <code>CredentialsMatcher</code> used during an authentication attempt to verify submitted
      * credentials with those stored in the system.
-     * <p/>
-     * <p>Unless overridden by the {@link #setCredentialsMatcher setCredentialsMatcher} method, the default
+     * <br>
+     * Unless overridden by the {@link #setCredentialsMatcher setCredentialsMatcher} method, the default
      * value is a {@link org.apache.shiro.authc.credential.SimpleCredentialsMatcher SimpleCredentialsMatcher} instance.
      *
      * @return the <code>CredentialsMatcher</code> used during an authentication attempt to verify submitted
@@ -201,8 +201,8 @@ public abstract class AuthenticatingRealm extends CachingRealm implements Initia
      * Sets the CrendialsMatcher used during an authentication attempt to verify submitted credentials with those
      * stored in the system.  The implementation of this matcher can be switched via configuration to
      * support any number of schemes, including plain text comparisons, hashing comparisons, and others.
-     * <p/>
-     * <p>Unless overridden by this method, the default value is a
+     * <br>
+     * Unless overridden by this method, the default value is a
      * {@link org.apache.shiro.authc.credential.SimpleCredentialsMatcher} instance.
      *
      * @param credentialsMatcher the matcher to use.
@@ -230,8 +230,8 @@ public abstract class AuthenticatingRealm extends CachingRealm implements Initia
 
     /**
      * Sets the authenticationToken class supported by this realm.
-     * <p/>
-     * <p>Unless overridden by this method, the default value is
+     * <br>
+     * Unless overridden by this method, the default value is
      * {@link org.apache.shiro.authc.UsernamePasswordToken UsernamePasswordToken.class} to support the majority of applications.
      *
      * @param authenticationTokenClass the class of authentication token instances supported by this realm.
@@ -245,7 +245,7 @@ public abstract class AuthenticatingRealm extends CachingRealm implements Initia
      * Sets an explicit {@link Cache} instance to use for authentication caching.  If not set and authentication
      * caching is {@link #isAuthenticationCachingEnabled() enabled}, any available
      * {@link #getCacheManager() cacheManager} will be used to acquire the cache instance if available.
-     * <p/>
+     * <br>
      * <b>WARNING:</b> Only set this property if safe caching conditions apply, as documented at the top
      * of this page in the class-level JavaDoc.
      *
@@ -275,10 +275,10 @@ public abstract class AuthenticatingRealm extends CachingRealm implements Initia
     /**
      * Returns the name of a {@link Cache} to lookup from any available {@link #getCacheManager() cacheManager} if
      * a cache is not explicitly configured via {@link #setAuthenticationCache(org.apache.shiro.cache.Cache)}.
-     * <p/>
+     * <br>
      * This name will only be used to look up a cache if authentication caching is
      * {@link #isAuthenticationCachingEnabled() enabled}.
-     * <p/>
+     * <br>
      * <b>WARNING:</b> Only set this property if safe caching conditions apply, as documented at the top
      * of this page in the class-level JavaDoc.
      *
@@ -294,7 +294,7 @@ public abstract class AuthenticatingRealm extends CachingRealm implements Initia
     /**
      * Sets the name of a {@link Cache} to lookup from any available {@link #getCacheManager() cacheManager} if
      * a cache is not explicitly configured via {@link #setAuthenticationCache(org.apache.shiro.cache.Cache)}.
-     * <p/>
+     * <br>
      * This name will only be used to look up a cache if authentication caching is
      * {@link #isAuthenticationCachingEnabled() enabled}.
      *
@@ -311,7 +311,7 @@ public abstract class AuthenticatingRealm extends CachingRealm implements Initia
     /**
      * Returns {@code true} if authentication caching should be utilized if a {@link CacheManager} has been
      * {@link #setCacheManager(org.apache.shiro.cache.CacheManager) configured}, {@code false} otherwise.
-     * <p/>
+     * <br>
      * The default value is {@code true}.
      *
      * @return {@code true} if authentication caching should be utilized, {@code false} otherwise.
@@ -323,9 +323,9 @@ public abstract class AuthenticatingRealm extends CachingRealm implements Initia
     /**
      * Sets whether or not authentication caching should be utilized if a {@link CacheManager} has been
      * {@link #setCacheManager(org.apache.shiro.cache.CacheManager) configured}, {@code false} otherwise.
-     * <p/>
+     * <br>
      * The default value is {@code false} to retain backwards compatibility with Shiro 1.1 and earlier.
-     * <p/>
+     * <br>
      * <b>WARNING:</b> Only set this property to {@code true} if safe caching conditions apply, as documented at the top
      * of this page in the class-level JavaDoc.
      *
@@ -386,7 +386,7 @@ public abstract class AuthenticatingRealm extends CachingRealm implements Initia
      * properties are set, caching will not be utilized and authentication look-ups will be delegated to
      * subclass implementations for each authentication attempt.</li>
      * </ol>
-     * <p/>
+     * <br>
      * This method finishes by calling {@link #onInit()} is to allow subclasses to perform any init behavior desired.
      *
      * @since 1.2
@@ -522,7 +522,7 @@ public abstract class AuthenticatingRealm extends CachingRealm implements Initia
     /**
      * Returns {@code true} if authentication caching should be utilized based on the specified
      * {@link AuthenticationToken} and/or {@link AuthenticationInfo}, {@code false} otherwise.
-     * <p/>
+     * <br>
      * The default implementation simply delegates to {@link #isAuthenticationCachingEnabled()}, the general-case
      * authentication caching setting.  Subclasses can override this to turn on or off caching at runtime
      * based on the specific submitted runtime values.
@@ -664,16 +664,16 @@ public abstract class AuthenticatingRealm extends CachingRealm implements Initia
 
     /**
      * Clears out the AuthenticationInfo cache entry for the specified account.
-     * <p/>
+     * <br>
      * This method is provided as a convenience to subclasses so they can invalidate a cache entry when they
      * change an account's authentication data (e.g. reset password) during runtime.  Because an account's
      * AuthenticationInfo can be cached, there needs to be a way to invalidate the cache for only that account so that
      * subsequent authentication operations don't used the (old) cached value if account data changes.
-     * <p/>
+     * <br>
      * After this method is called, the next authentication for that same account will result in a call to
      * {@link #doGetAuthenticationInfo(org.apache.shiro.authc.AuthenticationToken) doGetAuthenticationInfo}, and the
      * resulting return value will be cached before being returned so it can be reused for later authentications.
-     * <p/>
+     * <br>
      * If you wish to clear out all associated cached data (and not just authentication data), use the
      * {@link #clearCache(org.apache.shiro.subject.PrincipalCollection)} method instead (which will in turn call this
      * method by default).
@@ -696,11 +696,11 @@ public abstract class AuthenticatingRealm extends CachingRealm implements Initia
     /**
      * Retrieves authentication data from an implementation-specific datasource (RDBMS, LDAP, etc) for the given
      * authentication token.
-     * <p/>
+     * <br>
      * For most datasources, this means just 'pulling' authentication data for an associated subject/user and nothing
      * more and letting Shiro do the rest.  But in some systems, this method could actually perform EIS specific
      * log-in logic in addition to just retrieving data - it is up to the Realm implementation.
-     * <p/>
+     * <br>
      * A {@code null} return value means that no account could be associated with the specified token.
      *
      * @param token the authentication token containing the user's principal and credentials.

@@ -31,11 +31,11 @@ import org.apache.shiro.util.StringUtils;
 /**
  * A {@code HashedCredentialMatcher} provides support for hashing of supplied {@code AuthenticationToken} credentials
  * before being compared to those in the {@code AuthenticationInfo} from the data store.
- * <p/>
+ * <p>
  * Credential hashing is one of the most common security techniques when safeguarding a user's private credentials
  * (passwords, keys, etc).  Most developers never want to store their users' credentials in plain form, viewable by
  * anyone, so they often hash the users' credentials before they are saved in the data store.
- * <p/>
+ * </p>
  * This class (and its subclasses) function as follows:
  * <ol>
  * <li>Hash the {@code AuthenticationToken} credentials supplied by the user during their login.</li>
@@ -47,7 +47,7 @@ import org.apache.shiro.util.StringUtils;
  * <h2>Salting and Multiple Hash Iterations</h2>
  * Because simple hashing is usually not good enough for secure applications, this class also supports 'salting'
  * and multiple hash iterations.  Please read this excellent
- * <a href="http://www.owasp.org/index.php/Hashing_Java" _target="blank">Hashing Java article</a> to learn about
+ * <a href="http://www.owasp.org/index.php/Hashing_Java" target="_blank">Hashing Java article</a> to learn about
  * salting and multiple iterations and why you might want to use them. (Note of sections 5
  * &quot;Why add salt?&quot; and 6 "Hardening against the attacker's attack").   We should also note here that all of
  * Shiro's Hash implementations (for example, {@link org.apache.shiro.crypto.hash.Md5Hash Md5Hash},
@@ -64,7 +64,6 @@ import org.apache.shiro.util.StringUtils;
  * The lesson?
  * </p>
  * <b>ALWAYS, ALWAYS, ALWAYS SALT USER PASSWORDS!</b>
- * </p>
  * <h3>Salting</h3>
  * Prior to Shiro 1.1, salts could be obtained based on the end-user submitted
  * {@link AuthenticationToken AuthenticationToken} via the now-deprecated
@@ -100,8 +99,8 @@ import org.apache.shiro.util.StringUtils;
  * release.
  * <h3>Multiple Hash Iterations</h3>
  * If you hash your users' credentials multiple times before persisting to the data store, you will also need to
- * set this class's {@link #setHashIterations(int) hashIterations} property.  See the
- * <a href="http://www.owasp.org/index.php/Hashing_Java" _target="blank">Hashing Java article</a>'s
+ * set this class's {@link #setHashIterations(int) hashIterations} property. See the
+ * <a href="http://www.owasp.org/index.php/Hashing_Java" target="_blank">Hashing Java article</a>'s
  * <a href="http://www.owasp.org/index.php/Hashing_Java#Hardening_against_the_attacker.27s_attack">
  * &quot;Hardening against the attacker's attack&quot;</a> section to learn more about why you might want to use
  * multiple hash iterations.
@@ -181,7 +180,7 @@ public class HashedCredentialsMatcher extends SimpleCredentialsMatcher {
     /**
      * Returns {@code true} if the system's stored credential hash is Hex encoded, {@code false} if it
      * is Base64 encoded.
-     * <p/>
+     * <br>
      * Default value is {@code true} for convenience - all of Shiro's {@link Hash Hash#toString()}
      * implementations return Hex encoded values by default, making this class's use with those implementations
      * easier.
@@ -240,7 +239,7 @@ public class HashedCredentialsMatcher extends SimpleCredentialsMatcher {
 
     /**
      * Sets whether or not to salt a submitted {@code AuthenticationToken}'s credentials when hashing.
-     * <p/>
+     * <p>
      * If enabled, the salt used will be obtained via the {@link #getSalt(org.apache.shiro.authc.AuthenticationToken) getCredentialsSalt} method.
      * </p>
      * The default value is {@code false}.
@@ -253,7 +252,7 @@ public class HashedCredentialsMatcher extends SimpleCredentialsMatcher {
      *             {@code SaltedAuthenticationInfo} instances, but <b>it is highly recommended that {@code Realm} implementations
      *             that support hashed credentials start returning {@link SaltedAuthenticationInfo SaltedAuthenticationInfo}
      *             instances as soon as possible</b>.
-     *             <p/>
+     *             <br>
      *             This is because salts should always be obtained from the stored account information and
      *             never be interpreted based on user/Subject-entered data.  User-entered data is easier to compromise for
      *             attackers, whereas account-unique (and secure randomly-generated) salts never disseminated to the end-user

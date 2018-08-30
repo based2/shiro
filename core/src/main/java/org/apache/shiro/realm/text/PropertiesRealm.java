@@ -37,46 +37,46 @@ import java.util.concurrent.TimeUnit;
 /**
  * A {@link TextConfigurationRealm} that defers all logic to the parent class, but just enables
  * {@link java.util.Properties Properties} based configuration in addition to the parent class's String configuration.
- * <p/>
+ * <br>
  * This class allows processing of a single .properties file for user, role, and
  * permission configuration.
- * <p/>
+ * <br>
  * The {@link #setResourcePath resourcePath} <em>MUST</em> be set before this realm can be initialized.  You
  * can specify any resource path supported by
  * {@link ResourceUtils#getInputStreamForPath(String) ResourceUtils.getInputStreamForPath} method.
- * <p/>
+ * <br>
  * The Properties format understood by this implementation must be written as follows:
- * <p/>
+ * <br>
  * Each line's key/value pair represents either a user-to-role(s) mapping <em>or</em> a role-to-permission(s)
  * mapping.
- * <p/>
+ * <br>
  * The user-to-role(s) lines have this format:</p>
- * <p/>
- * <code><b>user.</b><em>username</em> = <em>password</em>,role1,role2,...</code></p>
- * <p/>
+ * <br>
+ * <code><b>user.</b><em>username</em> = <em>password</em>,role1,role2,...</code>
+ * <br>
  * Note that each key is prefixed with the token <b>{@code user.}</b>  Each value must adhere to the
  * the {@link #setUserDefinitions(String) setUserDefinitions(String)} JavaDoc.
- * <p/>
+ * <br>
  * The role-to-permission(s) lines have this format:</p>
- * <p/>
+ * <br>
  * <code><b>role.</b><em>rolename</em> = <em>permissionDefinition1</em>, <em>permissionDefinition2</em>, ...</code>
- * <p/>
+ * <br>
  * where each key is prefixed with the token <b>{@code role.}</b> and the value adheres to the format specified in
  * the {@link #setRoleDefinitions(String) setRoleDefinitions(String)} JavaDoc.
- * <p/>
+ * <br>
  * Here is an example of a very simple properties definition that conforms to the above format rules and corresponding
  * method JavaDocs:
- * <p/>
- * <code>user.root = <em>rootPassword</em>,administrator<br/>
- * user.jsmith = <em>jsmithPassword</em>,manager,engineer,employee<br/>
- * user.abrown = <em>abrownPassword</em>,qa,employee<br/>
- * user.djones = <em>djonesPassword</em>,qa,contractor<br/>
- * <br/>
- * role.administrator = *<br/>
- * role.manager = &quot;user:read,write&quot;, file:execute:/usr/local/emailManagers.sh<br/>
- * role.engineer = &quot;file:read,execute:/usr/local/tomcat/bin/startup.sh&quot;<br/>
- * role.employee = application:use:wiki<br/>
- * role.qa = &quot;server:view,start,shutdown,restart:someQaServer&quot;, server:view:someProductionServer<br/>
+ * <br>
+ * <code>user.root = <em>rootPassword</em>,administrator<br>
+ * user.jsmith = <em>jsmithPassword</em>,manager,engineer,employee<br>
+ * user.abrown = <em>abrownPassword</em>,qa,employee<br>
+ * user.djones = <em>djonesPassword</em>,qa,contractor<br>
+ * <br>
+ * role.administrator = *<br>
+ * role.manager = &quot;user:read,write&quot;, file:execute:/usr/local/emailManagers.sh<br>
+ * role.engineer = &quot;file:read,execute:/usr/local/tomcat/bin/startup.sh&quot;<br>
+ * role.employee = application:use:wiki<br>
+ * role.qa = &quot;server:view,start,shutdown,restart:someQaServer&quot;, server:view:someProductionServer<br>
  * role.contractor = application:use:timesheet</code>
  *
  * @since 0.2

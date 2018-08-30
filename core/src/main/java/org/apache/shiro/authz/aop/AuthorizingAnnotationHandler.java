@@ -44,7 +44,7 @@ public abstract class AuthorizingAnnotationHandler extends AnnotationHandler {
     /**
      * Ensures the calling Subject is authorized to execute based on the directive(s) found in the given
      * annotation.
-     * <p/>
+     * <br>
      * As this is an AnnotationMethodInterceptor, the implementations of this method typically inspect the annotation
      * and perform a corresponding authorization check based.
      *

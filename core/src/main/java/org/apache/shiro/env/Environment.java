@@ -23,11 +23,11 @@ import org.apache.shiro.mgt.SecurityManager;
 /**
  * An {@code Environment} instance encapsulates all of the objects that Shiro requires to function.  It is essentially
  * a 'meta' object from which all Shiro components can be obtained for an application.
- * <p/>
+ * <p>
  * An {@code Environment} instance is usually created as a result of parsing a Shiro configuration file.  The
  * environment instance can be stored in any place the application deems necessary, and from it, can retrieve any
  * of Shiro's components that might be necessary in implementing security behavior.
- * <p/>
+ * </p>
  * For example, the most obvious component accessible via an {@code Environment} instance is the application's
  * {@link #getSecurityManager() securityManager}.
  *

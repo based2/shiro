@@ -83,11 +83,11 @@ public class SimplePrincipalCollection implements MutablePrincipalCollection {
     /**
      * Returns the first available principal from any of the {@code Realm} principals, or {@code null} if there are
      * no principals yet.
-     * <p/>
+     * <br>
      * The 'first available principal' is interpreted as the principal that would be returned by
      * <code>{@link #iterator() iterator()}.{@link java.util.Iterator#next() next()}.</code>
      *
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public Object getPrimaryPrincipal() {
         if (isEmpty()) {
@@ -262,7 +262,7 @@ public class SimplePrincipalCollection implements MutablePrincipalCollection {
 
     /**
      * Serialization write support.
-     * <p/>
+     * <br>
      * NOTE: Don't forget to change the serialVersionUID constant at the top of this class
      * if you make any backwards-incompatible serialization changes!!!
      * (use the JDK 'serialver' program for this)
@@ -282,7 +282,7 @@ public class SimplePrincipalCollection implements MutablePrincipalCollection {
     /**
      * Serialization read support - reads in the Map principals collection if it exists in the
      * input stream.
-     * <p/>
+     * <br>
      * NOTE: Don't forget to change the serialVersionUID constant at the top of this class
      * if you make any backwards-incompatible serialization changes!!!
      * (use the JDK 'serialver' program for this)

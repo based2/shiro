@@ -19,7 +19,7 @@
 /**
  * Support and default implementations for Shiro's {@link org.apache.shiro.authz.Permission Permission}
  * interface.
- * <p/>
+ * <br>
  * Also note the {@link org.apache.shiro.authz.permission.PermissionResolver PermissionResolver} interface, as
  * it plays an important part in many of Shiro's {@link org.apache.shiro.realm.Realm Realm} implementations
  * and AOP support.

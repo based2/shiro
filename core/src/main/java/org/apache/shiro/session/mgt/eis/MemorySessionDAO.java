@@ -40,7 +40,7 @@ import java.util.concurrent.ConcurrentMap;
  * If your application is expected to host many sessions beyond what can be stored in the
  * memory available to the JVM, it is highly recommended to use a different {@code SessionDAO} implementation which
  * uses a more expansive or permanent backing data store.
- * <p/>
+ * <br>
  * In this case, it is recommended to instead use a custom
  * {@link CachingSessionDAO} implementation that communicates with a higher-capacity data store of your choice
  * (file system, database, etc).

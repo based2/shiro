@@ -28,12 +28,12 @@ import java.util.concurrent.Executor;
  * {@link Runnable} instances with the currently available {@link Subject} and then
  * dispatch the Subject-enabled runnable to an underlying delegate {@link Executor}
  * instance.
- * <p/>
+ * <br>
  * This is a simplification for applications that want to execute code as the currently
  * executing {@code Subject} on another thread, but don't want or need to call the
  * {@link Subject#associateWith(Runnable)} method and dispatch to a Thread manually.  This
  * simplifies code and reduces Shiro dependencies across application source code.
- * <p/>
+ * <br>
  * Consider this code that could be repeated in many places across an application:
  * <pre>
  * {@link Runnable Runnable} applicationWork = //instantiate or acquire Runnable from somewhere

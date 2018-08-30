@@ -23,7 +23,7 @@ import java.io.Serializable;
  * that is used to acquire a session attribute via the
  * {@link org.apache.shiro.session.Session#getAttribute(Object) Session.getAttribute} method.  A {@code SessionKey}
  * looks up a Session object directly.
- * <p/>
+ * <br>
  * While a {@code SessionKey} allows lookup of <em>any</em> Session that might exist, this is not something in practice
  * done too often by most Shiro end-users.  Instead, it is usually more convenient to acquire the currently executing
  * {@code Subject}'s session via the {@link org.apache.shiro.subject.Subject#getSession} method.  This interface and
@@ -35,7 +35,7 @@ public interface SessionKey {
 
     /**
      * Returns the id of the session to acquire.
-     * <p/>
+     * <br>
      * Acquiring sessions by ID only is a suitable strategy when sessions are natively managed by Shiro directly.
      * For example, the Servlet specification does not have an API that allows session acquisition by session ID, so
      * the session ID alone is not sufficient for ServletContainer-based SessionManager implementations.

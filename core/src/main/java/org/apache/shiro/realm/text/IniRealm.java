@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
  * A {@link org.apache.shiro.realm.Realm Realm} implementation that creates
  * {@link org.apache.shiro.authc.SimpleAccount SimpleAccount} instances based on
  * {@link Ini} configuration.
- * <p/>
+ * <br>
  * This implementation looks for two {@link Ini.Section sections} in the {@code Ini} configuration:
  * <pre>
  * [users]
@@ -36,7 +36,7 @@ import org.slf4j.LoggerFactory;
  * ...
  * [roles]
  * # One or more {@link org.apache.shiro.realm.text.TextConfigurationRealm#setRoleDefinitions(String) role definitions}</pre>
- * <p/>
+ * <br>
  * This class also supports setting the {@link #setResourcePath(String) resourcePath} property to create account
  * data from an .ini resource.  This will only be used if there isn't already account data in the Realm.
  *

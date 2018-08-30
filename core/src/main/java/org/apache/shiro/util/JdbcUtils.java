@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * A set of static helper methods for managing JDBC API objects.
- * <p/>
+ * <br>
  * <em>Note:</em> Some parts of this class were copied from the Spring Framework and then modified.
  * They were copied here to prevent Spring dependencies in the Shiro core API.  The original license conditions
  * (Apache 2.0) have been maintained.

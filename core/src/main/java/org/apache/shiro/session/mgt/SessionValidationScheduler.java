@@ -30,7 +30,7 @@ public interface SessionValidationScheduler {
     /**
      * Returns <code>true</code> if this Scheduler is enabled and ready to begin validation at the appropriate time,
      * <code>false</code> otherwise.
-     * <p/>
+     * <br>
      * It does <em>not</em> indicate if the validation is actually executing at that instant - only that it is prepared
      * to do so at the appropriate time.
      *

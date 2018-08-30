@@ -26,12 +26,11 @@ import org.apache.shiro.subject.PrincipalCollection;
 /**
  * <tt>AuthenticationStrategy</tt> implementation that requires <em>at least one</em> configured realm to
  * successfully process the submitted <tt>AuthenticationToken</tt> during the log-in attempt.
- * <p/>
  * <p>This means any number of configured realms do not have to support the submitted log-in token, or they may
  * be unable to acquire <tt>AuthenticationInfo</tt> for the token, but as long as at least one can do both, this
  * Strategy implementation will allow the log-in process to be successful.
- * <p/>
- * <p>Note that this implementation will aggregate the account data from <em>all</em> successfully consulted
+ * </p>
+ * Note that this implementation will aggregate the account data from <em>all</em> successfully consulted
  * realms during the authentication attempt. If you want only the account data from the first successfully
  * consulted realm and want to ignore all subsequent realms, use the
  * {@link FirstSuccessfulStrategy FirstSuccessfulAuthenticationStrategy} instead.

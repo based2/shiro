@@ -69,7 +69,6 @@ import java.lang.reflect.Field;
  *     myEvaluator = com.my.CustomSessionStorageEvaluator
  *     securityManager.subjectDAO.sessionStorageEvaluator = $myEvaluator
  * </pre>
- * <p/>
  * Unless overridden, the default evaluator is a {@link DefaultSessionStorageEvaluator}, which enables session usage for
  * Subject state by default.
  *
@@ -135,7 +134,7 @@ public class DefaultSubjectDAO implements SubjectDAO {
      * Saves the subject's state to the subject's {@link org.apache.shiro.subject.Subject#getSession() session} only
      * if {@link #isSessionStorageEnabled(Subject) sessionStorageEnabled(subject)}.  If session storage is not enabled
      * for the specific {@code Subject}, this method does nothing.
-     * <p/>
+     * <br>
      * In either case, the argument {@code Subject} is returned directly (a new Subject instance is not created).
      *
      * @param subject the Subject instance for which its state will be created or updated.

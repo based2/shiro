@@ -121,7 +121,7 @@ public class SimpleSession implements ValidatingSession, Serializable {
 
     /**
      * Returns the time the session was stopped, or <tt>null</tt> if the session is still active.
-     * <p/>
+     * <br>
      * A session may become stopped under a number of conditions:
      * <ul>
      * <li>If the user logs out of the system, their current session is terminated (released).</li>
@@ -130,7 +130,7 @@ public class SimpleSession implements ValidatingSession, Serializable {
      * <li>If there is an internal system error and the session state can no longer accurately
      * reflect the user's behavior, such in the case of a system crash</li>
      * </ul>
-     * <p/>
+     * <br>
      * Once stopped, a session may no longer be used.  It is locked from all further activity.
      *
      * @return The time the session was stopped, or <tt>null</tt> if the session is still
@@ -340,7 +340,7 @@ public class SimpleSession implements ValidatingSession, Serializable {
      * {@link #getId() id}s are equal.  If the argument is a {@code SimpleSession} and either 'this' or the argument
      * does not yet have an ID assigned, the value of {@link #onEquals(SimpleSession) onEquals} is returned, which
      * does a necessary attribute-based comparison when IDs are not available.
-     * <p/>
+     * <br>
      * Do your best to ensure {@code SimpleSession} instances receive an ID very early in their lifecycle to
      * avoid the more expensive attributes-based comparison.
      *
@@ -387,7 +387,7 @@ public class SimpleSession implements ValidatingSession, Serializable {
     /**
      * Returns the hashCode.  If the {@link #getId() id} is not {@code null}, its hashcode is returned immediately.
      * If it is {@code null}, an attributes-based hashCode will be calculated and returned.
-     * <p/>
+     * <br>
      * Do your best to ensure {@code SimpleSession} instances receive an ID very early in their lifecycle to
      * avoid the more expensive attributes-based calculation.
      *

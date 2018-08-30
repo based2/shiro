@@ -100,11 +100,11 @@ public abstract class RealmSecurityManager extends CachingSecurityManager {
     /**
      * Sets the internal {@link #getCacheManager CacheManager} on any internal configured
      * {@link #getRealms Realms} that implement the {@link org.apache.shiro.cache.CacheManagerAware CacheManagerAware} interface.
-     * <p/>
+     * <br>
      * This method is called after setting a cacheManager on this securityManager via the
      * {@link #setCacheManager(org.apache.shiro.cache.CacheManager) setCacheManager} method to allow it to be propagated
      * down to all the internal Realms that would need to use it.
-     * <p/>
+     * <br>
      * It is also called after setting one or more realms via the {@link #setRealm setRealm} or
      * {@link #setRealms setRealms} methods to allow these newly available realms to be given the cache manager
      * already in use.
@@ -124,11 +124,11 @@ public abstract class RealmSecurityManager extends CachingSecurityManager {
     /**
      * Sets the internal {@link #getEventBus  EventBus} on any internal configured
      * {@link #getRealms Realms} that implement the {@link EventBusAware} interface.
-     * <p/>
+     * <br>
      * This method is called after setting an eventBus on this securityManager via the
      * {@link #setEventBus(org.apache.shiro.event.EventBus) setEventBus} method to allow it to be propagated
      * down to all the internal Realms that would need to use it.
-     * <p/>
+     * <br>
      * It is also called after setting one or more realms via the {@link #setRealm setRealm} or
      * {@link #setRealms setRealms} methods to allow these newly available realms to be given the EventBus
      * already in use.

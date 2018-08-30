@@ -66,7 +66,7 @@ public class DefaultEnvironment implements NamedObjectEnvironment, Destroyable {
     /**
      * Returns the application's {@code SecurityManager} instance accessible in the backing map using the
      * {@link #getSecurityManagerName() securityManagerName} property as the lookup key.
-     * <p/>
+     * <br>
      * This implementation guarantees that a non-null instance is always returned, as this is expected for
      * Environment API end-users.  If subclasses have the need to perform the map lookup without this guarantee
      * (for example, during initialization when the instance may not have been added to the map yet), the

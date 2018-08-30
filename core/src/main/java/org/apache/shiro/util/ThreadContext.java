@@ -33,7 +33,6 @@ import java.util.Map;
  * current thread based on key/value pairs.
  * <p>An internal {@link java.util.HashMap} is used to maintain the key/value pairs
  * for each thread.</p>
- * <p/>
  * <p>If the desired behavior is to ensure that bound data is not shared across
  * threads in a pooled or reusable threaded environment, the application (or more likely a framework) must
  * bind and remove any necessary values at the beginning and end of stack
@@ -136,10 +135,8 @@ public abstract class ThreadContext {
 
     /**
      * Binds <tt>value</tt> for the given <code>key</code> to the current thread.
-     * <p/>
      * <p>A <tt>null</tt> <tt>value</tt> has the same effect as if <tt>remove</tt> was called for the given
      * <tt>key</tt>, i.e.:
-     * <p/>
      * <pre>
      * if ( value == null ) {
      *     remove( key );
@@ -192,7 +189,7 @@ public abstract class ThreadContext {
 
     /**
      * {@link ThreadLocal#remove Remove}s the underlying {@link ThreadLocal ThreadLocal} from the thread.
-     * <p/>
+     * <br>
      * This method is meant to be the final 'clean up' operation that is called at the end of thread execution to
      * prevent thread corruption in pooled thread environments.
      *
@@ -244,12 +241,12 @@ public abstract class ThreadContext {
 
     /**
      * Convenience method that simplifies removal of the application's SecurityManager instance from the thread.
-     * <p/>
+     * <p>
      * The implementation just helps reduce casting and remembering of the ThreadContext key name, i.e it is
      * merely a convenient wrapper for the following:
-     * <p/>
+     * </p>
      * <code>return (SecurityManager)remove( SECURITY_MANAGER_KEY );</code>
-     * <p/>
+     * <br>
      * If you wish to just retrieve the object from the thread without removing it (so it can be retrieved later
      * during thread execution), use the {@link #getSecurityManager() getSecurityManager()} method instead.
      *
@@ -265,9 +262,9 @@ public abstract class ThreadContext {
      * Convenience method that simplifies retrieval of a thread-bound Subject.  If there is no
      * Subject bound to the thread, this method returns <tt>null</tt>.  It is merely a convenient wrapper
      * for the following:
-     * <p/>
+     * <p>
      * <code>return (Subject)get( SUBJECT_KEY );</code>
-     * <p/>
+     * </p>
      * This method only returns the bound value if it exists - it does not remove it
      * from the thread.  To remove it, one must call {@link #unbindSubject() unbindSubject()} instead.
      *
@@ -281,11 +278,10 @@ public abstract class ThreadContext {
 
     /**
      * Convenience method that simplifies binding a Subject to the ThreadContext.
-     * <p/>
      * <p>The method's existence is to help reduce casting in your own code and to simplify remembering of
      * ThreadContext key names.  The implementation is simple in that, if the Subject is not <tt>null</tt>,
      * it binds it to the thread, i.e.:
-     * <p/>
+     * </p>
      * <pre>
      * if (subject != null) {
      *     put( SUBJECT_KEY, subject );
@@ -302,12 +298,12 @@ public abstract class ThreadContext {
 
     /**
      * Convenience method that simplifies removal of a thread-local Subject from the thread.
-     * <p/>
+     * <p>
      * The implementation just helps reduce casting and remembering of the ThreadContext key name, i.e it is
      * merely a convenient wrapper for the following:
-     * <p/>
+     * </p>
      * <code>return (Subject)remove( SUBJECT_KEY );</code>
-     * <p/>
+     * <br>
      * If you wish to just retrieve the object from the thread without removing it (so it can be retrieved later during
      * thread execution), you should use the {@link #getSubject() getSubject()} method for that purpose.
      *

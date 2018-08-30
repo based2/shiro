@@ -26,10 +26,10 @@ import java.lang.annotation.Target;
 /**
  * Requires the current Subject to be a &quot;guest&quot;, that is, they are not authenticated <em>or</em> remembered
  * from a previous session for the annotated class/instance/method to be accessed or invoked.
- * <p/>
+ * <br>
  * This annotation is the logical inverse of the {@link RequiresUser RequiresUser} annotation. That is,
  * <code>RequiresUser == !RequiresGuest</code>, or more accurately,
- * <p/>
+ * <br>
  * <code>RequiresGuest === subject.{@link org.apache.shiro.subject.Subject#getPrincipal() getPrincipal()} == null</code>.
  *
  * @see RequiresAuthentication

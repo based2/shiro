@@ -428,7 +428,7 @@ public class SimpleAccount implements Account, MergableAuthenticationInfo, Salte
 
     /**
      * Merges the specified <code>AuthenticationInfo</code> into this <code>Account</code>.
-     * <p/>
+     * <br>
      * If the specified argument is also an instance of {@link SimpleAccount SimpleAccount}, the
      * {@link #isLocked()} and {@link #isCredentialsExpired()} attributes are merged (set on this instance) as well
      * (only if their values are <code>true</code>).

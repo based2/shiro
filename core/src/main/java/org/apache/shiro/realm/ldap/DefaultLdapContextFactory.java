@@ -33,11 +33,9 @@ import org.slf4j.LoggerFactory;
 /**
  * <p>Default implementation of {@link LdapContextFactory} that can be configured or extended to
  * customize the way {@link javax.naming.ldap.LdapContext} objects are retrieved.</p>
- * <p/>
  * <p>This implementation of {@link LdapContextFactory} is used by the {@link AbstractLdapRealm} if a
  * factory is not explictly configured.</p>
- * <p/>
- * <p>Connection pooling is enabled by default on this factory, but can be disabled using the
+ * Connection pooling is enabled by default on this factory, but can be disabled using the
  * {@link #usePooling} property.</p>
  *
  * @since 0.2
@@ -280,7 +278,7 @@ public class DefaultLdapContextFactory implements LdapContextFactory {
     /**
      * Validates the configuration in the JNDI <code>environment</code> settings and throws an exception if a problem
      * exists.
-     * <p/>
+     * <br>
      * This implementation will throw a {@link AuthenticationException} if the authentication mechanism is set to
      * 'simple', the principal is non-empty, and the credentials are empty (as per
      * <a href="http://tools.ietf.org/html/rfc4513#section-5.1.2">rfc4513 section-5.1.2</a>).
