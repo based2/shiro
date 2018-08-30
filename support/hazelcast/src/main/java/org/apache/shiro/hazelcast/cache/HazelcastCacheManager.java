@@ -36,36 +36,36 @@ import java.util.Map;
 /**
  * A {@code CacheManager} implementation backed by <a href="http://www.hazelcast.com/">Hazelcast</a>,
  * &quot;an open source clustering and highly scalable data distribution platform for Java&quot;
- * <p/>
+ * <br>
  * This implementation interacts with a {@link HazelcastInstance} to
  * {@link HazelcastInstance#getMap(String) acquire} named {@link java.util.concurrent.ConcurrentMap ConcurrentMap}
  * instances.  Those clustered/distributed Map instances are then wrapped and made available to {@code CacheManager}
  * callers as {@link MapCache} instances via {@link #getCache(String)}.
- * <h2>Configuration</h2>
+ * <h1>Configuration</h1>
  * This implementation's backing {@code HazelcastInstance} can be configured in one of three ways:
  * <ol>
  * <li>Doing nothing and leveraging default Hazelcast configuration mechanisms</li>
  * <li>Supplying an already-existing {@code HazelcastInstance}</li>
  * <li>Supplying a {@link Config} instance and using that to create a new {@code HazelcastInstance}</li>
  * </ol>
- * <h3>Default Configuration</h3>
+ * <h2>Default Configuration</h2>
  * If you simply instantiate a {@code HazelcastCacheManager} and do nothing further, its backing
  * {@link HazelcastInstance} instance will be created automatically by calling
  * {@link Hazelcast#newHazelcastInstance(com.hazelcast.config.Config) Hazelcast.newHazelcastInstance(null)}.
- * <p/>
+ * <br>
  * The null argument instructs Hazelcast to use whatever default configuration mechanism it has at its disposal,
  * usually a {@code hazelcast.xml} file at the root of the classpath, or if that is not present, the
  * {@code hazelcast-default.xml} file contained in the Hazelcast {@code .jar} file itself.
- * <p/>
- * <h3>An existing {@code HazelcastInstance}</h3>
+ * <br>
+ * <h2>An existing {@code HazelcastInstance}</h2>
  * If you have created a {@code HazelcastInstance} outside of Shiro's knowledge/control, you can simply configure it
  * to be used by calling {@link #setHazelcastInstance(com.hazelcast.core.HazelcastInstance) setHazelcastInstance}.
- * <p/>
- * <h3>A {@link Config} instance</h3>
+ * <br>
+ * <h1>A {@link Config} instance</h1>
  * If you do not want to use the above two options, you can have programmatic control over all of Hazelcast's
  * configuration by <a href="http://www.hazelcast.com/docs/2.5/manual/multi_html/ch12.html">creating and configuring a
  * Config instance</a>.
- * <p/>
+ * <br>
  * Once constructed, you can set it via {@link #setConfig(com.hazelcast.config.Config) setConfig(config)}. This config
  * instance will be used to acquire a new Hazelcast instance by calling
  * {@link Hazelcast#newHazelcastInstance(Config) Hazelcast.newHazelcastInstance(config)}
@@ -137,7 +137,7 @@ public class HazelcastCacheManager implements CacheManager, Initializable, Destr
      * using any {@link #setConfig(com.hazelcast.config.Config) configured} {@code Config} object.  If no config
      * object has been specified, {@code this.config} will be {@code null}, thereby using Hazelcast's
      * <a href="http://www.hazelcast.com/docs/2.5/manual/multi_html/ch12.html">default configuration mechanism</a>.
-     * <p/>
+     * <br>
      * Can be overridden by subclasses for custom creation behavior.
      *
      * @return a new {@link HazelcastInstance} that will be used to back this implementation
@@ -152,7 +152,7 @@ public class HazelcastCacheManager implements CacheManager, Initializable, Destr
 
     /**
      * NOT PART OF SHIRO'S ACCESSIBLE API.  DO NOT DEPEND ON THIS.  This method was added for testing purposes only.
-     * <p/>
+     * <br>
      * Returns {@code true} if this {@code HazelcastCacheManager} instance implicitly created the backing
      * {@code HazelcastInstance}, or {@code false} if one was externally provided via
      * {@link #setHazelcastInstance(com.hazelcast.core.HazelcastInstance) setHazelcastInstance}.

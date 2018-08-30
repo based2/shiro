@@ -37,10 +37,10 @@ import java.util.Set;
  * Requires the requesting user to be {@link org.apache.shiro.subject.Subject#isAuthenticated() authenticated} for the
  * request to continue, and if they're not, requires the user to login via the HTTP Basic protocol-specific challenge.
  * Upon successful login, they're allowed to continue on to the requested resource/url.
- * <p/>
+ * <br>
  * This implementation is a 'clean room' Java implementation of Basic HTTP Authentication specification per
  * <a href="ftp://ftp.isi.edu/in-notes/rfc2617.txt">RFC 2617</a>.
- * <p/>
+ * <br>
  * Basic authentication functions as follows:
  * <ol>
  * <li>A request comes in for a resource that requires authentication.</li>
@@ -50,7 +50,7 @@ import java.util.Set;
  * username and a password and puts them in the following format:
  * <p><code>username:password</code></p></li>
  * <li>This token is then base 64 encoded.</li>
- * <li>The client then sends another request for the same resource with the following header:<br/>
+ * <li>The client then sends another request for the same resource with the following header:<br>
  * <p><code>Authorization: Basic <em>Base64_encoded_username_and_password</em></code></p></li>
  * </ol>
  * The {@link #onAccessDenied(javax.servlet.ServletRequest, javax.servlet.ServletResponse)} method will
@@ -96,10 +96,10 @@ public class BasicHttpAuthenticationFilter extends AuthenticatingFilter {
 
     /**
      * Returns the name to use in the ServletResponse's <b><code>WWW-Authenticate</code></b> header.
-     * <p/>
+     * <br>
      * Per RFC 2617, this name name is displayed to the end user when they are asked to authenticate.  Unless overridden
      * by the {@link #setApplicationName(String) setApplicationName(String)} method, the default value is 'application'.
-     * <p/>
+     * <br>
      * Please see {@link #setApplicationName(String) setApplicationName(String)} for an example of how this functions.
      *
      * @return the name to use in the ServletResponse's 'WWW-Authenticate' header.
@@ -110,15 +110,15 @@ public class BasicHttpAuthenticationFilter extends AuthenticatingFilter {
 
     /**
      * Sets the name to use in the ServletResponse's <b><code>WWW-Authenticate</code></b> header.
-     * <p/>
+     * <br>
      * Per RFC 2617, this name name is displayed to the end user when they are asked to authenticate.  Unless overridden
      * by this method, the default value is &quot;application&quot;
-     * <p/>
+     * <br>
      * For example, setting this property to the value <b><code>Awesome Webapp</code></b> will result in the
      * following header:
-     * <p/>
+     * <br>
      * <code>WWW-Authenticate: Basic realm=&quot;<b>Awesome Webapp</b>&quot;</code>
-     * <p/>
+     * <br>
      * Side note: As you can see from the header text, the HTTP Basic specification calls
      * this the authentication 'realm', but we call this the 'applicationName' instead to avoid confusion with
      * Shiro's Realm constructs.
@@ -132,7 +132,7 @@ public class BasicHttpAuthenticationFilter extends AuthenticatingFilter {
     /**
      * Returns the HTTP <b><code>Authorization</code></b> header value that this filter will respond to as indicating
      * a login request.
-     * <p/>
+     * <br>
      * Unless overridden by the {@link #setAuthzScheme(String) setAuthzScheme(String)} method, the
      * default value is <code>BASIC</code>.
      *
@@ -145,7 +145,7 @@ public class BasicHttpAuthenticationFilter extends AuthenticatingFilter {
     /**
      * Sets the HTTP <b><code>Authorization</code></b> header value that this filter will respond to as indicating a
      * login request.
-     * <p/>
+     * <br>
      * Unless overridden by this method, the default value is <code>BASIC</code>
      *
      * @param authzScheme the HTTP <code>Authorization</code> header value that this filter will respond to as
@@ -252,7 +252,7 @@ public class BasicHttpAuthenticationFilter extends AuthenticatingFilter {
 
     /**
      * Determines whether the incoming request is an attempt to log in.
-     * <p/>
+     * <br>
      * The default implementation obtains the value of the request's
      * {@link #AUTHORIZATION_HEADER AUTHORIZATION_HEADER}, and if it is not <code>null</code>, delegates
      * to {@link #isLoginAttempt(String) isLoginAttempt(authzHeaderValue)}. If the header is <code>null</code>,
@@ -277,10 +277,10 @@ public class BasicHttpAuthenticationFilter extends AuthenticatingFilter {
 
     /**
      * Returns the {@link #AUTHORIZATION_HEADER AUTHORIZATION_HEADER} from the specified ServletRequest.
-     * <p/>
+     * <br>
      * This implementation merely casts the request to an <code>HttpServletRequest</code> and returns the header:
-     * <p/>
-     * <code>HttpServletRequest httpRequest = {@link WebUtils#toHttp(javax.servlet.ServletRequest) toHttp(reaquest)};<br/>
+     * <br>
+     * <code>HttpServletRequest httpRequest = {@link WebUtils#toHttp(javax.servlet.ServletRequest) toHttp(reaquest)};<br>
      * return httpRequest.getHeader({@link #AUTHORIZATION_HEADER AUTHORIZATION_HEADER});</code>
      *
      * @param request the incoming <code>ServletRequest</code>
@@ -295,10 +295,10 @@ public class BasicHttpAuthenticationFilter extends AuthenticatingFilter {
      * Default implementation that returns <code>true</code> if the specified <code>authzHeader</code>
      * starts with the same (case-insensitive) characters specified by the
      * {@link #getAuthzScheme() authzScheme}, <code>false</code> otherwise.
-     * <p/>
+     * <br>
      * That is:
-     * <p/>
-     * <code>String authzScheme = getAuthzScheme().toLowerCase();<br/>
+     * <br>
+     * <code>String authzScheme = getAuthzScheme().toLowerCase();<br>
      * return authzHeader.toLowerCase().startsWith(authzScheme);</code>
      *
      * @param authzHeader the 'Authorization' header value (guaranteed to be non-null if the
@@ -315,9 +315,9 @@ public class BasicHttpAuthenticationFilter extends AuthenticatingFilter {
     /**
      * Builds the challenge for authorization by setting a HTTP <code>401</code> (Unauthorized) status as well as the
      * response's {@link #AUTHENTICATE_HEADER AUTHENTICATE_HEADER}.
-     * <p/>
+     * <br>
      * The header value constructed is equal to:
-     * <p/>
+     * <br>
      * <code>{@link #getAuthcScheme() getAuthcScheme()} + " realm=\"" + {@link #getApplicationName() getApplicationName()} + "\"";</code>
      *
      * @param request  incoming ServletRequest, ignored by this implementation
@@ -336,7 +336,7 @@ public class BasicHttpAuthenticationFilter extends AuthenticatingFilter {
 
     /**
      * Creates an AuthenticationToken for use during login attempt with the provided credentials in the http header.
-     * <p/>
+     * <br>
      * This implementation:
      * <ol><li>acquires the username and password based on the request's
      * {@link #getAuthzHeader(javax.servlet.ServletRequest) authorization header} via the
@@ -377,7 +377,7 @@ public class BasicHttpAuthenticationFilter extends AuthenticatingFilter {
     /**
      * Returns the username obtained from the
      * {@link #getAuthzHeader(javax.servlet.ServletRequest) authorizationHeader}.
-     * <p/>
+     * <br>
      * Once the {@code authzHeader} is split per the RFC (based on the space character ' '), the resulting split tokens
      * are translated into the username/password pair by the
      * {@link #getPrincipalsAndCredentials(String, String) getPrincipalsAndCredentials(scheme,encoded)} method.
@@ -401,11 +401,11 @@ public class BasicHttpAuthenticationFilter extends AuthenticatingFilter {
     /**
      * Returns the username and password pair based on the specified <code>encoded</code> String obtained from
      * the request's authorization header.
-     * <p/>
+     * <br>
      * Per RFC 2617, the default implementation first Base64 decodes the string and then splits the resulting decoded
      * string into two based on the ":" character.  That is:
-     * <p/>
-     * <code>String decoded = Base64.decodeToString(encoded);<br/>
+     * <br>
+     * <code>String decoded = Base64.decodeToString(encoded);<br>
      * return decoded.split(":");</code>
      *
      * @param scheme  the {@link #getAuthcScheme() authcScheme} found in the request

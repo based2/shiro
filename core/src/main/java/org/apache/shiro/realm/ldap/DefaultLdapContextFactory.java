@@ -36,7 +36,7 @@ import org.slf4j.LoggerFactory;
  * <p>This implementation of {@link LdapContextFactory} is used by the {@link AbstractLdapRealm} if a
  * factory is not explictly configured.</p>
  * Connection pooling is enabled by default on this factory, but can be disabled using the
- * {@link #usePooling} property.</p>
+ * {@link #usePooling} property.
  *
  * @since 0.2
  * @deprecated replaced by the {@link JndiLdapContextFactory} implementation.  This implementation will be removed
@@ -133,7 +133,7 @@ public class DefaultLdapContextFactory implements LdapContextFactory {
     }
 
     /**
-     * The LDAP url to connect to. (e.g. ldap://<ldapDirectoryHostname>:<port>)
+     * The LDAP url to connect to. (e.g. ldap:// - ldapDirectoryHostname - : - port - )
      *
      * @param url the LDAP url.
      */

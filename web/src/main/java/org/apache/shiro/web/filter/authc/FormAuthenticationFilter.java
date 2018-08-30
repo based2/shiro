@@ -34,7 +34,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Requires the requesting user to be authenticated for the request to continue, and if they are not, forces the user
  * to login via by redirecting them to the {@link #setLoginUrl(String) loginUrl} you configure.
- * <p/>
+ * <br>
  * <p>This filter constructs a {@link UsernamePasswordToken UsernamePasswordToken} with the values found in
  * {@link #setUsernameParam(String) username}, {@link #setPasswordParam(String) password},
  * and {@link #setRememberMeParam(String) rememberMe} request parameters.  It then calls
@@ -43,12 +43,12 @@ import javax.servlet.http.HttpServletRequest;
  * {@link #isLoginSubmission(javax.servlet.ServletRequest, javax.servlet.ServletResponse) isLoginSubmission(request,response)}
  * is <code>true</code>, which by default occurs when the request is for the {@link #setLoginUrl(String) loginUrl} and
  * is a POST request.
- * <p/>
+ * <br>
  * <p>If the login attempt fails, the resulting <code>AuthenticationException</code> fully qualified class name will
  * be set as a request attribute under the {@link #setFailureKeyAttribute(String) failureKeyAttribute} key.  This
  * FQCN can be used as an i18n key or lookup mechanism to explain to the user why their login attempt failed
  * (e.g. no account, incorrect password, etc).
- * <p/>
+ * <br>
  * <p>If you would prefer to handle the authentication validation and login in your own code, consider using the
  * {@link PassThruAuthenticationFilter} instead, which allows requests to the
  * {@link #loginUrl} to pass through to your application's code directly.
@@ -126,7 +126,7 @@ public class FormAuthenticationFilter extends AuthenticatingFilter {
     /**
      * Sets the request parameter name to look for when acquiring the rememberMe boolean value.  Unless overridden
      * by calling this method, the default is <code>rememberMe</code>.
-     * <p/>
+     * <br>
      * RememberMe will be <code>true</code> if the parameter value equals any of those supported by
      * {@link org.apache.shiro.web.util.WebUtils#isTrue(javax.servlet.ServletRequest, String) WebUtils.isTrue(request,value)}, <code>false</code>
      * otherwise.

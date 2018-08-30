@@ -30,7 +30,7 @@ import java.lang.annotation.Target;
  * <br>
  * For example,
  * <br>
- * <code>&#64;RequiresRoles("aRoleName");<br/>
+ * <code>&#64;RequiresRoles("aRoleName");<br>
  * void someMethod();</code>
  * <br>
  * means <tt>someMethod()</tt> could only be executed by subjects who have been assigned the

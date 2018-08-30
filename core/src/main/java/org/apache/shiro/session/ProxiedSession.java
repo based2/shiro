@@ -25,7 +25,7 @@ import java.util.Date;
 /**
  * Simple <code>Session</code> implementation that immediately delegates all corresponding calls to an
  * underlying proxied session instance.
- * <p/>
+ * <br>
  * This class is mostly useful for framework subclassing to intercept certain <code>Session</code> calls
  * and perform additional logic.
  *

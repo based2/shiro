@@ -48,7 +48,7 @@ public abstract class AuthorizationFilter extends AccessControlFilter {
     /**
      * Returns the URL to which users should be redirected if they are denied access to an underlying path or resource,
      * or {@code null} if a raw {@link HttpServletResponse#SC_UNAUTHORIZED} response should be issued (401 Unauthorized).
-     * <p/>
+     * <br>
      * The default is {@code null}, ensuring default web server behavior.  Override this default by calling the
      * {@link #setUnauthorizedUrl(String) setUnauthorizedUrl} method with a meaningful path within your application
      * if you would like to show the user a 'nice' page in the event of unauthorized access.
@@ -62,10 +62,10 @@ public abstract class AuthorizationFilter extends AccessControlFilter {
 
     /**
      * Sets the URL to which users should be redirected if they are denied access to an underlying path or resource.
-     * <p/>
+     * <br>
      * If the value is {@code null} a raw {@link HttpServletResponse#SC_UNAUTHORIZED} response will
      * be issued (401 Unauthorized), retaining default web server behavior.
-     * <p/>
+     * <br>
      * Unless overridden by calling this method, the default value is {@code null}.  If desired, you can specify a
      * meaningful path within your application if you would like to show the user a 'nice' page in the event of
      * unauthorized access.
@@ -82,13 +82,15 @@ public abstract class AuthorizationFilter extends AccessControlFilter {
      * Handles the response when access has been denied.  It behaves as follows:
      * <ul>
      * <li>If the {@code Subject} is unknown<sup><a href="#known">[1]</a></sup>:
-     * <ol><li>The incoming request will be saved and they will be redirected to the login page for authentication
+     * <ol>
+     * <li>The incoming request will be saved and they will be redirected to the login page for authentication
      * (via the {@link #saveRequestAndRedirectToLogin(javax.servlet.ServletRequest, javax.servlet.ServletResponse)}
      * method).</li>
-     * <li>Once successfully authenticated, they will be redirected back to the originally attempted page.</li></ol>
-     * </li>
-     * <li>If the Subject is known:</li>
+     * <li>Once successfully authenticated, they will be redirected back to the originally attempted page.</li>
+     * </ol>
      * <ol>
+     * <li>If the Subject is known:</li>
+     * </ol>
      * <li>The HTTP {@link HttpServletResponse#SC_UNAUTHORIZED} header will be set (401 Unauthorized)</li>
      * <li>If the {@link #getUnauthorizedUrl() unauthorizedUrl} has been configured, a redirect will be issued to that
      * URL.  Otherwise the 401 response is rendered normally</li>

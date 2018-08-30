@@ -26,10 +26,10 @@ import javax.servlet.ServletResponse;
  * server {@link #setPort(int) port} <em>and</em> the
  * {@code request.}{@link javax.servlet.ServletRequest#isSecure() isSecure()}.  If either condition is {@code false},
  * the filter chain will not continue.
- * <p/>
+ * <br>
  * The {@link #getPort() port} property defaults to {@code 443} and also additionally guarantees that the
  * request scheme is always 'https' (except for port 80, which retains the 'http' scheme).
- * <p/>
+ * <br>
  * Example config:
  * <pre>
  * [urls]

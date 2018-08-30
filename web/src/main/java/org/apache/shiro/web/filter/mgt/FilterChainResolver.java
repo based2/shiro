@@ -26,7 +26,7 @@ import javax.servlet.ServletResponse;
  * A {@code FilterChainResolver} can resolve an appropriate {@link FilterChain} to execute during a
  * {@code ServletRequest}.  It allows resolution of arbitrary filter chains which can be executed for any given
  * request or URI/URL.
- * <p/>
+ * <br>
  * This mechanism allows for a much more flexible FilterChain resolution than normal {@code web.xml} servlet filter
  * definitions:  it allows arbitrary filter chains to be defined per URL in a much more concise and easy to read manner,
  * and even allows filter chains to be dynamically resolved or constructed at runtime if the underlying implementation
@@ -39,7 +39,7 @@ public interface FilterChainResolver {
     /**
      * Returns the filter chain that should be executed for the given request, or {@code null} if the
      * original chain should be used.
-     * <p/>
+     * <br>
      * This method allows a implementation to define arbitrary security {@link javax.servlet.Filter Filter}
      * chains for any given request or URL pattern.
      *

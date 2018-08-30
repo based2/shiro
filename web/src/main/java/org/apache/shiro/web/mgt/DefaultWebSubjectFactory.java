@@ -33,7 +33,7 @@ import org.apache.shiro.web.subject.WebSubject;
 
 /**
  * A {@code SubjectFactory} implementation that creates {@link WebDelegatingSubject} instances.
- * <p/>
+ * <br>
  * {@code WebDelegatingSubject} instances are required if Request/Response objects are to be maintained across
  * threads when using the {@code Subject} {@link Subject#associateWith(java.util.concurrent.Callable) createCallable}
  * and {@link Subject#associateWith(Runnable) createRunnable} methods.

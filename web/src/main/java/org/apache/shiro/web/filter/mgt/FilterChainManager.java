@@ -81,7 +81,7 @@ public interface FilterChainManager {
     /**
      * Adds a filter to the 'pool' of available filters that can be used when
      * {@link #addToChain(String, String, String) creating filter chains}.
-     * <p/>
+     * <br>
      * Calling this method is effectively the same as calling
      * <code>{@link #addFilter(String, javax.servlet.Filter, boolean) addFilter}(name, filter, <b>false</b>);</code>
      *
@@ -104,15 +104,15 @@ public interface FilterChainManager {
     /**
      * Creates a filter chain for the given {@code chainName} with the specified {@code chainDefinition}
      * String.
-     * <h3>Conventional Use</h3>
+     * <h1>Conventional Use</h1>
      * Because the {@code FilterChainManager} interface does not impose any restrictions on filter chain names,
      * (it expects only Strings), a convenient convention is to make the chain name an actual URL path expression
      * (such as an {@link org.apache.shiro.util.AntPathMatcher Ant path expression}).  For example:
-     * <p/>
+     * <br>
      * <code>createChain(<b><em>path_expression</em></b>, <em>path_specific_filter_chain_definition</em>);</code>
      * This convention can be used by a {@link FilterChainResolver} to inspect request URL paths
      * against the chain name (path) and, if a match is found, return the corresponding chain for runtime filtering.
-     * <h3>Chain Definition Format</h3>
+     * <h1>Chain Definition Format</h1>
      * The {@code chainDefinition} method argument is expected to conform to the following format:
      * <pre>
      * filter1[optional_config1], filter2[optional_config2], ..., filterN[optional_configN]</pre>
@@ -125,26 +125,26 @@ public interface FilterChainManager {
      * </ol>
      * If the filter does not need specific config for that chain name/URL path,
      * you may discard the brackets - that is, {@code filterN[]} just becomes {@code filterN}.
-     * <p/>
+     * <br>
      * And because this method does create a chain, remember that order matters!  The comma-delimited filter tokens in
      * the {@code chainDefinition} specify the chain's execution order.
-     * <h3>Examples</h3>
+     * <h1>Examples</h1>
      * <pre>/account/** = authcBasic</pre>
      * This example says &quot;Create a filter named '{@code /account/**}' consisting of only the '{@code authcBasic}'
      * filter&quot;.  Also because the {@code authcBasic} filter does not need any path-specific
      * config, it doesn't have any config brackets {@code []}.
-     * <p/>
+     * <br>
      * <pre>/remoting/** = authcBasic, roles[b2bClient], perms[&quot;remote:invoke:wan,lan&quot;]</pre>
      * This example by contrast uses the 'roles' and 'perms' filters which <em>do</em> use bracket notation.  This
      * definition says:
-     * <p/>
+     * <br>
      * Construct a filter chain named '{@code /remoting/**}' which
      * <ol>
      * <li>ensures the user is first authenticated ({@code authcBasic}) then</li>
      * <li>ensures that user has the {@code b2bClient} role, and then finally</li>
      * <li>ensures that they have the {@code remote:invoke:lan,wan} permission.</li>
      * </ol>
-     * <p/>
+     * <br>
      * <b>Note</b>: because elements within brackets [ ] can be comma-delimited themselves, you must quote the
      * internal bracket definition if commas are needed (the above example has 'lan,wan').  If we didn't do that, the
      * parser would interpret the chain definition as four tokens:
@@ -178,7 +178,7 @@ public interface FilterChainManager {
     /**
      * Adds (appends) a filter to the filter chain identified by the given {@code chainName}.  If there is no chain
      * with the given name, a new one is created and the filter will be the first in the chain.
-     * <p/>
+     * <br>
      * Note that the final argument expects the associated filter to be an instance of
      * a {@link org.apache.shiro.web.filter.PathConfigProcessor PathConfigProcessor} to accept per-chain configuration.
      * If it is not, a {@link IllegalArgumentException} will be thrown.

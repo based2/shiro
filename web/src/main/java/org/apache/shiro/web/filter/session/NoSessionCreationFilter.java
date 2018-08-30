@@ -28,7 +28,7 @@ import javax.servlet.ServletResponse;
  * A {@code PathMatchingFilter} that will disable creating new Sessions during the request.  This is a useful
  * filter to place in the front of any filter chains that may result in REST, SOAP or other service invocations that
  * are not intended to participate in a session.
- * <p/>
+ * <br>
  * This filter enables the following behavior:
  * <ol>
  * <li>If a {@code Subject} does not yet have a Session by the time this filter is called, this filter effectively

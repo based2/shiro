@@ -30,12 +30,12 @@ import java.net.URLEncoder;
 
 /**
  * HttpServletResponse implementation to support URL Encoding of Shiro Session IDs.
- * <p/>
+ * <br>
  * It is only used when using Shiro's native Session Management configuration (and not when using the Servlet
  * Container session configuration, which is Shiro's default in a web environment).  Because the servlet container
  * already performs url encoding of its own session ids, instances of this class are only needed when using Shiro
  * native sessions.
- * <p/>
+ * <br>
  * Note that this implementation relies in part on source code from the Tomcat 6.x distribution for
  * encoding URLs for session ID URL Rewriting (we didn't want to re-invent the wheel).  Since Shiro is also
  * Apache 2.0 license, all regular licenses and conditions have remained in tact.

@@ -98,7 +98,7 @@ public interface SecurityManager extends Authenticator, Authorizer, SessionManag
      * Most Shiro end-users will never call this method - it exists primarily for
      * framework development and to support any underlying custom {@link SubjectFactory SubjectFactory} implementations
      * that may be used by the {@code SecurityManager}.
-     * <h4>Usage</h4>
+     * <h1>Usage</h1>
      * After calling this method, the returned instance is <em>not</em> bound to the application for further use.
      * Callers are expected to know that {@code Subject} instances have local scope only and any
      * other further use beyond the calling method must be managed explicitly.

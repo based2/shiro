@@ -93,7 +93,7 @@ public class DefaultSessionManager extends AbstractValidatingSessionManager impl
      * Returns {@code true} if sessions should be automatically deleted after they are discovered to be invalid,
      * {@code false} if invalid sessions will be manually deleted by some process external to Shiro's control.  The
      * default is {@code true} to ensure no orphans exist in the underlying data store.
-     * <h4>Usage</h4>
+     * <h1>Usage</h1>
      * It is ok to set this to {@code false} <b><em>ONLY</em></b> if you have some other process that you manage yourself
      * that periodically deletes invalid sessions from the backing data store over time, such as via a Quartz or Cron
      * job.  If you do not do this, the invalid sessions will become 'orphans' and fill up the data store over time.
@@ -114,7 +114,7 @@ public class DefaultSessionManager extends AbstractValidatingSessionManager impl
     /**
      * Sets whether or not sessions should be automatically deleted after they are discovered to be invalid.  Default
      * value is {@code true} to ensure no orphans will exist in the underlying data store.
-     * <h4>WARNING</h4>
+     * <h1>WARNING</h1>
      * Only set this value to {@code false} if you are manually going to delete sessions yourself by some process
      * (quartz, cron, etc) external to Shiro's control.  See the
      * {@link #isDeleteInvalidSessions() isDeleteInvalidSessions()} JavaDoc for more.

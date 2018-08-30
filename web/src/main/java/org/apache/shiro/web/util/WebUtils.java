@@ -41,7 +41,7 @@ import java.util.Map;
 
 /**
  * Simple utility class for operations used across multiple class hierarchies in the web framework code.
- * <p/>
+ * <br>
  * Some methods in this class were copied from the Spring Framework so we didn't have to re-invent the wheel,
  * and in these cases, we have retained all license, copyright and author information.
  *
@@ -95,13 +95,13 @@ public class WebUtils {
     /**
      * Return the path within the web application for the given request.
      * Detects include request URL if called within a RequestDispatcher include.
-     * <p/>
+     * <br>
      * For example, for a request to URL
-     * <p/>
+     * <br>
      * <code>http://www.somehost.com/myapp/my/url.jsp</code>,
-     * <p/>
+     * <br>
      * for an application deployed to <code>/mayapp</code> (the application's context path), this method would return
-     * <p/>
+     * <br>
      * <code>/my/url.jsp</code>.
      *
      * @param request current HTTP request
@@ -259,7 +259,7 @@ public class WebUtils {
     /**
      * Find the Shiro {@link WebEnvironment} for this web application, which is typically loaded via the
      * {@link org.apache.shiro.web.env.EnvironmentLoaderListener}.
-     * <p/>
+     * <br>
      * This implementation rethrows an exception that happened on environment startup to differentiate between a failed
      * environment startup and no environment at all.
      *
@@ -282,7 +282,7 @@ public class WebUtils {
     /**
      * Find the Shiro {@link WebEnvironment} for this web application, which is typically loaded via
      * {@link org.apache.shiro.web.env.EnvironmentLoaderListener}.
-     * <p/>
+     * <br>
      * This implementation rethrows an exception that happened on environment startup to differentiate between a failed
      * environment startup and no environment at all.
      *
@@ -440,7 +440,7 @@ public class WebUtils {
     /**
      * Returns {@code true} if a session is allowed to be created for a subject-associated request, {@code false}
      * otherwise.
-     * <p/>
+     * <br>
      * <b>This method exists for Shiro's internal framework needs and should never be called by Shiro end-users.  It
      * could be changed/removed at any time.</b>
      *
@@ -460,7 +460,7 @@ public class WebUtils {
     /**
      * Returns {@code true} if a session is allowed to be created for a subject-associated request, {@code false}
      * otherwise.
-     * <p/>
+     * <br>
      * <b>This method exists for Shiro's internal framework needs and should never be called by Shiro end-users.  It
      * could be changed/removed at any time.</b>
      *
@@ -481,9 +481,9 @@ public class WebUtils {
     /**
      * A convenience method that merely casts the incoming <code>ServletRequest</code> to an
      * <code>HttpServletRequest</code>:
-     * <p/>
+     * <br>
      * <code>return (HttpServletRequest)request;</code>
-     * <p/>
+     * <br>
      * Logic could be changed in the future for logging or throwing an meaningful exception in
      * non HTTP request environments (e.g. Portlet API).
      *
@@ -497,9 +497,9 @@ public class WebUtils {
     /**
      * A convenience method that merely casts the incoming <code>ServletResponse</code> to an
      * <code>HttpServletResponse</code>:
-     * <p/>
+     * <br>
      * <code>return (HttpServletResponse)response;</code>
-     * <p/>
+     * <br>
      * Logic could be changed in the future for logging or throwing an meaningful exception in
      * non HTTP request environments (e.g. Portlet API).
      *
@@ -571,12 +571,12 @@ public class WebUtils {
     /**
      * <p>Checks to see if a request param is considered true using a loose matching strategy for
      * general values that indicate that something is true or enabled, etc.</p>
-     * <p/>
+     * <br>
      * <p>Values that are considered "true" include (case-insensitive): true, t, 1, enabled, y, yes, on.</p>
      *
      * @param request   the servlet request
-     * @param paramName @return true if the param value is considered true or false if it isn't.
-     * @return true if the given parameter is considered "true" - false otherwise.
+     * @param paramName  parameter name
+     * @return true if the param value is considered true or false if it isn't.
      */
     public static boolean isTrue(ServletRequest request, String paramName) {
         String value = getCleanParam(request, paramName);
@@ -635,7 +635,7 @@ public class WebUtils {
      * {@link #saveRequest(javax.servlet.ServletRequest) saved} request, or if there is no saved request, redirects the
      * end user to the specified {@code fallbackUrl}.  If there is no saved request or fallback url, this method
      * throws an {@link IllegalStateException}.
-     * <p/>
+     * <br>
      * This method is primarily used to support a common login scenario - if an unauthenticated user accesses a
      * page that requires authentication, it is expected that request is
      * {@link #saveRequest(javax.servlet.ServletRequest) saved} first and then redirected to the login page. Then,

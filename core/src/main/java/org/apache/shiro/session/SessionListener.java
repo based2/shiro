@@ -43,12 +43,12 @@ public interface SessionListener {
 
     /**
      * Notification callback that occurs when the corresponding Session has expired.
-     * <p/>
+     * <br>
      * <b>Note</b>: this method is almost never called at the exact instant that the {@code Session} expires.  Almost all
      * session management systems, including Shiro's implementations, lazily validate sessions - either when they
      * are accessed or during a regular validation interval.  It would be too resource intensive to monitor every
      * single session instance to know the exact instant it expires.
-     * <p/>
+     * <br>
      * If you need to perform time-based logic when a session expires, it is best to write it based on the
      * session's {@link org.apache.shiro.session.Session#getLastAccessTime() lastAccessTime} and <em>not</em> the time
      * when this method is called.

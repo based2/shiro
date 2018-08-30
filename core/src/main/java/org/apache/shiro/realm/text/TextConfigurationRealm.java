@@ -83,10 +83,10 @@ public class TextConfigurationRealm extends SimpleAccountRealm {
      * <br>
      * <p>Here are some examples of what these lines might look like:</p>
      * <br>
-     * <p><code>root = <em>reallyHardToGuessPassword</em>, administrator<br/>
-     * jsmith = <em>jsmithsPassword</em>, manager, engineer, employee<br/>
-     * abrown = <em>abrownsPassword</em>, qa, employee<br/>
-     * djones = <em>djonesPassword</em>, qa, contractor<br/>
+     * <p><code>root = <em>reallyHardToGuessPassword</em>, administrator<br>
+     * jsmith = <em>jsmithsPassword</em>, manager, engineer, employee<br>
+     * abrown = <em>abrownsPassword</em>, qa, employee<br>
+     * djones = <em>djonesPassword</em>, qa, contractor<br>
      * guest = <em>guestPassword</em></code></p>
      *
      * @param userDefinitions the user definitions to be parsed and converted to Map.Entry elements

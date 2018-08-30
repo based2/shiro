@@ -57,7 +57,7 @@ import java.util.Set;
  * <br>
  * <h3>Multiple Levels</h3>
  * <br>
- * WildcardPermission</code> also supports the concept of multiple <em>levels</em>.  For example, you could
+ * <code>WildcardPermission</code> also supports the concept of multiple <em>levels</em>.  For example, you could
  * restructure the previous simple example by granting a user the permission <code>&quot;newsletter:edit&quot;</code>.
  * The colon in this example is a special character used by the <code>WildcardPermission</code> that delimits the
  * next token in the permission.

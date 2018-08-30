@@ -40,12 +40,12 @@ import java.util.Map;
  * <h1>Deprecated</h1>
  * This filter has been deprecated as of Shiro 1.2 in favor of using the {@link ShiroFilter} in {@code web.xml} instead.
  * See the {@link ShiroFilter} JavaDoc for usage.
- * <p/>
+ * <br>
  * ======================
- * <p/>
+ * <br>
  * Servlet Filter that configures and enables all Shiro functions within a web application by using the
  * <a href="http://en.wikipedia.org/wiki/INI_file">INI</a> configuration format.
- * <p/>
+ * <br>
  * The actual INI configuration contents are not covered here, but instead in Shiro's
  * <a href="http://shiro.apache.org/configuration.html">Configuration Documentation</a> and additional web-specific
  * <a href="http://shiro.apache.org/web.html">Web Documentation</a>.
@@ -75,7 +75,7 @@ import java.util.Map;
  * </pre>
  * Unqualified (schemeless or 'non-prefixed') paths are assumed to be {@code ServletContext} resource paths, resolvable
  * via {@link javax.servlet.ServletContext#getResourceAsStream(String) ServletContext#getResourceAsStream}.
- * <p/>
+ * <br>
  * Non-ServletContext resources may be loaded from qualified locations by specifying prefixes indicating the source,
  * e.g. {@code file:}, {@code url:}, and {@code classpath:}.  See the
  * {@link ResourceUtils#getInputStreamForPath(String)} JavaDoc for more.
@@ -96,7 +96,7 @@ import java.util.Map;
  * </pre>
  * Although this is typically not recommended because any Shiro configuration changes would contribute to version control
  * 'noise' in the web.xml file.
- * <p/>
+ * <br>
  * When creating the shiro.ini configuration itself, please see Shiro's
  * <a href="http://shiro.apache.org/configuration.html">Configuration Documentation</a> and
  * <a href="http://shiro.apache.org/web.html">Web Documentation</a>.
@@ -126,7 +126,7 @@ public class IniShiroFilter extends AbstractShiroFilter {
      * Returns the actual INI configuration text to use to build the {@link SecurityManager} and
      * {@link FilterChainResolver} used by the web application or {@code null} if the
      * {@link #getConfigPath() configPath} should be used to load a fallback INI source.
-     * <p/>
+     * <br>
      * This value is {@code null} by default, but it will be automatically set to the value of the
      * '{@code config}' {@code init-param} if it exists in the {@code FilterConfig} provided by the servlet
      * container at startup.
@@ -143,7 +143,7 @@ public class IniShiroFilter extends AbstractShiroFilter {
      * Sets the actual INI configuration text to use to build the {@link SecurityManager} and
      * {@link FilterChainResolver} used by the web application.  If this value is {@code null}, the
      * {@link #getConfigPath() configPath} will be checked to see if a .ini file should be loaded instead.
-     * <p/>
+     * <br>
      * This value is {@code null} by default, but it will be automatically set to the value of the
      * '{@code config}' {@code init-param} if it exists in the {@code FilterConfig} provided by the servlet
      * container at startup.
@@ -158,7 +158,7 @@ public class IniShiroFilter extends AbstractShiroFilter {
     /**
      * Returns the config path to be used to load a .ini file for configuration if a configuration is
      * not specified via the {@link #getConfig() config} attribute.
-     * <p/>
+     * <br>
      * This value is {@code null} by default, but it will be automatically set to the value of the
      * '{@code configPath}' {@code init-param} if it exists in the {@code FilterConfig} provided by the servlet
      * container at startup.
@@ -173,7 +173,7 @@ public class IniShiroFilter extends AbstractShiroFilter {
     /**
      * Sets the config path to be used to load a .ini file for configuration if a configuration is
      * not specified via the {@link #getConfig() config} attribute.
-     * <p/>
+     * <br>
      * This value is {@code null} by default, but it will be automatically set to the value of the
      * '{@code configPath}' {@code init-param} if it exists in the {@code FilterConfig} provided by the servlet
      * container at startup.
@@ -324,7 +324,7 @@ public class IniShiroFilter extends AbstractShiroFilter {
 
     /**
      * Converts the specified file path to an {@link Ini} instance.
-     * <p/>
+     * <br>
      * If the path does not have a resource prefix as defined by {@link ResourceUtils#hasResourcePrefix(String)}, the
      * path is expected to be resolvable by the {@code ServletContext} via
      * {@link javax.servlet.ServletContext#getResourceAsStream(String)}.

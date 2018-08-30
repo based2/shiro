@@ -18,7 +18,7 @@
  */
 /**
  * Provides the Shiro JSP Tag Library implementations.
- * <p/>
+ * <br>
  * Shiro JSP Tags can be used to evalute or not evaluate (show or not show) parts of a JSP page based on the
  * current user's authentication status and/or authorization (access control) abilities.
  */

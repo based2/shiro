@@ -38,20 +38,20 @@ import java.util.ServiceLoader;
  * An {@code EnvironmentLoader} is responsible for loading a web application's Shiro {@link WebEnvironment}
  * (which includes the web app's {@link org.apache.shiro.web.mgt.WebSecurityManager WebSecurityManager}) into the
  * {@code ServletContext} at application startup.
- * </p>
+ * <br>
  * In Shiro 1.1 and earlier, the Shiro ServletFilter was responsible for creating the {@code WebSecurityManager} and
  * any additional objects (security filters, etc).  However, any component not filtered by the Shiro Filter (such
  * as other context listeners) was not able to easily acquire the these objects to perform security operations.
- * </p>
+ * <br>
  * Due to this, in Shiro 1.2 and later, this {@code EnvironmentLoader} (or more likely, the
  * {@link EnvironmentLoaderListener} subclass) is the preferred mechanism to initialize
  * a Shiro environment.  The Shiro Filter, while still required for request filtering, will not perform this
  * initialization at startup if the {@code EnvironmentLoader} (or listener) runs first.
- * <h2>Usage</h2>
+ * <h1>Usage</h1>
  * This implementation will look for two servlet context {@code context-param}s in {@code web.xml}:
  * {@code shiroEnvironmentClass} and {@code shiroConfigLocations} that customize how the {@code WebEnvironment} instance
  * will be initialized.
- * <h3>shiroEnvironmentClass</h3>
+ * <h1>shiroEnvironmentClass</h1>
  * The {@code shiroEnvironmentClass} {@code context-param}, if it exists, allows you to specify the
  * fully-qualified implementation class name of the {@link WebEnvironment} to instantiate.  For example:
  * <pre>
@@ -62,7 +62,7 @@ import java.util.ServiceLoader;
  * </pre>
  * If not specified, the default value is the {@link IniWebEnvironment} class, which assumes Shiro's default
  * <a href="http://shiro.apache.org/configuration.html">INI configuration format</a>
- * <h3>shiroConfigLocations</h3>
+ * <h1>shiroConfigLocations</h1>
  * The {@code shiroConfigLocations} {@code context-param}, if it exists, allows you to specify the config location(s)
  * (resource path(s)) that will be relayed to the instantiated {@link WebEnvironment}.  For example:
  * <pre>
@@ -73,7 +73,7 @@ import java.util.ServiceLoader;
  * </pre>
  * The {@code WebEnvironment} implementation must implement the {@link ResourceConfigurable} interface if it is to
  * acquire the {@code shiroConfigLocations} value.
- * <p />
+ * <br>
  * If this {@code context-param} is not specified, the {@code WebEnvironment} instance determines default resource
  * lookup behavior.  For example, the {@link IniWebEnvironment} will check the following two locations for INI config
  * by default (in order):
@@ -81,11 +81,11 @@ import java.util.ServiceLoader;
  * <li>/WEB-INF/shiro.ini</li>
  * <li>classpath:shiro.ini</li>
  * </ol>
- * <h2>Web Security Enforcement</h2>
+ * <h1>Web Security Enforcement</h1>
  * Using this loader will only initialize Shiro's environment in a web application - it will not filter web requests or
  * perform web-specific security operations.  To do this, you must ensure that you have also configured the
  * {@link org.apache.shiro.web.servlet.ShiroFilter ShiroFilter} in {@code web.xml}.
- * <p />
+ * <br>
  * Finally, it should be noted that this implementation was based on ideas in Spring 3's
  * {@code org.springframework.web.context.ContextLoader} implementation - no need to reinvent the wheel for this common
  * behavior.
@@ -270,10 +270,10 @@ public class EnvironmentLoader {
 
     /**
      * Instantiates a {@link WebEnvironment} based on the specified ServletContext.
-     * <p/>
+     * <br>
      * This implementation {@link #determineWebEnvironmentClass(javax.servlet.ServletContext) determines} a
      * {@link WebEnvironment} implementation class to use.  That class is instantiated, configured, and returned.
-     * <p/>
+     * <br>
      * This allows custom {@code WebEnvironment} implementations to be specified via a ServletContext init-param if
      * desired.  If not specified, the default {@link IniWebEnvironment} implementation will be used.
      *

@@ -72,14 +72,16 @@ public class WebDelegatingSubject extends DelegatingSubject implements WebSubjec
 
     /**
      * Returns {@code true} if session creation is allowed  (as determined by the super class's
-     * {@link super#isSessionCreationEnabled()} value and no request-specific override has disabled sessions for this subject,
+     * {@link #isSessionCreationEnabled()}
+     * value and no request-specific override has disabled sessions for this subject,
      * {@code false} otherwise.
-     * <p/>
-     * This means session creation is disabled if the super {@link super#isSessionCreationEnabled()} property is {@code false}
+     * <br>
+     * This means session creation is disabled if the super {@link #isSessionCreationEnabled()} property is {@code false}
      * or if a request attribute is discovered that turns off sessions for the current request.
      *
      * @return {@code true} if session creation is allowed  (as determined by the super class's
-     *         {@link super#isSessionCreationEnabled()} value and no request-specific override has disabled sessions for this
+     *         {@link #isSessionCreationEnabled()}
+     *         value and no request-specific override has disabled sessions for this
      *         subject, {@code false} otherwise.
      * @since 1.2
      */

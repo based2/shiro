@@ -30,7 +30,7 @@ import java.io.Serializable;
  * Session record in the EIS data store.  Some EIS data stores, such as relational databases, can generate the id
  * at the same time the record is created, such as when using auto-generated primary keys.  In these cases, a
  * SessionIdGenerator does not need to be configured.
- * <p/>
+ * <br>
  * However, if you want to customize how session IDs are created before persisting the Session record into the data
  * store, you can implement this interface and typically inject it into an {@link AbstractSessionDAO} instance.
  *

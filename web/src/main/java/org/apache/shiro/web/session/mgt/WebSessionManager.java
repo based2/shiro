@@ -32,7 +32,7 @@ public interface WebSessionManager extends SessionManager {
     /**
      * Returns {@code true} if session management and storage is managed by the underlying Servlet container or
      * {@code false} if managed by Shiro directly (called 'native' sessions).
-     * <p/>
+     * <br>
      * If sessions are enabled, Shiro can make use of Sessions to retain security information from
      * request to request.  This method indicates whether Shiro would use the Servlet container sessions to fulfill its
      * needs, or if it would use its own native session management instead (which can support enterprise features

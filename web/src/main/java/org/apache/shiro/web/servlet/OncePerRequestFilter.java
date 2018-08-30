@@ -31,7 +31,7 @@ import java.io.IOException;
  * Filter base class that guarantees to be just executed once per request,
  * on any servlet container. It provides a {@link #doFilterInternal}
  * method with HttpServletRequest and HttpServletResponse arguments.
- * <p/>
+ * <br>
  * The {@link #getAlreadyFilteredAttributeName} method determines how
  * to identify that a request is already filtered. The default implementation
  * is based on the configured name of the concrete filter instance.
@@ -39,7 +39,7 @@ import java.io.IOException;
  * 1.2 introduced the {@link #isEnabled(javax.servlet.ServletRequest, javax.servlet.ServletResponse)} method and
  * {@link #isEnabled()} property to allow explicit controll over whether the filter executes (or allows passthrough)
  * for any given request.
- * <p/>
+ * <br>
  * <b>NOTE</b> This class was initially borrowed from the Spring framework but has continued modifications.
  *
  * @since 0.1
@@ -70,7 +70,7 @@ public abstract class OncePerRequestFilter extends NameableFilter {
      * {@code false} if it should let the request/response pass through immediately to the next
      * element in the {@link FilterChain}.  The default value is {@code true}, as most filters would inherently need
      * to execute when configured.
-     * <p/>
+     * <br>
      * <b>*</b> This configuration property is for general configuration for any request that comes through
      * the filter.  The
      * {@link #isEnabled(javax.servlet.ServletRequest, javax.servlet.ServletResponse) isEnabled(request,response)}
@@ -134,12 +134,12 @@ public abstract class OncePerRequestFilter extends NameableFilter {
     /**
      * Returns {@code true} if this filter should filter the specified request, {@code false} if it should let the
      * request/response pass through immediately to the next element in the {@code FilterChain}.
-     * <p/>
+     * <br>
      * This default implementation merely returns the value of {@link #isEnabled() isEnabled()}, which is
      * {@code true} by default (to ensure the filter always executes by default), but it can be overridden by
      * subclasses for request-specific behavior if necessary.  For example, a filter could be enabled or disabled
      * based on the request path being accessed.
-     * <p/>
+     * <br>
      * <b>Helpful Hint:</b> if your subclass extends {@link org.apache.shiro.web.filter.PathMatchingFilter PathMatchingFilter},
      * you may wish to instead override the
      * {@link org.apache.shiro.web.filter.PathMatchingFilter#isEnabled(javax.servlet.ServletRequest, javax.servlet.ServletResponse, String, Object)
@@ -162,7 +162,7 @@ public abstract class OncePerRequestFilter extends NameableFilter {
 
     /**
      * Return name of the request attribute that identifies that a request has already been filtered.
-     * <p/>
+     * <br>
      * The default implementation takes the configured {@link #getName() name} and appends &quot;{@code .FILTERED}&quot;.
      * If the filter is not fully initialized, it falls back to the implementation's class name.
      *

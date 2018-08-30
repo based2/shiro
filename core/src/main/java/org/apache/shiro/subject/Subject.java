@@ -67,7 +67,7 @@ public interface Subject {
      * The term <em>principal</em> is just a fancy security term for any identifying attribute(s) of an application
      * user, such as a username, or user id, or public key, or anything else you might use in your application to
      * identify a user.
-     * <h4>Uniqueness</h4>
+     * <h1>Uniqueness</h1>
      * Although given names and family names (first/last) are technically considered principals as well,
      * Shiro expects the object returned from this method to be an identifying attribute unique across
      * your entire application.
@@ -301,7 +301,7 @@ public interface Subject {
     void checkRoles(Collection<String> roleIdentifiers) throws AuthorizationException;
 
     /**
-     * Same as {@link #checkRoles(Collection<String> roleIdentifiers) checkRoles(Collection<String> roleIdentifiers)} but
+     * Same as {@link #checkRoles(Collection)} but
      * doesn't require a collection as a an argument.
      * Asserts this Subject has all of the specified roles by returning quietly if they do or throwing an
      * {@link org.apache.shiro.authz.AuthorizationException} if they do not.
@@ -354,7 +354,7 @@ public interface Subject {
      * Although the underlying implementation determines exactly how this method functions, most implementations have
      * this method act as the logical equivalent to this code:
      * <pre>
-     * {@link #getPrincipal() getPrincipal()} != null && !{@link #isAuthenticated() isAuthenticated()}</pre>
+     * {@link #getPrincipal() getPrincipal()} != null &amp; &amp; !{@link #isAuthenticated() isAuthenticated()}</pre>
      * <br>
      * Note as indicated by the above code example, if a {@code Subject} is remembered, they are
      * <em>NOT</em> considered authenticated.  A check against {@link #isAuthenticated() isAuthenticated()} is a more
@@ -364,7 +364,7 @@ public interface Subject {
      * <br>
      * Once the subject is authenticated, they are no longer considered only remembered because their identity would
      * have been verified during the current session.
-     * <h4>Remembered vs Authenticated</h4>
+     * <h1>Remembered vs Authenticated</h1>
      * Authentication is the process of <em>proving</em> you are who you say you are.  When a user is only remembered,
      * the remembered identity gives the system an idea who that user probably is, but in reality, has no way of
      * absolutely <em>guaranteeing</em> if the remembered {@code Subject} represents the user currently
@@ -574,7 +574,7 @@ public interface Subject {
      * <b>NOTE</b>: This is provided for framework development support only and should typically never be used by
      * application developers.  {@code Subject} instances should generally be acquired by using
      * <code>SecurityUtils.{@link SecurityUtils#getSubject() getSubject()}</code>
-     * <h4>Usage</h4>
+     * <h1>Usage</h1>
      * The simplest usage of this builder is to construct an anonymous, session-less {@code Subject} instance:
      * <pre>
      * Subject subject = new Subject.{@link #Builder() Builder}().{@link #buildSubject() buildSubject()};</pre>

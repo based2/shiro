@@ -24,11 +24,11 @@ import org.apache.shiro.web.util.WebUtils;
 
 /**
  * Primary Shiro Filter for web applications configuring Shiro via Servlet &lt;listener&gt; in web.xml.
- * <p/>
+ * <br>
  * As of Shiro 1.2, this is Shiro's preferred filter for {@code web.xml} configuration.  It expects the presence of a
  * Shiro {@link org.apache.shiro.web.env.WebEnvironment WebEnvironment} in the {@code ServletContext}, also
  * configured via {@code web.xml}.
- * <h2>Usage</h2>
+ * <h1>Usage</h1>
  * As this Filter expects an available {@link org.apache.shiro.web.env.WebEnvironment WebEnvironment} instance to
  * be configured, it must be defined in {@code web.xml} with the companion
  * {@link org.apache.shiro.web.env.EnvironmentLoaderListener EnvironmentLoaderListener}, which performs the necessary

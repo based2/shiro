@@ -165,8 +165,8 @@ public class JdbcRealm extends AuthorizingRealm {
      * per permission with three columns containing the fully qualified name of the permission class, the permission
      * name, and the permission actions (in that order).  If you require a solution that does not match this query
      * structure, you can override {@link #doGetAuthorizationInfo(org.apache.shiro.subject.PrincipalCollection)} or just
-     * {@link #getPermissions(java.sql.Connection,String,java.util.Collection)}</p>
-<br>
+     * {@link #getPermissions(java.sql.Connection,String,java.util.Collection)}
+     * <br>
      * <b>Permissions are only retrieved if you set {@link #permissionsLookupEnabled} to true.  Otherwise,
      * this query is ignored.</b>
      *

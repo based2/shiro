@@ -28,8 +28,8 @@ import org.apache.shiro.web.filter.AccessControlFilter;
  * Filter that allows access to resources if the accessor is a known user, which is defined as
  * having a known principal.  This means that any user who is authenticated or remembered via a
  * 'remember me' feature will be allowed access from this filter.
- * <p/>
- * If the accessor is not a known user, then they will be redirected to the {@link #setLoginUrl(String) loginUrl}</p>
+ * <br>
+ * If the accessor is not a known user, then they will be redirected to the {@link #setLoginUrl(String) loginUrl}
  *
  * @since 0.9
  */

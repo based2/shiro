@@ -155,7 +155,7 @@ public interface NativeSessionManager extends SessionManager {
      * Binds the specified {@code value} to the associated session uniquely identified by the {@code attributeKey}.
      * If there is already a session attribute bound under the {@code attributeKey}, that existing object will be
      * replaced by the new {@code value}.
-     * <p/>
+     * <br>
      * If the {@code value} parameter is null, it has the same effect as if the
      * {@link #removeAttribute(SessionKey sessionKey, Object attributeKey)} method was called.
      *

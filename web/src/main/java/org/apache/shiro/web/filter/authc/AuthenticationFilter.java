@@ -44,7 +44,7 @@ public abstract class AuthenticationFilter extends AccessControlFilter {
      * Returns the success url to use as the default location a user is sent after logging in.  Typically a redirect
      * after login will redirect to the originally request URL; this property is provided mainly as a fallback in case
      * the original request URL is not available or not specified.
-     * <p/>
+     * <br>
      * The default value is {@link #DEFAULT_SUCCESS_URL}.
      *
      * @return the success url to use as the default location a user is sent after logging in.
@@ -57,7 +57,7 @@ public abstract class AuthenticationFilter extends AccessControlFilter {
      * Sets the default/fallback success url to use as the default location a user is sent after logging in.  Typically
      * a redirect after login will redirect to the originally request URL; this property is provided mainly as a
      * fallback in case the original request URL is not available or not specified.
-     * <p/>
+     * <br>
      * The default value is {@link #DEFAULT_SUCCESS_URL}.
      *
      * @param successUrl the success URL to redirect the user to after a successful login.
@@ -69,7 +69,7 @@ public abstract class AuthenticationFilter extends AccessControlFilter {
 
     /**
      * Determines whether the current subject is authenticated.
-     * <p/>
+     * <br>
      * The default implementation {@link #getSubject(javax.servlet.ServletRequest, javax.servlet.ServletResponse) acquires}
      * the currently executing Subject and then returns
      * {@link org.apache.shiro.subject.Subject#isAuthenticated() subject.isAuthenticated()};

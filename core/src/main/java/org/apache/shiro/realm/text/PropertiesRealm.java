@@ -50,14 +50,14 @@ import java.util.concurrent.TimeUnit;
  * Each line's key/value pair represents either a user-to-role(s) mapping <em>or</em> a role-to-permission(s)
  * mapping.
  * <br>
- * The user-to-role(s) lines have this format:</p>
+ * The user-to-role(s) lines have this format:
  * <br>
  * <code><b>user.</b><em>username</em> = <em>password</em>,role1,role2,...</code>
  * <br>
  * Note that each key is prefixed with the token <b>{@code user.}</b>  Each value must adhere to the
  * the {@link #setUserDefinitions(String) setUserDefinitions(String)} JavaDoc.
  * <br>
- * The role-to-permission(s) lines have this format:</p>
+ * The role-to-permission(s) lines have this format:
  * <br>
  * <code><b>role.</b><em>rolename</em> = <em>permissionDefinition1</em>, <em>permissionDefinition2</em>, ...</code>
  * <br>

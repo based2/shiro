@@ -29,12 +29,12 @@ import java.io.IOException;
 
 /**
  * A Filter that requires the request to be on a specific port, and if not, redirects to the same URL on that port.
- * <p/>
+ * <br>
  * Example config:
  * <pre>
  * [filters]
  * port.port = 80
- * <p/>
+ * <br>
  * [urls]
  * /some/path/** = port
  * # override for just this path:

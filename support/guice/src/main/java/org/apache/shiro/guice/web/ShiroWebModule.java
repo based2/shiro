@@ -58,7 +58,7 @@ import com.google.inject.servlet.ServletModule;
  * Sets up Shiro lifecycles within Guice, enables the injecting of Shiro objects, and binds a default
  * {@link org.apache.shiro.web.mgt.WebSecurityManager}, {@link org.apache.shiro.mgt.SecurityManager} and {@link org.apache.shiro.session.mgt.SessionManager}.  At least one realm must be added by
  * using {@link #bindRealm() bindRealm}.
- * <p/>
+ * <br>
  * Also provides for the configuring of filter chains and binds a {@link org.apache.shiro.web.filter.mgt.FilterChainResolver} with that information.
  */
 public abstract class ShiroWebModule extends ShiroModule {
@@ -211,7 +211,7 @@ public abstract class ShiroWebModule extends ShiroModule {
 
     /**
      * Binds the security manager.  Override this method in order to provide your own security manager binding.
-     * <p/>
+     * <br>
      * By default, a {@link org.apache.shiro.web.mgt.DefaultWebSecurityManager} is bound as an eager singleton.
      *
      * @param bind
@@ -226,7 +226,7 @@ public abstract class ShiroWebModule extends ShiroModule {
 
     /**
      * Binds the session manager.  Override this method in order to provide your own session manager binding.
-     * <p/>
+     * <br>
      * By default, a {@link org.apache.shiro.web.session.mgt.DefaultWebSessionManager} is bound as an eager singleton.
      *
      * @param bind
@@ -256,7 +256,7 @@ public abstract class ShiroWebModule extends ShiroModule {
     }
 
     /**
-     * Maps 'n' number of <code>filterConfig</code>s to a specific path pattern.<BR/>
+     * Maps 'n' number of <code>filterConfig</code>s to a specific path pattern.<br>
      * For example, a path of '/my_private_resource/**' to 'filterConfig(AUTHC)' would require
      * any resource under the path '/my_private_resource' would be processed through the {@link FormAuthenticationFilter}.
      *
@@ -367,7 +367,7 @@ public abstract class ShiroWebModule extends ShiroModule {
 
     /**
      * Adds a filter chain to the shiro configuration.
-     * <p/>
+     * <br>
      * NOTE: If the provided key is for a subclass of {@link org.apache.shiro.web.filter.PathMatchingFilter}, it will be registered with a proper
      * provider.
      *

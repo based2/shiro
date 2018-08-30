@@ -113,7 +113,7 @@ public abstract class AbstractFilter extends ServletContextSupport implements Fi
      * (and non-{@code null}) at the time this method is invoked via the
      * {@link #getServletContext() getServletContext()} and {@link #getFilterConfig() getFilterConfig()}
      * methods respectively.
-     * <p/>
+     * <br>
      * {@code init-param} values may be conveniently obtained via the {@link #getInitParam(String)} method.
      *
      * @throws Exception if the subclass has an error upon initialization.

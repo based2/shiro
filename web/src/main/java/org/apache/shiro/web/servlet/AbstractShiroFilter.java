@@ -41,7 +41,7 @@ import java.util.concurrent.Callable;
 /**
  * Abstract base class that provides all standard Shiro request filtering behavior and expects
  * subclasses to implement configuration-specific logic (INI, XML, .properties, etc).
- * <p/>
+ * <br>
  * Subclasses should perform configuration and construction logic in an overridden
  * {@link #init()} method implementation.  That implementation should make available any constructed
  * {@code SecurityManager} and {@code FilterChainResolver} by calling
@@ -52,7 +52,7 @@ import java.util.concurrent.Callable;
  * memory via the {@code SecurityUtils.}{@link SecurityUtils#setSecurityManager(org.apache.shiro.mgt.SecurityManager) setSecurityManager}
  * method.  Instead, it is expected that Subject instances will always be constructed on a request-processing thread
  * via instances of this Filter class.
- * <p/>
+ * <br>
  * However, if you need to construct {@code Subject} instances on separate (non request-processing) threads, it might
  * be easiest to enable the SecurityManager to be available in static memory via the
  * {@link SecurityUtils#getSecurityManager()} method.  You can do this by additionally specifying an {@code init-param}:
@@ -115,9 +115,9 @@ public abstract class AbstractShiroFilter extends OncePerRequestFilter {
      * to static memory (via
      * {@code SecurityUtils.}{@link SecurityUtils#setSecurityManager(org.apache.shiro.mgt.SecurityManager) setSecurityManager}),
      * {@code false} otherwise.
-     * <p/>
+     * <br>
      * The default value is {@code false}.
-     * <p/>
+     * <br>
      *
      *
      * @return {@code true} if the constructed {@link #getSecurityManager() securityManager} reference should be bound
@@ -133,7 +133,7 @@ public abstract class AbstractShiroFilter extends OncePerRequestFilter {
     /**
      * Sets if the constructed {@link #getSecurityManager() securityManager} reference should be bound
      * to static memory (via {@code SecurityUtils.}{@link SecurityUtils#setSecurityManager(org.apache.shiro.mgt.SecurityManager) setSecurityManager}).
-     * <p/>
+     * <br>
      * The default value is {@code false}.
      *
      * @param staticSecurityManagerEnabled if the constructed {@link #getSecurityManager() securityManager} reference
@@ -214,7 +214,7 @@ public abstract class AbstractShiroFilter extends OncePerRequestFilter {
     /**
      * Prepares the {@code ServletRequest} instance that will be passed to the {@code FilterChain} for request
      * processing.
-     * <p/>
+     * <br>
      * If the {@code ServletRequest} is an instance of {@link HttpServletRequest}, the value returned from this method
      * is obtained by calling {@link #wrapServletRequest(javax.servlet.http.HttpServletRequest)} to allow Shiro-specific
      * HTTP behavior, otherwise the original {@code ServletRequest} argument is returned.
@@ -252,12 +252,12 @@ public abstract class AbstractShiroFilter extends OncePerRequestFilter {
     /**
      * Prepares the {@code ServletResponse} instance that will be passed to the {@code FilterChain} for request
      * processing.
-     * <p/>
+     * <br>
      * This implementation delegates to {@link #wrapServletRequest(javax.servlet.http.HttpServletRequest)}
      * only if Shiro-based sessions are enabled (that is, !{@link #isHttpSessions()}) and the request instance is a
      * {@link ShiroHttpServletRequest}.  This ensures that any URL rewriting that occurs is handled correctly using the
      * Shiro-managed Session's sessionId and not a servlet container session ID.
-     * <p/>
+     * <br>
      * If HTTP-based sessions are enabled (the default), then this method does nothing and just returns the
      * {@code ServletResponse} argument as-is, relying on the default Servlet Container URL rewriting logic.
      *
@@ -296,7 +296,7 @@ public abstract class AbstractShiroFilter extends OncePerRequestFilter {
      * Updates any 'native'  Session's last access time that might exist to the timestamp when this method is called.
      * If native sessions are not enabled (that is, standard Servlet container sessions are being used) or there is no
      * session ({@code subject.getSession(false) == null}), this method does nothing.
-     * <p/>This method implementation merely calls
+     * <br>This method implementation merely calls
      * <code>Session.{@link org.apache.shiro.session.Session#touch() touch}()</code> on the session.
      *
      * @param request  incoming request - ignored, but available to subclasses that might wish to override this method
@@ -337,7 +337,7 @@ public abstract class AbstractShiroFilter extends OncePerRequestFilter {
      * {@link #executeChain(javax.servlet.ServletRequest, javax.servlet.ServletResponse, javax.servlet.FilterChain)}
      * methods</li>
      * </ol>
-     * <p/>
+     * <br>
      * The {@code Subject.}{@link Subject#execute(Runnable) execute(Runnable)} call in step #4 is used as an
      * implementation technique to guarantee proper thread binding and restoration is completed successfully.
      *
@@ -387,11 +387,11 @@ public abstract class AbstractShiroFilter extends OncePerRequestFilter {
 
     /**
      * Returns the {@code FilterChain} to execute for the given request.
-     * <p/>
+     * <br>
      * The {@code origChain} argument is the
      * original {@code FilterChain} supplied by the Servlet Container, but it may be modified to provide
      * more behavior by pre-pending further chains according to the Shiro configuration.
-     * <p/>
+     * <br>
      * This implementation returns the chain that will actually be executed by acquiring the chain from a
      * {@link #getFilterChainResolver() filterChainResolver}.  The resolver determines exactly which chain to
      * execute, typically based on URL configuration.  If no chain is returned from the resolver call
@@ -425,7 +425,7 @@ public abstract class AbstractShiroFilter extends OncePerRequestFilter {
 
     /**
      * Executes a {@link FilterChain} for the given request.
-     * <p/>
+     * <br>
      * This implementation first delegates to
      * <code>{@link #getExecutionChain(javax.servlet.ServletRequest, javax.servlet.ServletResponse, javax.servlet.FilterChain) getExecutionChain}</code>
      * to allow the application's Shiro configuration to determine exactly how the chain should execute.  The resulting

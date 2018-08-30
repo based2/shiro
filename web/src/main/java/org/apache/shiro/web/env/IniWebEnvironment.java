@@ -160,8 +160,6 @@ public class IniWebEnvironment extends ResourceBasedWebEnvironment implements In
      *     realm = net.differentco.MyCustomRealm
      * </code></pre>
      *
-     * </p>
-     *
      * @return Ini configuration used by the framework integrations.
      * @since 1.4
      */
@@ -227,7 +225,7 @@ public class IniWebEnvironment extends ResourceBasedWebEnvironment implements In
     /**
      * Creates an {@link Ini} instance reflecting the specified path, or {@code null} if the path does not exist and
      * is not required.
-     * <p/>
+     * <br>
      * If the path is required and does not exist or is empty, a {@link ConfigurationException} will be thrown.
      *
      * @param configLocation the resource path to load into an {@code Ini} instance.
@@ -316,7 +314,7 @@ public class IniWebEnvironment extends ResourceBasedWebEnvironment implements In
 
     /**
      * Converts the specified file path to an {@link Ini} instance.
-     * <p/>
+     * <br>
      * If the path does not have a resource prefix as defined by {@link org.apache.shiro.io.ResourceUtils#hasResourcePrefix(String)}, the
      * path is expected to be resolvable by the {@code ServletContext} via
      * {@link javax.servlet.ServletContext#getResourceAsStream(String)}.
@@ -388,7 +386,7 @@ public class IniWebEnvironment extends ResourceBasedWebEnvironment implements In
     /**
      * Allows for configuration via a direct {@link Ini} instance instead of via
      * {@link #getConfigLocations() config locations}.
-     * <p/>
+     * <br>
      * If the specified instance is null or empty, the fallback/default resource-based configuration will be used.
      *
      * @param ini the ini instance to use for creation.

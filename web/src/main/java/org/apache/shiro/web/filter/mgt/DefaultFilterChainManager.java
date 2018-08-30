@@ -151,7 +151,7 @@ public class DefaultFilterChainManager implements FilterChainManager {
 
     /**
      * Splits the comma-delimited filter chain definition line into individual filter definition tokens.
-     * <p/>
+     * <br>
      * Example Input:
      * <pre>
      *     foo, bar[baz], blah[x, y]
@@ -173,19 +173,19 @@ public class DefaultFilterChainManager implements FilterChainManager {
 
     /**
      * Based on the given filter chain definition token (e.g. 'foo' or 'foo[bar, baz]'), this will return the token
-     * as a name/value pair, removing any brackets as necessary.  Examples:
-     * <table>
+     * as a name/value pair, removing any brackets as necessary.  
+     * <table summary="Examples:">
      *     <tr>
      *         <th>Input</th>
      *         <th>Result</th>
      *     </tr>
      *     <tr>
      *         <td>{@code foo}</td>
-     *         <td>returned[0] == {@code foo}<br/>returned[1] == {@code null}</td>
+     *         <td>returned[0] == {@code foo}<br>returned[1] == {@code null}</td>
      *     </tr>
      *     <tr>
      *         <td>{@code foo[bar, baz]}</td>
-     *         <td>returned[0] == {@code foo}<br/>returned[1] == {@code bar, baz}</td>
+     *         <td>returned[0] == {@code foo}<br>returned[1] == {@code bar, baz}</td>
      *     </tr>
      * </table>
      * @param token the filter chain definition token

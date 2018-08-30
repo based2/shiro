@@ -59,7 +59,7 @@ public abstract class AccessControlFilter extends PathMatchingFilter {
 
     /**
      * Returns the login URL used to authenticate a user.
-     * <p/>
+     * <br>
      * Most Shiro filters use this url
      * as the location to redirect a user when the filter requires authentication.  Unless overridden, the
      * {@link #DEFAULT_LOGIN_URL DEFAULT_LOGIN_URL} is assumed, which can be overridden via
@@ -73,7 +73,7 @@ public abstract class AccessControlFilter extends PathMatchingFilter {
 
     /**
      * Sets the login URL used to authenticate a user.
-     * <p/>
+     * <br>
      * Most Shiro filters use this url as the location to redirect a user when the filter requires
      * authentication.  Unless overridden, the {@link #DEFAULT_LOGIN_URL DEFAULT_LOGIN_URL} is assumed.
      *
@@ -85,7 +85,7 @@ public abstract class AccessControlFilter extends PathMatchingFilter {
 
     /**
      * Convenience method that acquires the Subject associated with the request.
-     * <p/>
+     * <br>
      * The default implementation simply returns
      * {@link org.apache.shiro.SecurityUtils#getSubject() SecurityUtils.getSubject()}.
      *
@@ -117,7 +117,7 @@ public abstract class AccessControlFilter extends PathMatchingFilter {
      * Processes requests where the subject was denied access as determined by the
      * {@link #isAccessAllowed(javax.servlet.ServletRequest, javax.servlet.ServletResponse, Object) isAccessAllowed}
      * method, retaining the {@code mappedValue} that was used during configuration.
-     * <p/>
+     * <br>
      * This method immediately delegates to {@link #onAccessDenied(ServletRequest,ServletResponse)} as a
      * convenience in that most post-denial behavior does not need the mapped config again.
      *
@@ -164,7 +164,7 @@ public abstract class AccessControlFilter extends PathMatchingFilter {
 
     /**
      * Returns <code>true</code> if the incoming request is a login request, <code>false</code> otherwise.
-     * <p/>
+     * <br>
      * The default implementation merely returns <code>true</code> if the incoming request matches the configured
      * {@link #getLoginUrl() loginUrl} by calling
      * <code>{@link #pathsMatch(String, String) pathsMatch(loginUrl, request)}</code>.
@@ -179,7 +179,7 @@ public abstract class AccessControlFilter extends PathMatchingFilter {
 
     /**
      * Convenience method for subclasses to use when a login redirect is required.
-     * <p/>
+     * <br>
      * This implementation simply calls {@link #saveRequest(javax.servlet.ServletRequest) saveRequest(request)}
      * and then {@link #redirectToLogin(javax.servlet.ServletRequest, javax.servlet.ServletResponse) redirectToLogin(request,response)}.
      *
@@ -197,7 +197,7 @@ public abstract class AccessControlFilter extends PathMatchingFilter {
      * {@link WebUtils#saveRequest(javax.servlet.ServletRequest) WebUtils.saveRequest(request)} to save the request
      * state for reuse later.  This is mostly used to retain user request state when a redirect is issued to
      * return the user to their originally requested url/resource.
-     * <p/>
+     * <br>
      * If you need to save and then immediately redirect the user to login, consider using
      * {@link #saveRequestAndRedirectToLogin(javax.servlet.ServletRequest, javax.servlet.ServletResponse)
      * saveRequestAndRedirectToLogin(request,response)} directly.
@@ -211,7 +211,7 @@ public abstract class AccessControlFilter extends PathMatchingFilter {
     /**
      * Convenience method for subclasses that merely acquires the {@link #getLoginUrl() getLoginUrl} and redirects
      * the request to that url.
-     * <p/>
+     * <br>
      * <b>N.B.</b>  If you want to issue a redirect with the intention of allowing the user to then return to their
      * originally requested URL, don't use this method directly.  Instead you should call
      * {@link #saveRequestAndRedirectToLogin(javax.servlet.ServletRequest, javax.servlet.ServletResponse)

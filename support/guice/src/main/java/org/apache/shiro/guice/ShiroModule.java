@@ -127,7 +127,7 @@ public abstract class ShiroModule extends PrivateModule implements Destroyable {
 
     /**
      * Binds the security manager.  Override this method in order to provide your own security manager binding.
-     * <p/>
+     * <br>
      * By default, a {@link org.apache.shiro.mgt.DefaultSecurityManager} is bound as an eager singleton.
      *
      * @param bind
@@ -142,7 +142,7 @@ public abstract class ShiroModule extends PrivateModule implements Destroyable {
 
     /**
      * Binds the session manager.  Override this method in order to provide your own session manager binding.
-     * <p/>
+     * <br>
      * By default, a {@link org.apache.shiro.session.mgt.DefaultSessionManager} is bound as an eager singleton.
      *
      * @param bind
@@ -153,7 +153,7 @@ public abstract class ShiroModule extends PrivateModule implements Destroyable {
 
     /**
      * Binds the environment.  Override this method in order to provide your own environment binding.
-     * <p/>
+     * <br>
      * By default, a {@link GuiceEnvironment} is bound as an eager singleton.
      *
      * @param bind
@@ -184,15 +184,12 @@ public abstract class ShiroModule extends PrivateModule implements Destroyable {
     /**
      * Destroys all beans created within this module that implement {@link org.apache.shiro.util.Destroyable}.  Should be called when this
      * module will no longer be used.
-     *
-     * @throws Exception
      */
     public final void destroy() {
         for (Destroyable destroyable : destroyables) {
             try {
                 destroyable.destroy();
-            }
-            catch(Exception e) {
+            } catch(Exception e) {
                 log.warn("Error destroying component class: " + destroyable.getClass(), e);
             }
         }

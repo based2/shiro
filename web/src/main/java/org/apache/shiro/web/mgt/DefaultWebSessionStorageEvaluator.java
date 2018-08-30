@@ -29,17 +29,17 @@ import org.apache.shiro.web.util.WebUtils;
  * A web-specific {@code SessionStorageEvaluator} that performs the same logic as the parent class
  * {@link DefaultSessionStorageEvaluator} but additionally checks for a request-specific flag that may enable or
  * disable session access.
- * <p/>
+ * <br>
  * This implementation usually works in conjunction with the
  * {@link org.apache.shiro.web.filter.session.NoSessionCreationFilter}:  If the {@code NoSessionCreationFilter}
  * is configured in a filter chain, that filter will set a specific
  * {@code ServletRequest} {@link javax.servlet.ServletRequest#setAttribute attribute} indicating that session creation
  * should be disabled.
- * <p/>
+ * <br>
  * This {@code DefaultWebSessionStorageEvaluator} will then inspect this attribute, and if it has been set, will return
  * {@code false} from {@link #isSessionStorageEnabled(org.apache.shiro.subject.Subject)} method, thereby preventing
  * Shiro from creating a session for the purpose of storing subject state.
- * <p/>
+ * <br>
  * If the request attribute has
  * not been set (i.e. the {@code NoSessionCreationFilter} is not configured or has been disabled), this class does
  * nothing and delegates to the parent class for existing behavior.
@@ -65,7 +65,7 @@ public class DefaultWebSessionStorageEvaluator extends DefaultSessionStorageEval
      * Returns {@code true} if session storage is generally available (as determined by the super class's global
      * configuration property {@link #isSessionStorageEnabled()} and no request-specific override has turned off
      * session storage, {@code false} otherwise.
-     * <p/>
+     * <br>
      * This means session storage is disabled if the {@link #isSessionStorageEnabled()} property is {@code false} or if
      * a request attribute is discovered that turns off session storage for the current request.
      *

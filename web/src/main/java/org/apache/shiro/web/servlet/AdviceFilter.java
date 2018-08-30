@@ -46,7 +46,7 @@ public abstract class AdviceFilter extends OncePerRequestFilter {
     /**
      * Returns {@code true} if the filter chain should be allowed to continue, {@code false} otherwise.
      * It is called before the chain is actually consulted/executed.
-     * <p/>
+     * <br>
      * The default implementation returns {@code true} always and exists as a template method for subclasses.
      *
      * @param request  the incoming ServletRequest
@@ -65,7 +65,7 @@ public abstract class AdviceFilter extends OncePerRequestFilter {
      * {@link #afterCompletion(javax.servlet.ServletRequest, javax.servlet.ServletResponse, Exception) afterCompletion(request,response,exception)}
      * implementation, which is guaranteed to be called for every request, even when the chain processing throws
      * an Exception.
-     * <p/>
+     * <br>
      * The default implementation does nothing (no-op) and exists as a template method for subclasses.
      *
      * @param request  the incoming ServletRequest
@@ -80,7 +80,7 @@ public abstract class AdviceFilter extends OncePerRequestFilter {
      * Called in all cases in a {@code finally} block even if {@link #preHandle preHandle} returns
      * {@code false} or if an exception is thrown during filter chain processing.  Can be used for resource
      * cleanup if so desired.
-     * <p/>
+     * <br>
      * The default implementation does nothing (no-op) and exists as a template method for subclasses.
      *
      * @param request   the incoming ServletRequest
@@ -96,7 +96,7 @@ public abstract class AdviceFilter extends OncePerRequestFilter {
 
     /**
      * Actually executes the specified filter chain by calling <code>chain.doFilter(request,response);</code>.
-     * <p/>
+     * <br>
      * Can be overridden by subclasses for custom logic.
      *
      * @param request  the incoming ServletRequest
@@ -153,7 +153,7 @@ public abstract class AdviceFilter extends OncePerRequestFilter {
      * Executes cleanup logic in the {@code finally} code block in the
      * {@link #doFilterInternal(javax.servlet.ServletRequest, javax.servlet.ServletResponse, javax.servlet.FilterChain) doFilterInternal}
      * implementation.
-     * <p/>
+     * <br>
      * This implementation specifically calls
      * {@link #afterCompletion(javax.servlet.ServletRequest, javax.servlet.ServletResponse, Exception) afterCompletion}
      * as well as handles any exceptions properly.

@@ -54,7 +54,7 @@ public abstract class PathMatchingFilter extends AdviceFilter implements PathCon
     /**
      * A collection of path-to-config entries where the key is a path which this filter should process and
      * the value is the (possibly null) configuration element specific to this Filter for that specific path.
-     * <p/>
+     * <br>
      * <p>To put it another way, the keys are the paths (urls) that this Filter will process.
      * <p>The values are filter-specific data that this Filter should use when processing the corresponding
      * key (path).  The values can be null if no Filter-specific config was specified for that url.
@@ -64,14 +64,14 @@ public abstract class PathMatchingFilter extends AdviceFilter implements PathCon
     /**
      * Splits any comma-delmited values that might be found in the <code>config</code> argument and sets the resulting
      * <code>String[]</code> array on the <code>appliedPaths</code> internal Map.
-     * <p/>
+     * <br>
      * That is:
      * <pre><code>
      * String[] values = null;
      * if (config != null) {
      *     values = split(config);
      * }
-     * <p/>
+     * <br>
      * this.{@link #appliedPaths appliedPaths}.put(path, values);
      * </code></pre>
      *
@@ -91,7 +91,7 @@ public abstract class PathMatchingFilter extends AdviceFilter implements PathCon
 
     /**
      * Returns the context path within the application based on the specified <code>request</code>.
-     * <p/>
+     * <br>
      * This implementation merely delegates to
      * {@link WebUtils#getPathWithinApplication(javax.servlet.http.HttpServletRequest) WebUtils.getPathWithinApplication(request)},
      * but can be overridden by subclasses for custom logic.
@@ -106,11 +106,11 @@ public abstract class PathMatchingFilter extends AdviceFilter implements PathCon
     /**
      * Returns <code>true</code> if the incoming <code>request</code> matches the specified <code>path</code> pattern,
      * <code>false</code> otherwise.
-     * <p/>
+     * <br>
      * The default implementation acquires the <code>request</code>'s path within the application and determines
      * if that matches:
-     * <p/>
-     * <code>String requestURI = {@link #getPathWithinApplication(javax.servlet.ServletRequest) getPathWithinApplication(request)};<br/>
+     * <br>
+     * <code>String requestURI = {@link #getPathWithinApplication(javax.servlet.ServletRequest) getPathWithinApplication(request)};<br>
      * return {@link #pathsMatch(String, String) pathsMatch(path,requestURI)}</code>
      *
      * @param path    the configured url pattern to check the incoming request against.
@@ -127,7 +127,7 @@ public abstract class PathMatchingFilter extends AdviceFilter implements PathCon
     /**
      * Returns <code>true</code> if the <code>path</code> matches the specified <code>pattern</code> string,
      * <code>false</code> otherwise.
-     * <p/>
+     * <br>
      * Simply delegates to
      * <b><code>this.pathMatcher.{@link PatternMatcher#matches(String, String) matches(pattern,path)}</code></b>,
      * but can be overridden by subclasses for custom matching behavior.
@@ -149,7 +149,7 @@ public abstract class PathMatchingFilter extends AdviceFilter implements PathCon
      * {@link #onPreHandle(javax.servlet.ServletRequest, javax.servlet.ServletResponse, Object) onPreHandle}.  If the
      * path does not match or the filter is not enabled for that path, this filter will allow passthrough immediately
      * to allow the {@code FilterChain} to continue executing.
-     * <p/>
+     * <br>
      * In order to retain path-matching functionality, subclasses should not override this method if at all
      * possible, and instead override
      * {@link #onPreHandle(javax.servlet.ServletRequest, javax.servlet.ServletResponse, Object) onPreHandle} instead.
@@ -235,7 +235,7 @@ public abstract class PathMatchingFilter extends AdviceFilter implements PathCon
      * {@link #isEnabled(javax.servlet.ServletRequest, javax.servlet.ServletResponse)} method, but additionally allows
      * for inspection of any path-specific configuration values corresponding to the specified request.  Subclasses
      * may wish to inspect this additional mapped configuration to determine if the filter is enabled or not.
-     * <p/>
+     * <br>
      * This method's default implementation ignores the {@code path} and {@code mappedValue} arguments and merely
      * returns the value from a call to {@link #isEnabled(javax.servlet.ServletRequest, javax.servlet.ServletResponse)}.
      * It is expected that subclasses override this method if they need to perform enable/disable logic for a specific

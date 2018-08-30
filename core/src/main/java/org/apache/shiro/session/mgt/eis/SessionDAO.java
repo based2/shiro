@@ -102,14 +102,14 @@ public interface SessionDAO {
      * haven't been stopped/expired.  This is primarily used to validate potential orphans.
      * <br>
      * If there are no active sessions in the EIS, this method may return an empty collection or {@code null}.
-     * <h4>Performance</h4>
+     * <h1>Performance</h1>
      * This method should be as efficient as possible, especially in larger systems where there might be
      * thousands of active sessions.  Large scale/high performance
      * implementations will often return a subset of the total active sessions and perform validation a little more
      * frequently, rather than return a massive set and validate infrequently.  If efficient and possible, it would
      * make sense to return the oldest unstopped sessions available, ordered by
      * {@link org.apache.shiro.session.Session#getLastAccessTime() lastAccessTime}.
-     * <h4>Smart Results</h4>
+     * <h1>Smart Results</h1>
      * <em>Ideally</em> this method would only return active sessions that the EIS was certain should be invalided.
      * Typically that is any session that is not stopped and where its lastAccessTimestamp is older than the session
      * timeout.
@@ -118,7 +118,7 @@ public interface SessionDAO {
      * return something similar to the results returned by this query (assuming
      * {@link org.apache.shiro.session.mgt.SimpleSession SimpleSession}s were being stored):
      * <pre>
-     * select * from sessions s where s.lastAccessTimestamp < ? and s.stopTimestamp is null
+     * select * from sessions s where s.lastAccessTimestamp &gt; ? and s.stopTimestamp is null
      * </pre>
      * where the {@code ?} parameter is a date instance equal to 'now' minus the session timeout
      * (e.g. now - 30 minutes).

@@ -33,11 +33,11 @@ import java.util.Map;
  * A filter that translates an HTTP Request's Method (eg GET, POST, etc)
  * into an corresponding action (verb) and uses that verb to construct a permission that will be checked to determine
  * access.
- * <p/>
+ * <br>
  * This Filter is primarily provided to support REST environments where the type (Method)
  * of request translates to an action being performed on one or more resources.  This paradigm works well with Shiro's
  * concepts of using permissions for access control and can be leveraged to easily perform permission checks.
- * <p/>
+ * <br>
  * This filter functions as follows:
  * <ol>
  * <li>The incoming HTTP request's Method (GET, POST, PUT, DELETE, etc) is discovered.</li>
@@ -47,7 +47,7 @@ import java.util.Map;
  * <li>If the current {@code Subject} {@link org.apache.shiro.subject.Subject#isPermitted(String) isPermitted} to
  * perform the resolved action, the request is allowed to continue.</li>
  * </ol>
- * <p/>
+ * <br>
  * For example, if the following filter chain was defined, where 'rest' was the name given to a filter instance of
  * this class:
  * <pre>
@@ -55,14 +55,13 @@ import java.util.Map;
  * Then an HTTP {@code GET} request to {@code /user/1234} would translate to the constructed permission
  * {@code user:read} (GET is mapped to the 'read' action) and execute the permission check
  * <code>Subject.isPermitted(&quot;user:read&quot;)</code> in order to allow the request to continue.
- * <p/>
+ * <br>
  * Similarly, an HTTP {@code POST} to {@code /user} would translate to the constructed permission
  * {@code user:create} (POST is mapped to the 'create' action) and execute the permission check
  * <code>Subject.isPermitted(&quot;user:create&quot;)</code> in order to allow the request to continue.
- * <p/>
- * <h3>Method To Verb Mapping</h3>
- * The following table represents the default HTTP Method-to-action verb mapping:
- * <table>
+ * <br>
+ * <h1>Method To Verb Mapping</h1>
+ * <table summary="The following table represents the default HTTP Method-to-action verb mapping:">
  * <tr><th>HTTP Method</th><th>Mapped Action</th><th>Example Permission</th><th>Runtime Check</th></tr>
  * <tr><td>head</td><td>read</td><td>perm1</td><td>perm1:read</td></tr>
  * <tr><td>get</td><td>read</td><td>perm2</td><td>perm2:read</td></tr>
@@ -142,7 +141,7 @@ public class HttpMethodPermissionFilter extends PermissionsAuthorizationFilter {
 
     /**
      * Determines the action (verb) attempting to be performed on the filtered resource by the current request.
-     * <p/>
+     * <br>
      * This implementation expects the incoming request to be an {@link HttpServletRequest} and returns a mapped
      * action based on the HTTP request {@link javax.servlet.http.HttpServletRequest#getMethod() method}.
      *
@@ -170,7 +169,7 @@ public class HttpMethodPermissionFilter extends PermissionsAuthorizationFilter {
     /**
      * Returns a collection of String permissions with which to perform a permission check to determine if the filter
      * will allow the request to continue.
-     * <p/>
+     * <br>
      * This implementation merely delegates to {@link #buildPermissions(String[], String)} and ignores the inbound
      * HTTP servlet request, but it can be overridden by subclasses for more complex request-specific building logic
      * if necessary.
@@ -191,9 +190,9 @@ public class HttpMethodPermissionFilter extends PermissionsAuthorizationFilter {
      * to each one per {@link org.apache.shiro.authz.permission.WildcardPermission WildcardPermission} conventions.  The
      * built permission strings will be the ones used at runtime during the permission check that determines if filter
      * access should be allowed to continue or not.
-     * <p/>
+     * <br>
      * For example, if the {@code configuredPerms} argument contains the following 3 permission strings:
-     * <p/>
+     * <br>
      * <ol>
      * <li>permission:one</li>
      * <li>permission:two</li>

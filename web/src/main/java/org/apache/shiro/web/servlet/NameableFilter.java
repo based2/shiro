@@ -39,7 +39,7 @@ public abstract class NameableFilter extends AbstractFilter implements Nameable 
 
     /**
      * Returns the filter's name.
-     * <p/>
+     * <br>
      * Unless overridden by calling the {@link #setName(String) setName(String)} method, this value defaults to the
      * filter name as specified by the servlet container at start-up:
      * <pre>
@@ -62,7 +62,7 @@ public abstract class NameableFilter extends AbstractFilter implements Nameable 
 
     /**
      * Sets the filter's name.
-     * <p/>
+     * <br>
      * Unless overridden by calling this method, this value defaults to the filter name as specified by the
      * servlet container at start-up:
      * <pre>

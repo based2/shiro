@@ -34,15 +34,15 @@ import javax.servlet.http.HttpSession;
 /**
  * SessionManager implementation providing {@link Session} implementations that are merely wrappers for the
  * Servlet container's {@link HttpSession}.
- * <p/>
+ * <br>
  * Despite its name, this implementation <em>does not</em> itself manage Sessions since the Servlet container
  * provides the actual management support.  This class mainly exists to 'impersonate' a regular Shiro
  * {@code SessionManager} so it can be pluggable into a normal Shiro configuration in a pure web application.
- * <p/>
+ * <br>
  * Note that because this implementation relies on the {@link HttpSession HttpSession}, it is only functional in a
  * servlet container - it is not capable of supporting Sessions for any clients other than those using the HTTP
  * protocol.
- * <p/>
+ * <br>
  * Therefore, if you need {@code Session} support for heterogeneous clients (e.g. web browsers,
  * RMI clients, etc), use the {@link DefaultWebSessionManager DefaultWebSessionManager}
  * instead.  The {@code DefaultWebSessionManager} supports both traditional web-based access as well as non web-based

@@ -25,14 +25,14 @@ import javax.servlet.ServletResponse;
  * An authentication filter that redirects the user to the login page when they are trying to access
  * a protected resource.  However, if the user is trying to access the login page, the filter lets
  * the request pass through to the application code.
- * <p/>
+ * <br>
  * The difference between this filter and the {@link FormAuthenticationFilter FormAuthenticationFilter} is that
  * on a login submission (by default an HTTP POST to the login URL), the <code>FormAuthenticationFilter</code> filter
  * attempts to automatically authenticate the user by passing the <code>username</code> and <code>password</code>
  * request parameter values to
  * {@link org.apache.shiro.subject.Subject#login(org.apache.shiro.authc.AuthenticationToken) Subject.login(usernamePasswordToken)}
  * directly.
- * <p/>
+ * <br>
  * Conversely, this controller always passes all requests to the {@link #setLoginUrl loginUrl} through, both GETs and
  * POSTs.  This is useful in cases where the developer wants to write their own login behavior, which should include a
  * call to {@link org.apache.shiro.subject.Subject#login(org.apache.shiro.authc.AuthenticationToken) Subject.login(AuthenticationToken)}

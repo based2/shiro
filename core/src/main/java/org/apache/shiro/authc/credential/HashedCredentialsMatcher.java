@@ -53,7 +53,7 @@ import org.apache.shiro.util.StringUtils;
  * Shiro's Hash implementations (for example, {@link org.apache.shiro.crypto.hash.Md5Hash Md5Hash},
  * {@link org.apache.shiro.crypto.hash.Sha1Hash Sha1Hash}, etc) support salting and multiple hash iterations via
  * overloaded constructors.
- * <h4>Real World Case Study</h4>
+ * <h1>Real World Case Study</h1>
  * In April 2010, some public Atlassian Jira and Confluence
  * installations (Apache Software Foundation, Codehaus, etc) were the target of account attacks and user accounts
  * were compromised.  The reason?  Jira and Confluence at the time did not salt user passwords and attackers were
@@ -64,7 +64,7 @@ import org.apache.shiro.util.StringUtils;
  * The lesson?
  * </p>
  * <b>ALWAYS, ALWAYS, ALWAYS SALT USER PASSWORDS!</b>
- * <h3>Salting</h3>
+ * <h1>Salting</h1>
  * Prior to Shiro 1.1, salts could be obtained based on the end-user submitted
  * {@link AuthenticationToken AuthenticationToken} via the now-deprecated
  * {@link #getSalt(org.apache.shiro.authc.AuthenticationToken) getSalt(AuthenticationToken)} method.  This however
@@ -73,7 +73,7 @@ import org.apache.shiro.util.StringUtils;
  * used in secure systems.  Instead salts should ideally be a secure randomly-generated number that is generated when
  * the user account is created.  The secure number should never be disseminated to the user and always kept private
  * by the application.
- * <h4>Shiro 1.1</h4>
+ * <h1>Shiro 1.1</h1>
  * As of Shiro 1.1, it is expected that any salt used to hash the submitted credentials will be obtained from the
  * stored account information (represented as an {@link AuthenticationInfo AuthenticationInfo} instance).  This is much
  * more secure because the salt value remains private to the application (Shiro will never store this value).
@@ -84,7 +84,7 @@ import org.apache.shiro.util.StringUtils;
  * security risks,
  * <b>it is highly recommended that any existing {@code Realm} implementations that support hashed credentials are
  * updated to return {@link SaltedAuthenticationInfo SaltedAuthenticationInfo} instances as soon as possible</b>.
- * <h4>Shiro 1.0 Backwards Compatibility</h4>
+ * <h1>Shiro 1.0 Backwards Compatibility</h1>
  * Because of the identified security risk, {@code Realm} implementations that support credentials hashing should
  * be updated to return {@link SaltedAuthenticationInfo SaltedAuthenticationInfo} instances as
  * soon as possible.
@@ -97,14 +97,14 @@ import org.apache.shiro.util.StringUtils;
  * But please note that the {@link #isHashSalted() hashSalted} property and the
  * {@link #getSalt(AuthenticationToken) getSalt(AuthenticationToken)} methods will be removed before the Shiro 2.0
  * release.
- * <h3>Multiple Hash Iterations</h3>
+ * <h1>Multiple Hash Iterations</h1>
  * If you hash your users' credentials multiple times before persisting to the data store, you will also need to
  * set this class's {@link #setHashIterations(int) hashIterations} property. See the
  * <a href="http://www.owasp.org/index.php/Hashing_Java" target="_blank">Hashing Java article</a>'s
  * <a href="http://www.owasp.org/index.php/Hashing_Java#Hardening_against_the_attacker.27s_attack">
  * &quot;Hardening against the attacker's attack&quot;</a> section to learn more about why you might want to use
  * multiple hash iterations.
- * <h2>MD5 &amp; SHA-1 Notice</h2>
+ * <h1>MD5 &amp; SHA-1 Notice</h1>
  * <a href="http://en.wikipedia.org/wiki/MD5">MD5</a> and
  * <a href="http://en.wikipedia.org/wiki/SHA_hash_functions">SHA-1</a> algorithms are now known to be vulnerable to
  * compromise and/or collisions (read the linked pages for more).  While most applications are ok with either of these
