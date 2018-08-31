@@ -1,11 +1,12 @@
 {
   "groups": [
     {
-      "name": "shiro"
+      "name": "shiro",
+      "type": "org.springframework.boot.autoconfigure.web.ServerProperties",
+      "sourceType": "org.springframework.boot.autoconfigure.web.ServerProperties"
     },
   ],
   "properties": [
-
     {
       "name": "shiro.enabled",
       "type": "java.lang.Boolean",

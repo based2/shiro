@@ -1,5 +1,3 @@
-shiro-master/support/cas/src/main/java/org/apache/shiro/cas/CasFilter.java:[29,21] package javax.servlet does not exist
-
 One or more dependencies were identified with known vulnerabilities in Apache Shiro:
 
 jackson-annotations-2.8.0.jar (com.fasterxml.jackson.core:jackson-annotations:2.8.0, cpe:/a:fasterxml:jackson:2.8.0) : CVE-2016-7051
