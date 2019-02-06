@@ -239,10 +239,17 @@ public abstract class AbstractAuthenticator implements Authenticator, LogoutAwar
 
     /**
      * Template design pattern hook for subclasses to implement specific authentication behavior.
+<<<<<<< HEAD
      * <p/>
      * Common behavior for most authentication attempts is encapsulated in the
      * {@link #authenticate} method and that method invokes this one for custom behavior.
      * <p/>
+=======
+     * <p>
+     * Common behavior for most authentication attempts is encapsulated in the
+     * {@link #authenticate} method and that method invokes this one for custom behavior.
+     * </p>
+>>>>>>> origin/master
      * <b>N.B.</b> Subclasses <em>should</em> throw some kind of
      * {@code AuthenticationException} if there is a problem during
      * authentication instead of returning {@code null}.  A {@code null} return value indicates
