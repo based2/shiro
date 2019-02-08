@@ -90,7 +90,7 @@ public class DefaultLdapRealmTest {
 
         Object expectedPrincipal = "uid=jsmith,ou=users,dc=mycompany,dc=com";
 
-        expect(factory.getLdapContext(eq(expectedPrincipal), isA(Object.class))).andReturn(createNiceMock(LdapContext.class));
+        expect(factory.getLdapContext(eq(expectedPrincipal), isA(Object.class))).andReturn((LdapContext) createNiceMock(LdapContext.class));
         replay(factory);
 
         realm.getAuthenticationInfo(new UsernamePasswordToken("jsmith", "secret") );
@@ -139,7 +139,7 @@ public class DefaultLdapRealmTest {
         final UUID userId = UUID.randomUUID();
 
         //ensure the userId is passed as-is:
-        expect(factory.getLdapContext(eq(userId), isA(Object.class))).andReturn(createNiceMock(LdapContext.class));
+        expect(factory.getLdapContext(eq(userId), isA(Object.class))).andReturn((LdapContext) createNiceMock(LdapContext.class));
         replay(factory);
 
         realm.getAuthenticationInfo(new AuthenticationToken() {

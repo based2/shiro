@@ -29,7 +29,7 @@ import static org.hamcrest.Matchers.*;
  *
  * @since 1.0
  */
-public class IniTest {
+public class Ini1Test {
 
     private static final String NL = "\n";
 

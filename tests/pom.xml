@@ -44,24 +44,11 @@
     </properties>
 
     <dependencies>
-	        <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy</artifactId>
-            <version>${groovy.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-test</artifactId>
-            <version>${groovy.version}</version>
-            <scope>test</scope>
-        </dependency>
        <!-- required by intellij idea when test are manually run -->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy</artifactId>
             <version>${groovy.version}</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
@@ -77,3 +64,4 @@
         </dependency>
 	</dependencies>
 </project>
+<!-- http://maven.40175.n5.nabble.com/What-scope-is-like-provided-and-test-together-td56399.html -->

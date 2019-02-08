@@ -287,6 +287,16 @@
                     https://github.com/groovy/GMavenPlus/wiki/GMaven-Migration
                     https://github.com/groovy/GMavenPlus/wiki
                     https://groovy.github.io/GMavenPlus/
+
+                    https://github.com/mycila/gmavenplus-intellij-plugin/issues/1
+                    When maven generate the groovy-stubs,
+                    it generates in target/generated-sources/groovy-stubs.
+                     So IntelliJ find sources of the same class in 2 directories.
+                     The first one in the real groovy source, and the second one
+                      the generated groovy-(java)-stub.
+It would be very nice, if your plugin could detect this and set in IntelliJ,
+that the groovy-stubs directory should also be ignored.
+Like setting the directory as "Excluded" in the Project Settings->Modules->Sources tab
                  -->
                 <plugin>
                     <groupId>org.codehaus.gmavenplus</groupId>
