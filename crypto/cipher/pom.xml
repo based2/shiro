@@ -54,6 +54,10 @@
     <dependencies>
         <dependency>
             <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-tests</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-lang</artifactId>
         </dependency>
         <dependency>

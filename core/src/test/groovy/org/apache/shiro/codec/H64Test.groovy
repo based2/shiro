@@ -23,7 +23,7 @@ import org.apache.shiro.crypto.SecureRandomNumberGenerator
 /**
  * Test cases for the {@link H64} implementation.
  */
-class H64Test extends GroovyTestCase {
+class H64_Test extends GroovyTestCase {
 
     void testNothing(){}
 

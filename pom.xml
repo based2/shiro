@@ -65,7 +65,7 @@
     </distributionManagement>
 
     <properties>
-
+        <shiro.version>1.4.1-SNAPSHOT</shiro.version>
         <!-- Replaced by the build number plugin at build time: -->
         <buildNumber>${user.name}-${maven.build.timestamp}</buildNumber>
 
@@ -92,28 +92,32 @@
         <quartz.version>1.6.1</quartz.version>
         <slf4j.version>1.7.25</slf4j.version>
         <spring.version>3.2.18.RELEASE</spring.version>
-        <spring-boot.version>1.4.7.RELEASE</spring-boot.version><!-- 1.5.12.RELEASE -->
+        <spring-boot.version>1.4.7.RELEASE</spring-boot.version><!-- 1.5.19.RELEASE 2.1.2.RELEASE -->
         <guice.version>3.0</guice.version><!-- 4.2.0 -->
 
         <!-- Test 3rd-party dependencies: -->
-        <easymock.version>3.4</easymock.version>
+        <easymock.version>4.0.2</easymock.version><!-- 3.4 3.6 -->
         <gmavenplus.version>1.6.2</gmavenplus.version>
-        <groovy.version>2.5.5</groovy.version><!-- 2.4.7 2.5.6?(groovy-all) -->
+        <groovy.version>2.5.6</groovy.version><!-- 2.4.7 2.5.6?(groovy-all) -->
         <!-- http://groovy-lang.org/releasenotes/groovy-2.5.html -->
         <junit.version>4.12</junit.version>
         <hibernate.version>4.2.21.Final</hibernate.version>
         <!-- so we can mock static methods in 3rd party libraries that sometimes don't use proper interfaces
              ahem, hazelcast, ahem... -->
-        <powermock.version>1.6.6</powermock.version>
+        <powermock.version>1.6.6</powermock.version><!-- 1.7.4 2.0.0 -->
 
         <maven.compiler.source>${jdk.version}</maven.compiler.source>
         <maven.compiler.target>${jdk.version}</maven.compiler.target>
 
         <root.dir>${session.executionRootDirectory}</root.dir>
+        <!-- With Maven 3.3.1 ${maven.multiModuleProjectDirectory} https://stackoverflow.com/questions/4146638/maven-variable-for-reactor-root/48879554#48879554 -->
 
+        <maven-failsafe-plugin.version>2.22.1</maven-failsafe-plugin.version>
+        <maven-javadoc-plugi>3.0.1</maven-javadoc-plugi>
     </properties>
 
     <modules>
+        <module>tests</module>
         <module>lang</module>
         <module>crypto</module>
         <module>event</module>
@@ -248,7 +252,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
-                    <version>3.5.1</version>
+                    <version>3.7.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -348,6 +352,11 @@
                            <artifactId>groovy</artifactId>
                            <version>${groovy.version}</version>
                        </dependency>
+                       <dependency>
+                           <groupId>org.codehaus.groovy</groupId>
+                           <artifactId>groovy-test</artifactId>
+                           <version>${groovy.version}</version>
+                       </dependency>
                  </dependencies>
                 </plugin>
                 <plugin>
@@ -433,7 +442,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.22.1</version>
+                <version>${surefire.version}</version>
                 <configuration>
                     <useSystemClassLoader>false</useSystemClassLoader>
                     <includes>
@@ -617,11 +626,12 @@
              are test dependencies.  Actual compile or runtime dependencies should be
              explicitly declared in a child module, referencing the dependency defined
              in this file's <dependencyManagement> section. -->
-        <dependency>
+     <!--   <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
             <scope>test</scope>
-        </dependency>
+        </dependency> -->
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>java-hamcrest</artifactId>
@@ -642,9 +652,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-test</artifactId>
-            <version>${groovy.version}</version>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -666,122 +676,127 @@
             <!-- Shiro core artifacts -->
             <dependency>
                 <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-tests</artifactId>
+                <version>${shiro.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-lang</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-cache</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-core</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-config-core</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-config-ogdl</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-crypto-core</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-crypto-hash</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-crypto-cipher</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-event</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-web</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-servlet-plugin</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
             </dependency>
 
             <!-- Shiro 3rd party support (keep this alphabetically ordered based on the artifactId please): -->
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-aspectj</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-cas</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-ehcache</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-quartz</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-spring</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-guice</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-hazelcast</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-jaxrs</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-all</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
             </dependency>
 
             <!-- Shiro samples: -->
             <dependency>
                 <groupId>org.apache.shiro.samples</groupId>
                 <artifactId>samples-spring-client</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-spring-boot-starter</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-spring-boot-web-starter</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
             </dependency>
 
 
@@ -789,21 +804,21 @@
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-core</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
                 <type>test-jar</type>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-config-ogdl</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
                 <type>test-jar</type>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro.integrationtests</groupId>
                 <artifactId>shiro-its-support</artifactId>
-                <version>1.4.1-SNAPSHOT</version>
+                <version>${shiro.version}</version>
             </dependency>
 
             <!-- 3rd party dependencies -->
@@ -812,6 +827,7 @@
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
+                <scope>test</scope>
             </dependency>
             <dependency>
                 <!-- used for the 'hashpass' command line tool: -->
@@ -946,16 +962,17 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-           <!-- <dependency>
+           <dependency>
                 <groupId>org.codehaus.groovy</groupId>
                 <artifactId>groovy-all</artifactId>
                 <version>${groovy.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.groovy</groupId>
-                <artifactId>groovy</artifactId>
+                <artifactId>groovy-test</artifactId>
                 <version>${groovy.version}</version>
-            </dependency> -->
+                <scope>test</scope>
+            </dependency>
             <dependency>
                 <groupId>net.sf.ehcache</groupId>
                 <artifactId>ehcache-core</artifactId>
@@ -1178,6 +1195,7 @@
     <reporting>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.0.1</version><!-- 2.9.1 -->
                 <configuration>
@@ -1229,6 +1247,7 @@
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
                 <version>3.7</version>
                 <configuration>
@@ -1237,8 +1256,9 @@
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>2.9</version>
+                <version>3.0.0</version>
                 <!-- Disable, just to make it go faster -->
                 <configuration>
                     <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
@@ -1266,8 +1286,9 @@
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>2.21.1</version>
+                <version>${surefire.version}</version>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
