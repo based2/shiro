@@ -101,10 +101,12 @@
         <groovy.version>2.5.6</groovy.version><!-- 2.4.7 2.5.6?(groovy-all) -->
         <!-- http://groovy-lang.org/releasenotes/groovy-2.5.html -->
         <junit.version>4.12</junit.version>
-        <hibernate.version>4.2.21.Final</hibernate.version>
-        <!-- so we can mock static methods in 3rd party libraries that sometimes don't use proper interfaces
+         <!-- so we can mock static methods in 3rd party libraries that sometimes don't use proper interfaces
              ahem, hazelcast, ahem... -->
-        <powermock.version>1.6.6</powermock.version><!-- 1.7.4 2.0.0 -->
+        <powermock.version>2.0.0</powermock.version><!-- 1.6.6 1.7.4 2.0.0 -->
+        <hamcrest.version>2.1</hamcrest.version>
+        
+        <hibernate.version>4.2.21.Final</hibernate.version>
 
         <maven.compiler.source>${jdk.version}</maven.compiler.source>
         <maven.compiler.target>${jdk.version}</maven.compiler.target>
@@ -642,10 +644,16 @@ Like setting the directory as "Excluded" in the Project Settings->Modules->Sourc
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency> -->
-        <dependency>
+       <!--  <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>java-hamcrest</artifactId>
             <version>2.0.0.0</version>
+            <scope>test</scope>
+        </dependency> -->
+         <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-core</artifactId>
+            <version>${hamcrest.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>

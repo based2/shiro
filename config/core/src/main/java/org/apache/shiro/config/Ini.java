@@ -595,7 +595,7 @@ public class Ini implements Map<String, Ini.Section> {
 
             String key = StringUtils.clean(keyBuffer.toString());
             String value = StringUtils.clean(valueBuffer.toString());
-
+            //log.error(key + "::" + value);
             if (key == null || value == null) {
                 String msg = "Line argument must contain a key and a value.  Only one string token was found.";
                 throw new IllegalArgumentException(msg);

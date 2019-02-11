@@ -21,8 +21,11 @@ package org.apache.shiro.config;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.core.IsIterableContaining.*;
+import static org.hamcrest.core.AllOf.*;
+import static org.hamcrest.collection.IsCollectionWithSize.*;
+import static org.hamcrest.collection.IsMapWithSize.*;
+import static org.hamcrest.collection.IsMapContaining.*;
 
 /**
  * Unit test for the {@link Ini} class.
@@ -35,9 +38,7 @@ public class Ini1Test {
 
     @Test
     public void testNoSections() {
-        String test =
-            "prop1 = value1" + NL +
-                    "prop2 = value2";
+        String test = "prop1 = value1" + NL + "prop2 = value2";
 
         Ini ini = new Ini();
         ini.load(test);
