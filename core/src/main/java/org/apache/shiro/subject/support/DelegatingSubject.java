@@ -77,7 +77,7 @@ public class DelegatingSubject implements Subject {
 
     protected PrincipalCollection principals;
     protected boolean authenticated;
-    protected String host;
+    protected String host = "127.0.0.1";
     protected Session session;
     /**
      * @since 1.2
@@ -104,7 +104,9 @@ public class DelegatingSubject implements Subject {
         this.securityManager = securityManager;
         this.principals = principals;
         this.authenticated = authenticated;
-        this.host = host;
+        if (null!=host) {
+        	this.host = host;
+        }
         if (session != null) {
             this.session = decorate(session);
         }

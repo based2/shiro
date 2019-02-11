@@ -70,7 +70,9 @@ public class ShiroHttpServletRequestTest extends TestCase {
         assertNotNull(request.getSession(false));
         
         mockSubject.logout();
-        
+
+        //assertFalse(request.isRequestedSessionIdValid());
+        // If create is false and the request has no valid HttpSession, this method returns null.
         assertNull(request.getSession(false));
         assertNotNull(request.getSession(true));
         verify(mockSubject);
