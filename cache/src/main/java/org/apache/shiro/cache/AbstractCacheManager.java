@@ -33,18 +33,18 @@ import java.util.concurrent.ConcurrentMap;
  *
  * @since 1.0
  */
-public abstract class AbstractCacheManager implements CacheManager, Destroyable {
+public abstract class AbstractCacheManager<A,B> implements CacheManager, Destroyable {
 
     /**
      * Retains all Cache objects maintained by this cache manager.
      */
-    private final ConcurrentMap<String, Cache> caches;
+    private final ConcurrentMap<String, Cache<A,B>> caches;
 
     /**
      * Default no-arg constructor that instantiates an internal name-to-cache {@code ConcurrentMap}.
      */
     public AbstractCacheManager() {
-        this.caches = new ConcurrentHashMap<String, Cache>();
+        this.caches = new ConcurrentHashMap<>();
     }
 
     /**
@@ -56,17 +56,15 @@ public abstract class AbstractCacheManager implements CacheManager, Destroyable 
      * @throws IllegalArgumentException if the {@code name} argument is {@code null} or does not contain text.
      * @throws CacheException           if there is a problem lazily creating a {@code Cache} instance.
      */
-    public <K, V> Cache<K, V> getCache(String name) throws IllegalArgumentException, CacheException {
+    public <K,V> Cache<K,V> getCache(String name) throws IllegalArgumentException, CacheException {
         if (!StringUtils.hasText(name)) {
             throw new IllegalArgumentException("Cache name cannot be null or empty.");
         }
 
-        Cache cache;
-
-        cache = caches.get(name);
+        Cache<K,V> cache = (Cache<K,V>) caches.get(name);
         if (cache == null) {
-            cache = createCache(name);
-            Cache existing = caches.putIfAbsent(name, cache);
+            cache = (Cache<K,V>) createCache(name);
+            Cache<K,V> existing = (Cache<K,V>) caches.putIfAbsent(name, (Cache<A,B>) cache);
             if (existing != null) {
                 cache = existing;
             }
@@ -83,7 +81,7 @@ public abstract class AbstractCacheManager implements CacheManager, Destroyable 
      * @return a new {@code Cache} instance associated with the specified {@code name}.
      * @throws CacheException if the {@code Cache} instance cannot be created.
      */
-    protected abstract Cache createCache(String name) throws CacheException;
+    protected abstract Cache<A,B> createCache(String name) throws CacheException;
 
     /**
      * Cleanup method that first {@link LifecycleUtils#destroy destroys} all of it's managed caches and then
@@ -93,7 +91,7 @@ public abstract class AbstractCacheManager implements CacheManager, Destroyable 
      */
     public void destroy() throws Exception {
         while (!caches.isEmpty()) {
-            for (Cache cache : caches.values()) {
+            for (Cache<A,B> cache : caches.values()) {
                 LifecycleUtils.destroy(cache);
             }
             caches.clear();
@@ -101,13 +99,13 @@ public abstract class AbstractCacheManager implements CacheManager, Destroyable 
     }
 
     public String toString() {
-        Collection<Cache> values = caches.values();
+        Collection<Cache<A,B>> values = caches.values();
         StringBuilder sb = new StringBuilder(getClass().getSimpleName())
                 .append(" with ")
                 .append(caches.size())
                 .append(" cache(s)): [");
         int i = 0;
-        for (Cache cache : values) {
+        for (Cache<A,B> cache : values) {
             if (i > 0) {
                 sb.append(", ");
             }

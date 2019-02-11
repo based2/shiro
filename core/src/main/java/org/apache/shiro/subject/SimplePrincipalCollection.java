@@ -170,7 +170,7 @@ public class SimplePrincipalCollection implements MutablePrincipalCollection {
         if (all.isEmpty()) {
             return Collections.EMPTY_LIST;
         }
-        return Collections.unmodifiableList(new ArrayList(all));
+        return Collections.unmodifiableList(new ArrayList<>(all));
     }
 
     public Set asSet() {
