@@ -28,9 +28,10 @@ import org.apache.shiro.authz.Permission;
  * @since 0.9
  */
 public class WildcardPermissionResolver implements PermissionResolver {
-    private boolean caseSensitive;
+	/* @see WildcardPermission#DEFAULT_CASE_SENSITIVE =false */
+    private boolean caseSensitive = WildcardPermission.DEFAULT_CASE_SENSITIVE;
     /**
-     * Constructor to specify case sensitivity for the resolved premissions.
+     * Constructor to specify case sensitivity for the resolved permissions.
      * @param caseSensitive true if permissions should be case sensitive.
      */
     public WildcardPermissionResolver(boolean caseSensitive) {
@@ -71,6 +72,7 @@ public class WildcardPermissionResolver implements PermissionResolver {
      *         <tt>permissionString</tt>
      */
     public Permission resolvePermission(String permissionString) {
-        return new WildcardPermission(permissionString);
+        return new WildcardPermission(permissionString, caseSensitive);
     }
+    
 }

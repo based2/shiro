@@ -18,16 +18,15 @@
  */
 package org.apache.shiro.authz.permission;
 
-import org.apache.shiro.authz.Permission;
-import org.apache.shiro.util.CollectionUtils;
-import org.apache.shiro.util.StringUtils;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+
+import org.apache.shiro.authz.Permission;
+import org.apache.shiro.util.CollectionUtils;
+import org.apache.shiro.util.StringUtils;
 
 /**
  * A <code>WildcardPermission</code> is a very flexible permission construct supporting multiple levels of
@@ -106,14 +105,13 @@ import java.util.Set;
  */
 public class WildcardPermission implements Permission, Serializable {
 
-    //TODO - JavaDoc methods
-
     /*--------------------------------------------
     |             C O N S T A N T S             |
     ============================================*/
     protected static final String WILDCARD_TOKEN = "*";
     protected static final String PART_DIVIDER_TOKEN = ":";
     protected static final String SUBPART_DIVIDER_TOKEN = ",";
+    /* Set @see WildcardPermissionResolver#caseSensitive */
     protected static final boolean DEFAULT_CASE_SENSITIVE = false;
 
     /*--------------------------------------------
@@ -125,13 +123,13 @@ public class WildcardPermission implements Permission, Serializable {
     |         C O N S T R U C T O R S           |
     ============================================*/
     /**
-     * Default no-arg constructor for subclasses only - end-user developers instantiating Permission instances must
+     * Default no-argument constructor for subclasses only - end-user developers instantiating Permission instances must
      * provide a wildcard string at a minimum, since Permission instances are immutable once instantiated.
      * <p/>
      * Note that the WildcardPermission class is very robust and typically subclasses are not necessary unless you
      * wish to create type-safe Permission objects that would be used in your application, such as perhaps a
-     * {@code UserPermission}, {@code SystemPermission}, {@code PrinterPermission}, etc.  If you want such type-safe
-     * permission usage, consider subclassing the {@link DomainPermission DomainPermission} class for your needs.
+     * {@code UserPermission}, {@code SystemPermission}, {@code PrinterPermission}, etc. If you want such type-safe
+     * permission usage, consider sub-classing the {@link DomainPermission DomainPermission} class for your needs.
      */
     protected WildcardPermission() {
     }

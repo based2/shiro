@@ -109,6 +109,7 @@ public class AntPathMatcher implements PatternMatcher {
      *         http://127.0.0.1/\../\../\../\../\../\../Server4/admin-serv/config/adm.conf
      */
     protected boolean doMatch(final String pattern, final String path, boolean fullMatch) {
+    	if (null == pattern || null==path) return false;
         if (path.startsWith(this.pathSeparator) != pattern.startsWith(this.pathSeparator)) {
             return false;
         }
