@@ -29,6 +29,7 @@ import org.powermock.modules.junit4.PowerMockRunner;
 
 import javax.servlet.ServletContext;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.ServiceLoader;
 
@@ -46,7 +47,7 @@ public class EnvironmentLoaderServiceTest {
     @Test()
     public void singleServiceTest() throws Exception {
 
-        List<WebEnvironmentStub> environmentList = Arrays.asList(new WebEnvironmentStub());
+        List<WebEnvironmentStub> environmentList = Collections.singletonList(new WebEnvironmentStub());
 
         ServletContext servletContext = EasyMock.mock(ServletContext.class);
         expect(servletContext.getInitParameter("shiroEnvironmentClass")).andReturn(null);
