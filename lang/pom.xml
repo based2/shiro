@@ -40,7 +40,6 @@
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-tests</artifactId>
-            <version>${shiro.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -48,10 +47,6 @@
             <artifactId>slf4j-api</artifactId>
         </dependency>
         <!-- Test dependencies - scope set appropriately already in the parent pom-->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>

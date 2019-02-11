@@ -37,7 +37,7 @@
         <hazelcast.bundle.version>3.7.2_1</hazelcast.bundle.version>
         <quartz.bundle.version>1.6.1_1</quartz.bundle.version>
         <!-- Not a Shiro dependency - used for quartz bundle resolution only (see features.xml): -->
-        <commons.collections.version>3.2.1</commons.collections.version>
+        <commons.collections.version>3.2.2</commons.collections.version>
     </properties>
 
     <build>

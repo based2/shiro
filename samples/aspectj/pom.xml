@@ -50,9 +50,9 @@
 				</configuration>
 				<executions>
 					<execution>
-						<id>aspectj-compile</id>
+						<!--  <id>compile-test</id> -->
 						<goals>
-							<goal>aspectj-compile</goal>
+							<goal>compile</goal>
 							<goal>test-compile</goal>
 						</goals>
 					</execution>

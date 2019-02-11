@@ -159,7 +159,7 @@
         <profile>
             <id>cxf</id>
             <properties>
-                <cxf.version>3.1.7</cxf.version>
+                <cxf.version>3.1.7</cxf.version><!-- 3.1.18 -->
             </properties>
             <dependencies>
                 <dependency>
