@@ -31,8 +31,6 @@ import java.util.*;
  */
 public class StringUtils {
 
-    //TODO - complete JavaDoc
-
     /**
      * Constant representing the empty string, equal to &quot;&quot;
      */
@@ -197,7 +195,7 @@ public class StringUtils {
      * @return a single string, delimited by the specified {@code delimiter}.
      * @since 1.2
      */
-    public static String toDelimitedString(Collection c, String delimiter) {
+    public static String toDelimitedString(Collection<String> c, String delimiter) {
         if (c == null || c.isEmpty()) {
             return EMPTY_STRING;
         }
@@ -246,7 +244,6 @@ public class StringUtils {
      * @see java.util.StringTokenizer
      * @see java.lang.String#trim()
      */
-    @SuppressWarnings({"unchecked"})
     public static String[] tokenizeToStringArray(
             String str, String delimiters, boolean trimTokens, boolean ignoreEmptyTokens) {
 
@@ -254,7 +251,7 @@ public class StringUtils {
             return null;
         }
         StringTokenizer st = new StringTokenizer(str, delimiters);
-        List tokens = new ArrayList();
+        List<String> tokens = new ArrayList<String>();
         while (st.hasMoreTokens()) {
             String token = st.nextToken();
             if (trimTokens) {
@@ -277,8 +274,7 @@ public class StringUtils {
      * @return the String array (<code>null</code> if the passed-in
      *         Collection was <code>null</code>)
      */
-    @SuppressWarnings({"unchecked"})
-    public static String[] toStringArray(Collection collection) {
+    public static String[] toStringArray(Collection<String> collection) {
         if (collection == null) {
             return null;
         }
