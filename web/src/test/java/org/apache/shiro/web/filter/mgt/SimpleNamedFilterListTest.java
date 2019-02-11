@@ -147,8 +147,7 @@ public class SimpleNamedFilterListTest {
         list.retainAll(multipleFilters);
         assertEquals(2, list.size());
         //noinspection unchecked
-        assertEquals(new ArrayList(list), multipleFilters);
+        assertEquals(new ArrayList<>(list), multipleFilters);
     }
-
 
 }
