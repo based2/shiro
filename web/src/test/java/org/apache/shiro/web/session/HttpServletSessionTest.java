@@ -24,6 +24,7 @@ import static org.junit.Assert.assertEquals;
 import javax.servlet.http.HttpSession;
 
 import org.easymock.Capture;
+import org.easymock.CaptureType;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -46,7 +47,7 @@ public class HttpServletSessionTest {
         final int expectedTimeoutInSeconds = 30 * 24 * 60 * 60;  // 30 days.
         final long expectedLongValue = expectedTimeoutInSeconds * 1000L;
 
-        Capture<Integer> capturedInt = new Capture<Integer>();
+        Capture<Integer> capturedInt = newCapture(CaptureType.ALL);
         // use a capture to make sure the setter is doing the right thing.
         mockSession.setMaxInactiveInterval(captureInt(capturedInt));
         expect(mockSession.getMaxInactiveInterval()).andReturn(expectedTimeoutInSeconds);
