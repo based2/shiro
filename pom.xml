@@ -309,9 +309,9 @@ Like setting the directory as "Excluded" in the Project Settings->Modules->Sourc
                                 <goal>addTestSources</goal>
                                 <goal>generateStubs</goal>
                                 <goal>compile</goal>
+                                <goal>removeStubs</goal>
                                 <goal>generateTestStubs</goal>
                                 <goal>compileTests</goal>
-                                <goal>removeStubs</goal>
                                 <goal>removeTestStubs</goal>
                             </goals>
                         </execution>
